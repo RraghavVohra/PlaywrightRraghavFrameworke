@@ -31,7 +31,7 @@ public class PushNotificationPage {
 	    }
 
 	    private Locator createAppNotification() {
-	        return page.locator("xpath=//a/span[text()='Create App Notification'][1]");
+	        return page.locator("xpath=(//a/span[text()='Create App Notification'])[1]");
 	    }
 
 	    private Locator notificationNameField() {
@@ -115,16 +115,21 @@ public class PushNotificationPage {
 	    }
 	    
 	    public void clickActions() {
+	    	// Hover over the first table row to reveal the actions button, then click it
+	    	Locator firstRow = page.locator("table tbody tr").first();
+	    	firstRow.hover();
 	    	page.locator("(//*[name()='svg'])[1]").click();
 	    }
-	    
+
 	    public boolean isMenuVisible() {
-	    	return page.locator("//a[@class='menu-link px-3']").first().isVisible();
-	    	
+	    	// Wait for any visible dropdown menu item to appear after clicking actions
+	    	Locator dropdownItem = page.locator(".menu-item.show .menu-link, [data-kt-menu-trigger] + div .menu-link").first();
+	    	dropdownItem.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
+	    	return dropdownItem.isVisible();
 	    }
 	    
 	    public void clickCreate() {
-	    	page.locator("text=Create App Notification").click();
+	    	createAppNotification().click();
 	    }
 	}	
 

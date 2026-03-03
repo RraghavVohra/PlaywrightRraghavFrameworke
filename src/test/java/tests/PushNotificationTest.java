@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.microsoft.playwright.options.LoadState;
+
 import base.BaseTest;
 import pageObjects.PushNotificationPage;
 
@@ -14,7 +16,7 @@ public class PushNotificationTest extends BaseTest {
 	    @BeforeMethod
 	    public void initPage() {
 	        page.navigate("https://app.spdevmfp.com/home/");
-	        page.waitForLoadState();
+	        page.waitForLoadState(LoadState.NETWORKIDLE);
 	        pushPage = new PushNotificationPage(page);
 	        
 	        // page.waitForURL("**/home/**");

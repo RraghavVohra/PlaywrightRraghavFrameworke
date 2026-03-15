@@ -23,7 +23,7 @@ public class BaseTest {
         browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions().
                 setHeadless(false)
-                .setSlowMo(200));
+                .setSlowMo(50)); // helps debugging
 
         // Ensure login exists
         AuthManager.ensureLogin(browser);
@@ -36,9 +36,14 @@ public class BaseTest {
         context = browser.newContext(
                 new Browser.NewContextOptions()
                         .setStorageStatePath(Paths.get("auth.json"))
+                        .setViewportSize(1920,1080) // This line was added afterwards
         );
 
         page = context.newPage();
+        
+        // GLOBAL TIMEOUTS - THIS WAS ALSO ADDED AFTERWARDS
+        page.setDefaultTimeout(60000);
+        page.setDefaultNavigationTimeout(60000);
 
         // IMPORTANT
         //page.navigate("https://app.spdevmfp.com/home/AssetLibrary");

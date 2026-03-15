@@ -37,7 +37,7 @@ public class PushNotificationTest extends BaseTest {
 	    @Test(groups="smoke")
 	    public void test_TC_PN_04_createNotification() {
 	        pushPage.clickActions();
-	        pushPage.clickCreate();
+	        pushPage.clickCreateAppNotification();
 	        Assert.assertTrue(page.url().contains("create"));
 	    }
 	}

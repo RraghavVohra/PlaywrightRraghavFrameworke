@@ -21,7 +21,9 @@ public class BaseTest {
         playwright = Playwright.create();
 
         browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().setHeadless(false));
+                new BrowserType.LaunchOptions().
+                setHeadless(false)
+                .setSlowMo(200));
 
         // Ensure login exists
         AuthManager.ensureLogin(browser);
@@ -39,7 +41,8 @@ public class BaseTest {
         page = context.newPage();
 
         // IMPORTANT
-        page.navigate("https://app.spdevmfp.com/home/AssetLibrary");
+        //page.navigate("https://app.spdevmfp.com/home/AssetLibrary");
+        page.navigate("https://app.spdevmfp.com/home");
       
         page.waitForLoadState(LoadState.NETWORKIDLE);
     }

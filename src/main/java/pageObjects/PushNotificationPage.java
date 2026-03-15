@@ -2,7 +2,6 @@ package pageObjects;
 
 
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
 public class PushNotificationPage {
@@ -15,23 +14,26 @@ public class PushNotificationPage {
 
 	    // LOCATORS
 	    private Locator communicationTab() {
-	        return page.locator("xpath=//span[normalize-space()='Communication']");
+	        return page.locator("//span[normalize-space()='Communication']");
+	        // Even Better would be 
+	        // return page.getByText("Communication");
+	        
 	    }
 
 	    private Locator notifications() {
-	        return page.locator("xpath=//a[normalize-space()='New Push Notification']");
+	        return page.locator("//a[normalize-space()='New Push Notification']");
 	    }
 
 	    private Locator pageHeading() {
-	        return page.locator("xpath=//span[@class='fs-2 fw-bolder']");
+	        return page.locator("//span[@class='fs-2 fw-bolder']");
 	    }
 
 	    private Locator actionsButton() {
-	        return page.locator("xpath=(//*[name()='svg'])[1]");
+	        return page.locator("(//*[name()='svg'])[1]");
 	    }
 
 	    private Locator createAppNotification() {
-	        return page.locator("xpath=(//a/span[text()='Create App Notification'])[1]");
+	        return page.locator("(//a/span[text()='Create App Notification'])[1]");
 	    }
 
 	    private Locator notificationNameField() {
@@ -47,15 +49,15 @@ public class PushNotificationPage {
 	    }
 
 	    private Locator imageUpload() {
-	        return page.locator("xpath=//input[@name='image_url']");
+	        return page.locator("//input[@name='image_url']");
 	    }
 
 	    private Locator submitButton() {
-	        return page.locator("xpath=//button[@type='submit']");
+	        return page.locator("//button[@type='submit']");
 	    }
 
 	    private Locator toastMessage() {
-	        return page.locator("xpath=//span[@class='mssg_content']");
+	        return page.locator("//span[@class='mssg_content']");
 	    }
 
 	    // ACTION METHODS
@@ -66,22 +68,18 @@ public class PushNotificationPage {
 	        // page.waitForLoadState(LoadState.NETWORKIDLE);
 
 	        // ✅ Wait for communication tab to appear first
-	        communicationTab().waitFor(new Locator.WaitForOptions()
-	                .setState(WaitForSelectorState.VISIBLE));
+	        // communicationTab().waitFor(new Locator.WaitForOptions()
+	        //        .setState(WaitForSelectorState.VISIBLE));
 
 	        communicationTab().click();
 	        
-	        notifications().waitFor(new Locator.WaitForOptions()
-	        .setState(WaitForSelectorState.VISIBLE));
+	        // notifications().waitFor(new Locator.WaitForOptions()
+	        // .setState(WaitForSelectorState.VISIBLE));
 	        
 	        notifications().click();
 	    }
 
-	    // public void openNotificationPage() {
-	    //     communicationTab().click();
-	    //     notifications().click();
-	    // }
-
+	  
 	    public String getHeading() {
 	        return pageHeading().textContent();
 	    }
@@ -128,9 +126,7 @@ public class PushNotificationPage {
 	    	return dropdownItem.isVisible();
 	    }
 	    
-	    public void clickCreate() {
-	    	createAppNotification().click();
-	    }
+	   
 	}	
 
 

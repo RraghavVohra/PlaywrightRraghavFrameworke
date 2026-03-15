@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-15T11:10:34 IST" name="Default suite" finished-at="2026-03-15T11:11:22 IST" duration-ms="48297">
+    <groups>
+      <group name="smoke">
+        <method signature="PushNotificationTest.test_TC_PN_01_takenToPushNotificationsScreen()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" name="test_TC_PN_01_takenToPushNotificationsScreen" class="tests.PushNotificationTest"/>
+        <method signature="PushNotificationTest.test_TC_PN_03_clicksOnActionMenuButton()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" name="test_TC_PN_03_clicksOnActionMenuButton" class="tests.PushNotificationTest"/>
+        <method signature="PushNotificationTest.test_TC_PN_04_createNotification()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" name="test_TC_PN_04_createNotification" class="tests.PushNotificationTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2026-03-15T11:10:34 IST" name="Default test" finished-at="2026-03-15T11:11:22 IST" duration-ms="48297">
+      <class name="tests.PushNotificationTest">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:13 IST" name="globalSetup" finished-at="2026-03-15T11:10:34 IST" duration-ms="20972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalSetup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:34 IST" name="setUp" finished-at="2026-03-15T11:10:43 IST" duration-ms="8623" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:43 IST" name="initPage" finished-at="2026-03-15T11:10:47 IST" duration-ms="3985" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPage -->
+        <test-method signature="test_TC_PN_01_takenToPushNotificationsScreen()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:47 IST" name="test_TC_PN_01_takenToPushNotificationsScreen" finished-at="2026-03-15T11:10:48 IST" duration-ms="1439" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_TC_PN_01_takenToPushNotificationsScreen -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:48 IST" name="tearDown" finished-at="2026-03-15T11:10:48 IST" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:49 IST" name="setUp" finished-at="2026-03-15T11:10:57 IST" duration-ms="8377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:10:57 IST" name="initPage" finished-at="2026-03-15T11:11:01 IST" duration-ms="3884" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPage -->
+        <test-method signature="test_TC_PN_03_clicksOnActionMenuButton()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:01 IST" name="test_TC_PN_03_clicksOnActionMenuButton" finished-at="2026-03-15T11:11:05 IST" duration-ms="4356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_TC_PN_03_clicksOnActionMenuButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:05 IST" name="tearDown" finished-at="2026-03-15T11:11:05 IST" duration-ms="76" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:05 IST" name="setUp" finished-at="2026-03-15T11:11:14 IST" duration-ms="8342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="initPage()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:14 IST" name="initPage" finished-at="2026-03-15T11:11:17 IST" duration-ms="3827" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPage -->
+        <test-method signature="test_TC_PN_04_createNotification()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:17 IST" name="test_TC_PN_04_createNotification" finished-at="2026-03-15T11:11:22 IST" duration-ms="4936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_TC_PN_04_createNotification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:22 IST" name="tearDown" finished-at="2026-03-15T11:11:22 IST" duration-ms="94" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="closeAll()[pri:0, instance:tests.PushNotificationTest@2d3379b4]" started-at="2026-03-15T11:11:23 IST" name="closeAll" finished-at="2026-03-15T11:11:23 IST" duration-ms="476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeAll -->
+      </class> <!-- tests.PushNotificationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -17,17 +17,33 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.9.0</version>
-    <scope>compile</scope>
+    <scope>test</scope>
 </dependency>
     </dependencies>
   <build>
-    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
+        <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.2.5</version>
+    <configuration>
+        <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+    </configuration>
+</plugin>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.11.0</version>
+    <configuration>
+        <release>11</release>
+    </configuration>
+</plugin>
       </plugins>
-    </pluginManagement>
   </build> 
 </project>

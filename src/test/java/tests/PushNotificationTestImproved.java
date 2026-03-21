@@ -5,13 +5,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.microsoft.playwright.options.LoadState;
 
 import pageObjects.PushNotificationPageImproved;
 
+import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class PushNotificationTestImproved extends BaseTest {
 
@@ -19,10 +21,25 @@ public class PushNotificationTestImproved extends BaseTest {
 
 	@BeforeMethod
 	public void initPage() {
-		page.navigate("https://app.spdevmfp.com/home/");
-        page.waitForLoadState(LoadState.NETWORKIDLE);
+		// page.navigate("https://app.spdevmfp.com/home/");
+        // page.waitForLoadState(LoadState.NETWORKIDLE);
 	    pushNotificationPage = new PushNotificationPageImproved(page);
 	}
+	
+	 // Add this — computed once, always 30 days in the future
+    private final String futureDate = LocalDate.now()
+        .plusDays(30)
+        .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    
+    // Instead of repeating System.getProperty("user.dir") everywhere, 
+    // I added a small private helper method getResource()
+    private java.nio.file.Path getResource(String relativePath) {
+        try {
+            return Paths.get(getClass().getClassLoader().getResource(relativePath).toURI());
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("Resource not found: " + relativePath, e);
+        }
+    }
 
 	// TC_PN_01
 	@Test(priority = 1)
@@ -59,14 +76,14 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.clickOnTargetCategory();
 	pushNotificationPage.clickOnBlankSpace();
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.clickCustomLink();
 	pushNotificationPage.enterCustomLink("https://google.com");
 
-	pushNotificationPage.enterSchedulingDateTime("27/04/2026","11:30");
+	pushNotificationPage.enterSchedulingDateTime(futureDate,"11:30");
 
 	pushNotificationPage.clickSubmit();
 
@@ -90,14 +107,14 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.clickOnTargetCategory();
 	pushNotificationPage.clickOnBlankSpace();
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.clickCustomLink();
 	pushNotificationPage.enterCustomLink("https://google.com");
 
-	pushNotificationPage.enterSchedulingDateTime("27/04/2026","11:30");
+	pushNotificationPage.enterSchedulingDateTime(futureDate,"11:30");
 
 	pushNotificationPage.clickSubmit();
 
@@ -117,18 +134,19 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.enterNotificationName(name);
 	pushNotificationPage.enterNotificationMessage("Automation Message");
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.clickCustomLink();
 	pushNotificationPage.enterCustomLink("https://google.com");
 
-	pushNotificationPage.enterSchedulingDateTime("27/04/2026","11:30");
+	pushNotificationPage.enterSchedulingDateTime(futureDate,"11:30");
 
     pushNotificationPage.clickSubmit();
 
-	Assert.assertTrue(true);
+    Assert.assertTrue(page.url().contains("AgencyCommunication/create"),
+    "Form should stay on create page when category is missing");
 }
 
     
@@ -147,13 +165,13 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.clickOnTargetCategory();
 	pushNotificationPage.clickOnBlankSpace();
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.clickCustomLink();
 
-	pushNotificationPage.enterSchedulingDateTime("27/04/2026","11:30");
+	pushNotificationPage.enterSchedulingDateTime(futureDate,"11:30");
 
 	pushNotificationPage.clickSubmit();
 
@@ -238,9 +256,9 @@ public class PushNotificationTestImproved extends BaseTest {
 
 	pushNotificationPage.openCreateNotification();
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.hoverOverAddPhotoButton();
 
@@ -262,14 +280,14 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.clickOnTargetCategory();
 	pushNotificationPage.clickOnBlankSpace();
 
-    pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+    // pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.clickCustomLink();
 	pushNotificationPage.enterCustomLink("https://google.com");
 
-	pushNotificationPage.enterSchedulingDateTime("27/04/2026","11:30");
+	pushNotificationPage.enterSchedulingDateTime(futureDate,"11:30");
 
 	pushNotificationPage.clickSubmit();
 
@@ -296,15 +314,15 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.clickOnTargetCategory();
 	pushNotificationPage.clickOnBlankSpace();
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.jpg"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/budapest.jpg"));
 
 	pushNotificationPage.clickContentLink();
 	pushNotificationPage.openContentDropdown();
 	pushNotificationPage.selectContentOption();
 
-	pushNotificationPage.enterSchedulingDateTime("27/04/2026","11:30");
+	pushNotificationPage.enterSchedulingDateTime(futureDate,"11:30");
 
 	pushNotificationPage.clickSubmit();
 
@@ -317,11 +335,13 @@ public class PushNotificationTestImproved extends BaseTest {
 
 	pushNotificationPage.openCreateNotification();
 
-	pushNotificationPage.uploadImage(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/images/notification.png"));
+	pushNotificationPage.uploadImage(getResource("images/Amsterdam.png"));
+	// pushNotificationPage.uploadImage(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/images/Amsterdam.png"));
 
-	Assert.assertTrue(true);
+	Assert.assertTrue(pushNotificationPage.isImageUploaded(),
+    "Image preview should appear after uploading a PNG file");
+	
 	}
 
     @Test(priority = 16)
@@ -330,12 +350,13 @@ public class PushNotificationTestImproved extends BaseTest {
 	pushNotificationPage.openCreateNotification();
 
 	String name = "Push_" + System.currentTimeMillis();
-
 	pushNotificationPage.enterNotificationName(name);
 
-	pushNotificationPage.enterNotificationMessage("!@#$%^&*() Notification");
+	String specialMessage = "!@#$%^&*() Notification";
+	pushNotificationPage.enterNotificationMessage(specialMessage);
 
-	Assert.assertTrue(true);
+	Assert.assertEquals(pushNotificationPage.getNotificationMessageText(),specialMessage,
+	"Message field should accept and retain special characters");
 	}
 
 	@Test(priority = 17)
@@ -345,11 +366,12 @@ public class PushNotificationTestImproved extends BaseTest {
 
 	pushNotificationPage.clickPartnerListRadio();
 
-	pushNotificationPage.uploadCsv(
-	Paths.get(System.getProperty("user.dir"),
-	"src/test/resources/csv/partners.csv"));
+	pushNotificationPage.uploadCsv(getResource("csv/pushnotificationsspuat.csv"));
+	// pushNotificationPage.uploadCsv(Paths.get(System.getProperty("user.dir"),
+	// "src/main/resources/csv/pushnotificationsspuat.csv"));
 
-	Assert.assertTrue(true);
+	Assert.assertTrue(pushNotificationPage.isCsvUploaded(),
+		    "CSV file name should appear after upload");
 	}
 
 	@Test(priority = 18)

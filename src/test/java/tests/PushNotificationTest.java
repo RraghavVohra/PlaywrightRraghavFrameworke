@@ -15,12 +15,17 @@ public class PushNotificationTest extends BaseTest {
 
 	    @BeforeMethod
 	    public void initPage() {
-	        page.navigate("https://app.spdevmfp.com/home/");
-	        page.waitForLoadState(LoadState.NETWORKIDLE);
+	        // page.navigate("https://app.spdevmfp.com/home/");
+	        // page.waitForLoadState(LoadState.NETWORKIDLE);
+	    	// We removed above code because : 
+	    	// `BaseTest.setUp()` already navigates to the home URL and waits for page load. Both test classes repeat this in their own 
+	    	// `@BeforeMethod`, which doubles the page load time for every single test.
+	    	// - Removed the duplicate `page.navigate()` and `waitForLoadState()` calls from test `@BeforeMethod`s.
+	    	// - `BaseTest.setUp()` handles this once — test classes just initialize their page objects.
 	        pushPage = new PushNotificationPage(page);
-	        
-	        // page.waitForURL("**/home/**");
 	        pushPage.openNotificationPage();
+	        
+	        
 	    }
 
 	    @Test(groups="smoke")

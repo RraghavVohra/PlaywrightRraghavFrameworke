@@ -22,16 +22,26 @@ public class AuthManager {
 	}
 
 	System.out.println("No session found. Performing login...");
+	
+	String baseUrl  = ConfigReader.get("base.url");
+    String username = ConfigReader.get("validusername");
+    String password = ConfigReader.get("validpassword");
 
 	BrowserContext context = browser.newContext();
 	Page page = context.newPage();
+	
+	page.navigate(baseUrl + "/");
+    page.fill("#username", username);
+    page.fill("#password", password);
+    page.click("xpath=(//button[@type='submit'])[1]");
 
-	page.navigate("https://app.spdevmfp.com/");
+
+	// page.navigate("https://app.spdevmfp.com/");
 
 	// YOUR LOGIN LOCATORS
-	page.fill("#username", "prem.chandra@bizight.com");
-	page.fill("#password", "Sbtest@123");
-	page.click("xpath=(//button[@type='submit'])[1]");
+	// page.fill("#username", "prem.chandra@bizight.com");
+	// page.fill("#password", "Sbtest@123");
+	// page.click("xpath=(//button[@type='submit'])[1]");
 
 	// IMPORTANT WAIT
 	page.waitForURL("**/home/**");

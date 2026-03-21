@@ -2,6 +2,8 @@ package pageObjects;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -335,4 +337,22 @@ public class PushNotificationPageImproved {
     public String getPageHeading() {
         return pageHeading.textContent().trim();
     }
+    
+    public boolean isImageUploaded() {
+        return page.locator("#myImage").isVisible();
+    }
+    
+    public boolean isCsvUploaded() {
+        String fileName = page.locator("#file_name span").textContent();
+        return fileName.contains(".csv");
+    }
+    
+    // inputValue() is the Playwright method to read what's currently typed in a text field — different from textContent()
+    // which is for display elements.
+    public String getNotificationMessageText() {
+        return notificationMessageField.inputValue();
+    }
+
+    
 }
+   

@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
 
 import utils.AuthManager;
+import utils.ConfigReader;
 
 import java.nio.file.Paths;
 
@@ -19,11 +20,14 @@ public class BaseTest {
     public void globalSetup() {
 
         playwright = Playwright.create();
+        
+        boolean headless = Boolean.parseBoolean(ConfigReader.get("browser.headless"));
+        int slowMo = Integer.parseInt(ConfigReader.get("browser.slowmo"));
 
         browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions().
-                setHeadless(false)
-                .setSlowMo(50)); // helps debugging
+                setHeadless(headless)
+                .setSlowMo(slowMo)); // helps debugging
 
         // Ensure login exists
         AuthManager.ensureLogin(browser);
@@ -46,10 +50,15 @@ public class BaseTest {
         page.setDefaultNavigationTimeout(60000);
 
         // IMPORTANT
-        //page.navigate("https://app.spdevmfp.com/home/AssetLibrary");
-        page.navigate("https://app.spdevmfp.com/home");
+        // page.navigate("https://app.spdevmfp.com/home/AssetLibrary");
+        // page.navigate("https://app.spdevmfp.com/home");
       
-        page.waitForLoadState(LoadState.NETWORKIDLE);
+        
+        page.navigate(ConfigReader.get("base.url") + "/home");
+        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+        // page.waitForLoadState(LoadState.NETWORKIDLE);
+        // Changed `NETWORKIDLE` to `DOMCONTENTLOADED` — significantly faster. 
+        // If a specific test becomes flaky, add `NETWORKIDLE` only inside that test.
     }
 
     // Runs after each test

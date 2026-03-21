@@ -3,18 +3,32 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.PushNotificationTest">
+      <class name="tests.PushNotificationTestImproved">
         <methods>
           <include name="setUp"/>
+          <include name="test_TC_PN_012_imagesInDifferentFormat"/>
+          <include name="initPage"/>
+          <include name="test_TC_PN_07_fillsAllFieldsExceptNotificationName"/>
+          <include name="test_TC_PN_036_pushNotificationWithCsvUpload"/>
+          <include name="test_TC_PN_050_pushNotificationWithoutCsvUpload"/>
+          <include name="test_TC_PN_023_verifyNotificationStatus"/>
+          <include name="test_TC_PN_020_verifyContentLink"/>
+          <include name="test_TC_PN_04_takentoCreateAppNotificationScreen"/>
+          <include name="globalSetup"/>
+          <include name="test_TC_PN_013_sendToOptionsSelection"/>
+          <include name="test_TC_PN_08_fillsAllFieldsExceptNotificationMessage"/>
+          <include name="test_TC_PN_017_missingCategoryField"/>
+          <include name="test_TC_PN_06_notificationChannelSelection"/>
+          <include name="test_TC_PN_015_selectAllCategories"/>
           <include name="tearDown"/>
           <include name="closeAll"/>
-          <include name="test_TC_PN_01_takenToPushNotificationsScreen"/>
-          <include name="test_TC_PN_04_createNotification"/>
-          <include name="initPage"/>
-          <include name="test_TC_PN_03_clicksOnActionMenuButton"/>
-          <include name="globalSetup"/>
+          <include name="test_TC_PN_019_missingCustomLinkField"/>
+          <include name="test_TC_PN_049_pushNotificationWithSpecialCharacter"/>
+          <include name="test_TC_PN_09_verifyImageUpload"/>
+          <include name="test_TC_PN_016_verifySearchTextField"/>
+          <include name="test_TC_PN_03_clickActionMenuButton"/>
         </methods>
-      </class> <!-- tests.PushNotificationTest -->
+      </class> <!-- tests.PushNotificationTestImproved -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

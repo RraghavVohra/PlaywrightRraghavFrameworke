@@ -67,7 +67,7 @@ public class PushNotificationPageImproved {
         pageHeading = page.locator("//span[@class='fs-2 fw-bolder']");
 
         actionsButton = page.locator("(//*[name()='svg'])[1]");
-        createAppNotification = page.locator("//a/span[text()='Create App Notification']");
+        createAppNotification = page.locator("(//a/span[text()='Create App Notification'])[1]");
 
         notificationNameField = page.locator("#pushnotify_name");
         notificationMessageField = page.locator("#pushnotify_msg");
@@ -117,8 +117,9 @@ public class PushNotificationPageImproved {
     public void openCreateNotification() {
         openPushNotificationPage();
         actionsButton.click();
-        createAppNotification.click();
-    }
+        // createAppNotification.click();
+        createAppNotification.first().click();
+        }
 
     // FORM ACTIONS
 

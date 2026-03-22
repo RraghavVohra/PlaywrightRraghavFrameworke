@@ -23,8 +23,11 @@ public class DocumentLibraryPage {
     private Locator communicationTab(){ 
     	return page.locator("//span[text()='Communication']"); 
     }
-    private Locator documentLibraryLink(){ 
-    	return page.locator("(//a[@class='dropdown-item'])[5]"); 
+    private Locator documentLibraryLink(){
+    	// FIX: Replaced the index-based locator (//a[@class='dropdown-item'])[5] with a
+    	// text-based one. The index approach silently clicks the wrong item if the menu
+    	// order ever changes. Matching by visible text is stable regardless of position.
+    	return page.locator("//a[normalize-space()='Document Library']");
     }
     private Locator actionsButton(){ 
     	return page.locator("(//*[name()='svg'])[1]"); 
@@ -83,9 +86,9 @@ public class DocumentLibraryPage {
     private Locator searchBox(){ 
     	return page.locator("//input[@type='search' and @placeholder='Search']"); 
     }
-    private Locator searchResult(){ 
-    	return page.locator("//td[normalize-space()='ewewew test']");
-    }
+    // REMOVED: hardcoded no-arg searchResult() that matched only "ewewew test".
+    // The parameterized version at the bottom of this file — searchResult(String text) —
+    // is the correct one to use, as it accepts any search term dynamically.
     private Locator deleteOption(){ 
     	return page.locator("#Delete3"); 
     }
@@ -138,7 +141,10 @@ public class DocumentLibraryPage {
     // NO AutoIt EXE files needed at all!
     // ================================================================
 
-    public static final String PDF_FILE   = "src/main/resources/testfiles/Autopost Done Notification";
+    // FIX: Added the ".pdf" extension that was previously missing.
+    // Without this, Playwright's setInputFiles() would fail to locate or properly
+    // type the file, causing the upload test to error out silently.
+    public static final String PDF_FILE   = "src/main/resources/testfiles/Autopost Done Notification.pdf";
     public static final String PNG_FILE   = "src/main/resources/testfiles/Amsterdam.png";
     public static final String JPG_FILE   = "src/main/resources/testfiles/budapest.jpg";
     public static final String CSV_FILE   = "src/main/resources/testfiles/pushnotificationsspuat.csv";
@@ -190,13 +196,11 @@ public class DocumentLibraryPage {
         logOutOption().click(new Locator.ClickOptions().setForce(true));
     }
 
-    public void clickOnLogoutButton() {
-        logoutButtonPrimary().click(new Locator.ClickOptions().setForce(true));
-    }
-
-    public void clickOnLogoutButtonTwo() {
-        logoutButtonYes().click(new Locator.ClickOptions().setForce(true));
-    }
+    // REMOVED: clickOnLogoutButton() and clickOnLogoutButtonTwo() — both methods were
+    // defined but never called from any test class. Having two near-identical logout
+    // click methods with no callers just adds confusion. The locators (logoutButtonPrimary
+    // and logoutButtonYes) are kept below in case they are needed in the future, but the
+    // public action methods are removed to keep the API clean.
     
     // UPLOAD FORM METHODS
     // ================================================================
@@ -263,7 +267,7 @@ public class DocumentLibraryPage {
     public void resizeCroppingArea() {
         croppingHandle().waitFor(new Locator.WaitForOptions()
                 .setState(com.microsoft.playwright.options.WaitForSelectorState.VISIBLE));
-        com.microsoft.playwright.BoundingBox box = croppingHandle().boundingBox();
+        com.microsoft.playwright.options.BoundingBox box = croppingHandle().boundingBox();
         if (box != null) {
             page.mouse().move(box.x + box.width / 2, box.y + box.height / 2);
             page.mouse().down();
@@ -339,9 +343,9 @@ public class DocumentLibraryPage {
         searchBox().fill(text);
     }
 
-    public String getSearchResultText() {
-        return searchResult().innerText();
-    }
+    // REMOVED: no-arg getSearchResultText() that relied on the hardcoded locator above.
+    // Use getSearchResultText(String text) below — it finds results matching whatever
+    // text you pass in, making the method reusable across any search scenario.
 
 
     // ================================================================
@@ -357,6 +361,13 @@ public class DocumentLibraryPage {
     }
 
     public String getDialogBoxText() {
+        // FIX: Added an explicit waitFor(VISIBLE) before reading the dialog text.
+        // Previously the test had to do page.waitForTimeout(2000) before calling this
+        // method because innerText() doesn't wait for the element to appear — it just
+        // reads immediately and returns empty/throws if the dialog hasn't rendered yet.
+        // Moving the wait here means the test stays clean and the wait is always applied.
+        dialogBox().waitFor(new Locator.WaitForOptions()
+                .setState(com.microsoft.playwright.options.WaitForSelectorState.VISIBLE));
         return dialogBox().innerText();
     }
 
@@ -428,6 +439,33 @@ public class DocumentLibraryPage {
     // CALENDAR METHODS
     // ================================================================
 
+    // ================================================================
+    // PRIVATE TIME-SELECTION HELPER
+    //
+    // This block of logic — "click the active/highlighted time, or fall back to the
+    // first available time" — was copy-pasted identically in both selectDateOfYourChoice()
+    // and selectCurrentActiveTimeThree(). Any future tweak (e.g. different fallback
+    // selector) would have needed changing in two places.
+    // Extracted into a single private method so both callers share one implementation.
+    // ================================================================
+
+    private void selectActiveOrFirstTime() {
+        Locator activeTime = page.locator(
+            "//div[contains(@class,'xdsoft_datetimepicker') and contains(@style,'display: block')]" +
+            "//div[contains(@class,'xdsoft_time') and contains(@class,'xdsoft_current')]");
+
+        if (activeTime.isVisible()) {
+            activeTime.scrollIntoViewIfNeeded();
+            activeTime.click();
+        } else {
+            Locator firstTime = page.locator(
+                "(//div[contains(@class,'xdsoft_datetimepicker') and contains(@style,'display: block')]" +
+                "//div[contains(@class,'xdsoft_time')])[1]");
+            firstTime.scrollIntoViewIfNeeded();
+            firstTime.click();
+        }
+    }
+
     public void selectTodayInCalendar() {
         page.locator("//div[contains(@class, 'xdsoft_datetimepicker') and contains(@style, 'display: block')]")
             .waitFor(new Locator.WaitForOptions()
@@ -456,21 +494,8 @@ public class DocumentLibraryPage {
         // Day
         page.locator("//td[contains(@class,'xdsoft_date') and not(contains(@class,'xdsoft_disabled')) and @data-date='" + day + "']").click();
 
-        // Time — try active/highlighted time first, fall back to first available
-        Locator activeTime = page.locator(
-            "//div[contains(@class,'xdsoft_datetimepicker') and contains(@style,'display: block')]" +
-            "//div[contains(@class,'xdsoft_time') and contains(@class,'xdsoft_current')]");
-
-        if (activeTime.isVisible()) {
-            activeTime.scrollIntoViewIfNeeded();
-            activeTime.click();
-        } else {
-            Locator firstTime = page.locator(
-                "(//div[contains(@class,'xdsoft_datetimepicker') and contains(@style,'display: block')]" +
-                "//div[contains(@class,'xdsoft_time')])[1]");
-            firstTime.scrollIntoViewIfNeeded();
-            firstTime.click();
-        }
+        // Time — delegated to shared helper (see selectActiveOrFirstTime above).
+        selectActiveOrFirstTime();
     }
 
     public void selectCurrentActiveTimeThree() {
@@ -478,20 +503,10 @@ public class DocumentLibraryPage {
             .waitFor(new Locator.WaitForOptions()
                     .setState(com.microsoft.playwright.options.WaitForSelectorState.VISIBLE));
 
-        Locator activeTime = page.locator(
-            "//div[contains(@class,'xdsoft_datetimepicker') and contains(@style,'display: block')]" +
-            "//div[contains(@class,'xdsoft_time') and contains(@class,'xdsoft_current')]");
-
-        if (activeTime.isVisible()) {
-            activeTime.scrollIntoViewIfNeeded();
-            activeTime.click();
-        } else {
-            Locator firstTime = page.locator(
-                "(//div[contains(@class,'xdsoft_datetimepicker') and contains(@style,'display: block')]" +
-                "//div[contains(@class,'xdsoft_time')])[1]");
-            firstTime.scrollIntoViewIfNeeded();
-            firstTime.click();
-        }
+        // Delegated to shared helper — same logic as the time-selection step in
+        // selectDateOfYourChoice(). Both methods now call the same private helper
+        // instead of repeating identical code.
+        selectActiveOrFirstTime();
     }
 
 

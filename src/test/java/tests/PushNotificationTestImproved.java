@@ -68,7 +68,7 @@ public class PushNotificationTestImproved extends BaseTest {
 	public void test_TC_PN_07_fillsAllFieldsExceptNotificationName() {
 
 	pushNotificationPage.openCreateNotification();
-
+    
 	pushNotificationPage.enterNotificationMessage("Automation Message");
 
 	pushNotificationPage.openCategoryDropdown();

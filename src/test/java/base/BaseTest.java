@@ -7,6 +7,7 @@ import utils.AuthManager;
 import utils.ConfigReader;
 
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class BaseTest {
 
@@ -24,10 +25,18 @@ public class BaseTest {
         boolean headless = Boolean.parseBoolean(ConfigReader.get("browser.headless"));
         int slowMo = Integer.parseInt(ConfigReader.get("browser.slowmo"));
 
+        //browser = playwright.chromium().launch(
+             //   new BrowserType.LaunchOptions().
+              //  setHeadless(headless)
+              //  .setSlowMo(slowMo)); // helps debugging
         browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().
-                setHeadless(headless)
-                .setSlowMo(slowMo)); // helps debugging
+                new BrowserType.LaunchOptions()
+                .setHeadless(headless)
+                .setSlowMo(slowMo)
+                .setArgs(Arrays.asList(
+                    "--start-maximized",       // opens browser filling the full screen
+                    "--window-position=0,0"    // anchors it to the top-left, not off-screen
+                )));
 
         // Ensure login exists
         AuthManager.ensureLogin(browser);
@@ -37,10 +46,18 @@ public class BaseTest {
     @org.testng.annotations.BeforeMethod
     public void setUp() {
 
+        // context = browser.newContext(
+        // new Browser.NewContextOptions()
+        // .setStorageStatePath(Paths.get("auth.json"))
+        // .setViewportSize(1920,1080) // This line was added afterwards
+        // );
+        
         context = browser.newContext(
                 new Browser.NewContextOptions()
                         .setStorageStatePath(Paths.get("auth.json"))
-                        .setViewportSize(1920,1080) // This line was added afterwards
+                        // No setViewportSize — Playwright will use the actual window size.
+                        // Combined with --start-maximized, this matches the full screen,
+                        // exactly like a normal user opening Chrome.
         );
 
         page = context.newPage();

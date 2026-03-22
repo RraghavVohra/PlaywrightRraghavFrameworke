@@ -2,8 +2,7 @@ package pageObjects;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import com.microsoft.playwright.options.WaitForSelectorState;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -114,32 +113,52 @@ public class PushNotificationPageImproved {
         notifications.click();
     }
 
+    // public void openCreateNotification() {
+    //    openPushNotificationPage();
+    //    actionsButton.click();
+        // createAppNotification.click();
+    //    createAppNotification.first().click();
+    //    }
+    
     public void openCreateNotification() {
         openPushNotificationPage();
         actionsButton.click();
-        // createAppNotification.click();
+        createAppNotification.first().waitFor(
+            new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000)   // wait up to 10 seconds for the menu to appear
+        );
         createAppNotification.first().click();
-        }
+    }
 
     // FORM ACTIONS
 
     public void enterNotificationName(String name) {
-        notificationNameField.fill(name);
+    	notificationNameField.scrollIntoViewIfNeeded();
+    	notificationNameField.fill(name);
     }
 
     public void enterNotificationMessage(String message) {
+    	
+    	notificationMessageField.scrollIntoViewIfNeeded();
         notificationMessageField.fill(message);
     }
 
     public void clickPartnerListRadio() {
-        partnerListRadioButton.check();
+        
+    	partnerListRadioButton.scrollIntoViewIfNeeded();
+    	partnerListRadioButton.check();
     }
 
     public void clickPartnerCategoryRadio() {
+    	
+    	partnerCategoryRadioButton.scrollIntoViewIfNeeded();
         partnerCategoryRadioButton.check();
     }
 
     public void openCategoryDropdown() {
+    	
+    	categoryDropdown.scrollIntoViewIfNeeded();
         categoryDropdown.click();
     }
 
@@ -148,25 +167,33 @@ public class PushNotificationPageImproved {
     }
 
     public void clickSelectAllCategories() {
+    	
+    	selectAllButton.scrollIntoViewIfNeeded();
         selectAllButton.click();
     }
 
     public void uploadImage(Path filePath) {
+    	
+    	imageUpload.scrollIntoViewIfNeeded();
         imageUpload.setInputFiles(filePath);
     }
 
     public void clickCustomLink() {
+    	
+    	customLinkButton.scrollIntoViewIfNeeded();
         customLinkButton.click();
     }
 
     public void enterCustomLink(String link) {
+    	
+    	customLinkTextField.scrollIntoViewIfNeeded();
         customLinkTextField.fill(link);
     }
 
     public void enterSchedulingDateTime(String date, String time) {
 
         String formattedDateTime = formatToDateTimeLocal(date, time);
-
+        schedulingDateTime.scrollIntoViewIfNeeded();
         schedulingDateTime.fill(formattedDateTime);
     }
 
@@ -182,6 +209,8 @@ public class PushNotificationPageImproved {
     }
 
     public void clickSubmit() {
+    	
+    	submitButton.scrollIntoViewIfNeeded();
         submitButton.click();
     }
 

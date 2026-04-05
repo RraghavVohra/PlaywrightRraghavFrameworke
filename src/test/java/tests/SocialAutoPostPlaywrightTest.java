@@ -35,7 +35,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("15", "April 2026");
+        // +10 days from today — keeps the scheduled date always in the future
+        String[] date01 = getScheduleDate(10);
+        socialPage.selectFutureDate(date01[0], date01[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();
@@ -59,7 +61,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("24", "April 2026");
+        // +20 days from today — keeps the scheduled date always in the future
+        String[] date02 = getScheduleDate(20);
+        socialPage.selectFutureDate(date02[0], date02[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();
@@ -83,7 +87,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnStaticText();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("24", "August 2026");
+        // +140 days from today — video posts are scheduled far ahead to keep them future-safe
+        String[] date03 = getScheduleDate(140);
+        socialPage.selectFutureDate(date03[0], date03[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();
@@ -107,7 +113,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("24", "April 2026");
+        // +20 days from today — keeps the scheduled date always in the future
+        String[] date04 = getScheduleDate(20);
+        socialPage.selectFutureDate(date04[0], date04[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();
@@ -134,7 +142,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("24", "April 2026");
+        // +20 days from today — keeps the scheduled date always in the future
+        String[] date05 = getScheduleDate(20);
+        socialPage.selectFutureDate(date05[0], date05[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();
@@ -160,7 +170,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("24", "April 2026");
+        // +20 days from today — keeps the scheduled date always in the future
+        String[] date06 = getScheduleDate(20);
+        socialPage.selectFutureDate(date06[0], date06[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();
@@ -185,7 +197,9 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        socialPage.selectFutureDate("30", "April 2026");
+        // +25 days from today — keeps the scheduled date always in the future
+        String[] date07 = getScheduleDate(25);
+        socialPage.selectFutureDate(date07[0], date07[1]);
         socialPage.selectTime("17", "30");
         socialPage.verifySelection();
         socialPage.clickOnSchedulePostButton();

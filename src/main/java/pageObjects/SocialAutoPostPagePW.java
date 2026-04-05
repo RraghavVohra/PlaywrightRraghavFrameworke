@@ -3,6 +3,7 @@ package pageObjects;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.WaitForSelectorState;
+import utils.ConfigReader;
 import java.nio.file.Paths;
 
 public class SocialAutoPostPagePW {
@@ -93,8 +94,10 @@ public class SocialAutoPostPagePW {
     }
 
     public void clickOnSelectPartnerCategory() {
-        page.locator("#searchBox").fill("raj");
-        page.locator("//input[@value='287']").click();
+        // Search term and partner value are driven from config so this works on both
+        // preprod (value=287) and prod (value=478) without any code change.
+        page.locator("#searchBox").fill(ConfigReader.get("social.partner.search"));
+        page.locator("//input[@value='" + ConfigReader.get("social.partner.value") + "']").click();
     }
 
     public void clickOnStaticText() {
@@ -130,7 +133,8 @@ public class SocialAutoPostPagePW {
     }
 
     public void enterCustomURL() {
-        page.locator("//input[@name='custom_url']").fill("https://www.salespanda.com");
+        // URL is read from config so it can be changed per environment without touching test code.
+        page.locator("//input[@name='custom_url']").fill(ConfigReader.get("social.custom.url"));
     }
 
     public void clickOnNoneRadioButton() {

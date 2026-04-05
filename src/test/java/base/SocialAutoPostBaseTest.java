@@ -3,7 +3,10 @@ package base;
 import com.microsoft.playwright.*;
 import utils.ConfigReader;
 
+import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class SocialAutoPostBaseTest {
 
@@ -48,5 +51,24 @@ public class SocialAutoPostBaseTest {
     public void closeAll() {
         browser.close();
         playwright.close();
+    }
+
+    /**
+     * Returns a future date as String[] { day, "Month YYYY" } by adding the given
+     * number of days to today's date.
+     *
+     * Why dynamic? Hardcoded dates (e.g. "April 2026") become past dates over time
+     * and cause the date picker to disable them, failing the test silently.
+     * Using an offset (e.g. +10 days) keeps tests self-maintaining forever.
+     *
+     * Usage: String[] date = getScheduleDate(10);
+     *        socialPage.selectFutureDate(date[0], date[1]);
+     */
+    protected String[] getScheduleDate(int daysFromNow) {
+        LocalDate future = LocalDate.now().plusDays(daysFromNow);
+        String day       = String.valueOf(future.getDayOfMonth());
+        String monthYear = future.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH)
+                           + " " + future.getYear();
+        return new String[]{ day, monthYear };
     }
 }

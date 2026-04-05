@@ -18,7 +18,23 @@
     <artifactId>testng</artifactId>
     <version>7.9.0</version>
     <scope>test</scope>
-</dependency>
+   </dependency>
+
+   <!-- Allure TestNG integration — auto-registers the Allure listener via ServiceLoader -->
+   <dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.27.0</version>
+    <scope>test</scope>
+   </dependency>
+
+   <!-- AspectJ weaver — required so @Step annotations are intercepted at runtime -->
+   <dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.9.21</version>
+    <scope>test</scope>
+   </dependency>
     </dependencies>
   <build>
       <plugins>
@@ -34,6 +50,11 @@
         <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
         </suiteXmlFiles>
+        <!-- AspectJ agent is mandatory for @Step annotations to be intercepted.
+             Without it, @Step methods run fine but aren't captured in the report. -->
+        <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar"
+        </argLine>
     </configuration>
 </plugin>
 <plugin>
@@ -42,6 +63,18 @@
     <version>3.11.0</version>
     <configuration>
         <release>11</release>
+    </configuration>
+</plugin>
+
+<!-- Allure Maven plugin — run `mvn allure:serve` to open report in browser,
+     or `mvn allure:report` to generate static HTML in target/site/allure-maven-plugin/ -->
+<plugin>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-maven</artifactId>
+    <version>2.12.0</version>
+    <configuration>
+        <!-- Must match the allure-testng dependency version -->
+        <reportVersion>2.27.0</reportVersion>
     </configuration>
 </plugin>
       </plugins>

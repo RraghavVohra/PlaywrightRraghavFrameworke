@@ -3,6 +3,9 @@ package base;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
 
+import io.qameta.allure.Attachment;
+import org.testng.ITestResult;
+
 import utils.AuthManager;
 import utils.ConfigReader;
 
@@ -78,10 +81,21 @@ public class BaseTest {
         // If a specific test becomes flaky, add `NETWORKIDLE` only inside that test.
     }
 
-    // Runs after each test
-    @org.testng.annotations.AfterMethod
-    public void tearDown() {
+    // Runs after each test — alwaysRun=true ensures this fires even when the test fails.
+    // If the test failed, we grab a screenshot and attach it to the Allure report
+    // so you can see exactly what was on screen at the point of failure.
+    @org.testng.annotations.AfterMethod(alwaysRun = true)
+    public void tearDown(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE && page != null) {
+            attachScreenshot("Screenshot on failure - " + result.getName());
+        }
         context.close();
+    }
+
+    // Allure attaches the byte[] as a PNG image embedded directly in the report
+    @Attachment(value = "{screenshotName}", type = "image/png")
+    private byte[] attachScreenshot(String screenshotName) {
+        return page.screenshot(new Page.ScreenshotOptions().setFullPage(false));
     }
 
     // Runs once after suite

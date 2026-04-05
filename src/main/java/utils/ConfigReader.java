@@ -22,7 +22,10 @@ public class ConfigReader {
 	    }
 
 	    public static String get(String key) {
-	        return prop.getProperty(key);
+	        // System property (-Dkey=value from CLI) takes priority over config file.
+	        // This lets you switch environments at run time without touching config.properties.
+	        String sysProp = System.getProperty(key);
+	        return sysProp != null ? sysProp : prop.getProperty(key);
 	    }
 	}
 

@@ -1,10 +1,13 @@
 package tests;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 
 import pageObjects.PushNotificationPageImproved;
 
@@ -15,6 +18,10 @@ import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+// @Epic groups tests at the product-area level in Allure (top of the hierarchy)
+// @Feature groups them under a specific module within that epic
+@Epic("Agency Communication")
+@Feature("Push Notification")
 public class PushNotificationTestImproved extends BaseTest {
 
 	PushNotificationPageImproved pushNotificationPage;
@@ -42,6 +49,8 @@ public class PushNotificationTestImproved extends BaseTest {
     }
 
 	// TC_PN_01
+	@Story("Navigation")
+	@Description("Verify user is taken to the Push Notifications list screen with correct heading and URL")
 	@Test(priority = 1)
 	public void test_TC_PN_01_takenToPushNotificationsScreen() {
 
@@ -55,6 +64,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
 	// TC_PN_04
+	@Story("Navigation")
+	@Description("Verify user lands on the Create App Notification screen with the correct URL")
 	@Test(priority = 2)
 	public void test_TC_PN_04_takentoCreateAppNotificationScreen() {
 
@@ -64,6 +75,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
 	// TC_PN_07
+	@Story("Form Validation")
+	@Description("Submit the form with all fields filled except Notification Name — validation message should appear")
 	@Test(priority = 3)
 	public void test_TC_PN_07_fillsAllFieldsExceptNotificationName() {
 
@@ -93,6 +106,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
 	// TC_PN_08
+	@Story("Form Validation")
+	@Description("Submit the form with all fields filled except Notification Message — validation message should appear")
     @Test(priority = 4)
 	public void test_TC_PN_08_fillsAllFieldsExceptNotificationMessage() {
 
@@ -124,6 +139,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
    
+	@Story("Form Validation")
+	@Description("Submit the form without selecting a Category — form should stay on the create page")
     @Test(priority = 5)
 	public void test_TC_PN_017_missingCategoryField() {
 
@@ -150,6 +167,8 @@ public class PushNotificationTestImproved extends BaseTest {
 }
 
     
+   @Story("Form Validation")
+   @Description("Submit the form with Custom Link option selected but no URL entered — validation message should appear")
    @Test(priority = 6)
 	public void test_TC_PN_019_missingCustomLinkField() {
 
@@ -180,6 +199,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	"Please enter Custom Link to proceed");
 	}
 
+	@Story("Navigation")
+	@Description("Open the action menu and verify all expected options are present")
 	@Test(priority = 7)
 	public void test_TC_PN_03_clickActionMenuButton() {
 
@@ -198,6 +219,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
 	
+    @Story("Notification Channel")
+    @Description("Switch between WhatsApp and Push Notification radio buttons — verify each selection is registered")
     @Test(priority = 8)
 	public void test_TC_PN_06_notificationChannelSelection() {
 
@@ -211,6 +234,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
 
+    @Story("Send To Options")
+    @Description("Switch between Upload List and Partner Category radio buttons — verify each selection is registered")
     @Test(priority = 9)
 	public void test_TC_PN_013_sendToOptionsSelection() {
 
@@ -224,6 +249,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	}
 
 
+    @Story("Category Selection")
+    @Description("Click 'Select All' in the category dropdown — verify total categories text is populated")
     @Test(priority = 10)
 	public void test_TC_PN_015_selectAllCategories() {
 
@@ -238,6 +265,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	Assert.assertNotNull(categoriesText);
 	}
 
+    @Story("Category Selection")
+    @Description("Search for 'Raj2024' in the category dropdown and verify it appears in the list")
     @Test(priority = 11)
 	public void test_TC_PN_016_verifySearchTextField() {
 
@@ -251,6 +280,8 @@ public class PushNotificationTestImproved extends BaseTest {
     Assert.assertTrue(found);
 	}
 
+    @Story("Image Upload")
+    @Description("Upload a PNG image and hover over the Add Photo button — verify the upload interaction succeeds")
     @Test(priority = 12)
 	public void test_TC_PN_09_verifyImageUpload() {
 
@@ -265,6 +296,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	Assert.assertTrue(true);
 	}
 
+   @Story("Create Notification")
+   @Description("Fill all required fields and submit — verify success toast message appears")
    @Test(priority = 13)
 	public void test_TC_PN_023_verifyNotificationStatus() {
 
@@ -299,6 +332,8 @@ public class PushNotificationTestImproved extends BaseTest {
 }
 
 	
+    @Story("Create Notification")
+    @Description("Submit a notification using Content Link instead of Custom Link — verify success toast message appears")
     @Test(priority = 14)
 	public void test_TC_PN_020_verifyContentLink() {
 
@@ -330,6 +365,8 @@ public class PushNotificationTestImproved extends BaseTest {
     "Push Notification Saved.");
 	}
 
+    @Story("Image Upload")
+    @Description("Upload a PNG file and verify the image preview is displayed in the form")
     @Test(priority = 15)
 	public void test_TC_PN_012_imagesInDifferentFormat() {
 
@@ -344,6 +381,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	
 	}
 
+    @Story("Form Input")
+    @Description("Enter special characters in the Notification Message field — verify the field retains them correctly")
     @Test(priority = 16)
 	public void test_TC_PN_049_pushNotificationWithSpecialCharacter() {
 
@@ -359,6 +398,8 @@ public class PushNotificationTestImproved extends BaseTest {
 	"Message field should accept and retain special characters");
 	}
 
+	@Story("CSV Upload")
+	@Description("Select Partner List, upload a CSV file — verify the file name appears confirming successful upload")
 	@Test(priority = 17)
 	public void test_TC_PN_036_pushNotificationWithCsvUpload() {
 
@@ -374,6 +415,8 @@ public class PushNotificationTestImproved extends BaseTest {
 		    "CSV file name should appear after upload");
 	}
 
+	@Story("CSV Upload")
+	@Description("Select Partner List and submit without uploading a CSV — validation message should appear")
 	@Test(priority = 18)
 	public void test_TC_PN_050_pushNotificationWithoutCsvUpload() {
 

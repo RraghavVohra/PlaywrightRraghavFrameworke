@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [PushNotification Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Push Notification Tests(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="tests.PushNotificationTestImproved">
         <methods>
@@ -10,10 +10,14 @@
           <include name="initPage"/>
           <include name="test_TC_PN_07_fillsAllFieldsExceptNotificationName"/>
           <include name="test_TC_PN_036_pushNotificationWithCsvUpload"/>
-          <include name="test_TC_PN_023_verifyNotificationStatus"/>
+          <include name="test_TC_PN_050_pushNotificationWithoutCsvUpload"/>
           <include name="test_TC_PN_020_verifyContentLink"/>
+          <include name="test_TC_PN_023_verifyNotificationStatus"/>
+          <include name="test_TC_PN_04_takentoCreateAppNotificationScreen"/>
           <include name="globalSetup"/>
+          <include name="test_TC_PN_08_fillsAllFieldsExceptNotificationMessage"/>
           <include name="test_TC_PN_013_sendToOptionsSelection"/>
+          <include name="test_TC_PN_017_missingCategoryField"/>
           <include name="test_TC_PN_06_notificationChannelSelection"/>
           <include name="test_TC_PN_015_selectAllCategories"/>
           <include name="tearDown"/>
@@ -21,9 +25,11 @@
           <include name="test_TC_PN_019_missingCustomLinkField"/>
           <include name="test_TC_PN_049_pushNotificationWithSpecialCharacter"/>
           <include name="test_TC_PN_09_verifyImageUpload"/>
+          <include name="test_TC_PN_016_verifySearchTextField"/>
           <include name="test_TC_PN_03_clickActionMenuButton"/>
+          <include name="test_TC_PN_01_takenToPushNotificationsScreen"/>
         </methods>
       </class> <!-- tests.PushNotificationTestImproved -->
     </classes>
-  </test> <!-- Push Notification Tests(failed) -->
-</suite> <!-- Failed suite [PushNotification Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

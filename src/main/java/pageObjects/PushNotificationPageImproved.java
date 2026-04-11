@@ -3,6 +3,7 @@ package pageObjects;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.WaitForSelectorState;
+import utils.ConfigReader;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class PushNotificationPageImproved {
     // LOCATORS
     private Locator communicationTab;
     private Locator notifications;
+    private Locator notificationsprod;
     private Locator pageHeading;
     private Locator actionsButton;
     private Locator createAppNotification;
@@ -63,6 +65,7 @@ public class PushNotificationPageImproved {
 
         communicationTab = page.locator("//span[text()='Communication']");
         notifications = page.locator("//a[normalize-space()='New Push Notification']");
+        notificationsprod = page.locator("//a[normalize-space()='Push Notification']");
         pageHeading = page.locator("//span[@class='fs-2 fw-bolder']");
 
         actionsButton = page.locator("(//*[name()='svg'])[1]");
@@ -110,7 +113,17 @@ public class PushNotificationPageImproved {
 
     public void openPushNotificationPage() {
         communicationTab.click();
-        notifications.click();
+
+        // Pick the correct menu link locator based on the active environment.
+        // The link text differs between prod and dev/preprod because the feature
+        // is at different release stages across servers.
+        // env=prod  → "Push Notification"     (app.technochimes.com)
+        // env=dev / env=preprod → "New Push Notification" (app.spdevmfp.com / app.sppreprod.in)
+        if (ConfigReader.get("env").equals("prod")) {
+            notificationsprod.click();
+        } else {
+            notifications.click();
+        }
     }
 
     // public void openCreateNotification() {

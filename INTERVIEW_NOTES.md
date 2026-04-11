@@ -103,3 +103,62 @@ Sharing a single context across tests means cookies, local storage, and page sta
 ## 5. Why DOMCONTENTLOADED instead of NETWORKIDLE?
 
 `NETWORKIDLE` waits until there are no network requests for 500ms — on a busy SPA this can be extremely slow or flaky. `DOMCONTENTLOADED` fires as soon as the HTML is parsed. For most navigations in this app it's sufficient, and it significantly reduces wait time. If a specific test needs the full network to settle, `NETWORKIDLE` is added only inside that test.
+
+---
+
+## 6. How do you handle locators that differ between environments?
+
+### The problem
+The same feature can have different locators across environments (dev, preprod, prod) because the app may be at different release stages. For example, the Push Notification menu link is:
+- Dev/Preprod: `//a[normalize-space()='New Push Notification']`
+- Prod: `//a[normalize-space()='Push Notification']`
+
+Hardcoding one locator means the test breaks on every other environment.
+
+### The solution — `env` key in config.properties
+
+We add a single `env` key to `config.properties` that identifies which environment is active:
+
+```properties
+# Values: dev | preprod | prod
+env=prod
+```
+
+The page object reads this value and picks the correct locator at runtime:
+
+```java
+public void openPushNotificationPage() {
+    communicationTab.click();
+
+    // Use the correct locator based on the active environment.
+    // The menu link text differs between prod and dev/preprod.
+    if (ConfigReader.get("env").equals("prod")) {
+        notificationsprod.click();   // prod: "Push Notification"
+    } else {
+        notifications.click();       // dev/preprod: "New Push Notification"
+    }
+}
+```
+
+### How to switch environments
+Only two lines change in `config.properties` — everything else is automatic:
+
+```properties
+# Switching to prod:
+base.url=https://app.technochimes.com
+env=prod
+validusername=eduadmin@gmail.com
+validpassword=12345
+
+# Switching to dev:
+base.url=https://app.spdevmfp.com
+env=dev
+validusername=prem.chandra@bizight.com
+validpassword=Sbtest@123
+```
+
+### Why not just change the locator directly?
+Because that means editing code every time you switch environments — error-prone and not scalable. Config is the right place for anything that changes between environments. Code should be environment-agnostic.
+
+### Interview talking point
+> "Our app has three environments — dev, preprod, and prod — and some locators differ between them because features are at different release stages. We handle this with an `env` key in config.properties. The page object reads that value and picks the correct locator at runtime using a simple if/else. This means switching environments is a two-line config change — no code edits, no risk of breaking things."

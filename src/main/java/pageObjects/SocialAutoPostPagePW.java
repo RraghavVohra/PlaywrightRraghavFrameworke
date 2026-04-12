@@ -173,7 +173,16 @@ public class SocialAutoPostPagePW {
                 return;
             }
 
-            Locator nextButton = page.locator("//button[contains(@class,'xdsoft_next')]");
+            // FIX: Scoped to xdsoft_datepicker to avoid strict mode violation.
+            // The xdsoft datetime picker renders TWO xdsoft_next buttons in the DOM:
+            //   1. Inside xdsoft_datepicker — the "next month" arrow we actually want
+            //   2. Inside xdsoft_timepicker — a "scroll time down" arrow
+            // The old bare locator matched both and Playwright threw a strict mode violation
+            // on any test that needed to navigate to a future month (TC_SAP_02 through 07).
+            // Scoping to xdsoft_datepicker ensures we only match the month-navigation button.
+            Locator nextButton = page.locator(
+                "//div[contains(@class,'xdsoft_datepicker')]//button[contains(@class,'xdsoft_next')]"
+            );
             nextButton.scrollIntoViewIfNeeded();
             nextButton.click();
             page.waitForTimeout(500); // xdsoft month-change animation — no deterministic signal

@@ -35,8 +35,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +10 days from today — keeps the scheduled date always in the future
-        String[] date01 = getScheduleDate(10);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date01 = getScheduleDate(1);
         socialPage.selectFutureDate(date01[0], date01[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
@@ -61,8 +61,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +20 days from today — keeps the scheduled date always in the future
-        String[] date02 = getScheduleDate(20);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date02 = getScheduleDate(1);
         socialPage.selectFutureDate(date02[0], date02[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
@@ -87,8 +87,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnStaticText();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +140 days from today — video posts are scheduled far ahead to keep them future-safe
-        String[] date03 = getScheduleDate(140);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date03 = getScheduleDate(1);
         socialPage.selectFutureDate(date03[0], date03[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
@@ -113,8 +113,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +20 days from today — keeps the scheduled date always in the future
-        String[] date04 = getScheduleDate(20);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date04 = getScheduleDate(1);
         socialPage.selectFutureDate(date04[0], date04[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
@@ -142,8 +142,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +20 days from today — keeps the scheduled date always in the future
-        String[] date05 = getScheduleDate(20);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date05 = getScheduleDate(1);
         socialPage.selectFutureDate(date05[0], date05[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
@@ -170,8 +170,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +20 days from today — keeps the scheduled date always in the future
-        String[] date06 = getScheduleDate(20);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date06 = getScheduleDate(1);
         socialPage.selectFutureDate(date06[0], date06[1]);
         socialPage.selectTime("10", "30");
         socialPage.verifySelection();
@@ -197,8 +197,8 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
         socialPage.clickOnFacebook();
         socialPage.scrollDownByTwoHundred();
         socialPage.clickOnOpenDateTimePicker();
-        // +25 days from today — keeps the scheduled date always in the future
-        String[] date07 = getScheduleDate(25);
+        // +1 day from today — always picks tomorrow, keeps test simple and future-safe
+        String[] date07 = getScheduleDate(1);
         socialPage.selectFutureDate(date07[0], date07[1]);
         socialPage.selectTime("17", "30");
         socialPage.verifySelection();

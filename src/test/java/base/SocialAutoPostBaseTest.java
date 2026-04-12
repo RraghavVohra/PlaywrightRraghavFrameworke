@@ -1,8 +1,11 @@
 package base;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.LoadState;
+import utils.AuthManager;
 import utils.ConfigReader;
 
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Arrays;
@@ -21,25 +24,39 @@ public class SocialAutoPostBaseTest {
         browser = playwright.chromium().launch(
             new BrowserType.LaunchOptions()
                 .setHeadless(false)
-                .setArgs(Arrays.asList("--start-maximized", "--window-position=0,0"))
+                .setArgs(Arrays.asList(
+                    "--start-maximized",       // maximizes the browser window on launch
+                    "--window-position=0,0",   // anchors to top-left so it doesn't open off-screen
+                    "--window-size=1366,768"   // explicitly sets resolution — --start-maximized alone
+                                               // is unreliable in Playwright, this ensures correct size
+                ))
         );
+
+        // Login once and save session to auth.json.
+        // AuthManager checks if auth.json already exists — if so, skips login entirely.
+        // This is the same pattern BaseTest uses, so all suites share one saved session.
+        // WHY: Without this, every @BeforeMethod was doing a full login, costing ~5s per test
+        // and making the suite 7x slower than necessary.
+        AuthManager.ensureLogin(browser);
     }
 
     @org.testng.annotations.BeforeMethod
     public void setUp() {
-        context = browser.newContext();
+        // Restore the saved auth session — no login step needed.
+        // setStorageStatePath loads the cookies and localStorage from auth.json so the
+        // browser is already authenticated when the new context opens.
+        context = browser.newContext(
+            new Browser.NewContextOptions()
+                .setStorageStatePath(Paths.get("auth.json"))
+                .setViewportSize(null) // let --start-maximized control the window size
+        );
         page = context.newPage();
         page.setDefaultTimeout(30000);
 
-        // Navigate to preprod login page
-        page.navigate(ConfigReader.get("preprod.base.url"));
-
-        // Login
-        page.locator("#username").fill(ConfigReader.get("preprod.username"));
-        page.locator("#password").fill(ConfigReader.get("preprod.password"));
-        page.locator("(//button[@type='submit'])[1]").evaluate("el => el.click()");
-        page.waitForURL("**/AssetLibrary**");
-        System.out.println("User Logged in Successfully.");
+        // Navigate to home — session is already authenticated, no login page shown.
+        page.navigate(ConfigReader.get("preprod.base.url") + "/home");
+        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+        System.out.println("Session restored. Navigated to home.");
     }
 
     @org.testng.annotations.AfterMethod

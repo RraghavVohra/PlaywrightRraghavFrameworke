@@ -2,216 +2,64 @@
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-No session found. Performing login...
-Login completed & saved.
-=== TEST CASE TC_DL_01 EXECUTING ===
-Test Case TC_DL_01 Passed!
-=== TEST CASE TC_DL_03 EXECUTING ===
-Actual Options: [Upload, Access, Update Hashtag(s), Delete]
-test_TC_DL_03 Passed!
-=== TEST CASE TC_DL_04 EXECUTING ===
-test_TC_DL_04 Passed!
-=== TEST CASE TC_DL_17 EXECUTING ===
-=== TEST CASE TC_DL_18 EXECUTING ===
-Document Name validation message verified.
-test_TC_DL_18 Passed!
-=== TEST CASE TC_DL_22 EXECUTING ===
-test_TC_DL_22 Passed!
-=== TEST CASE TC_DL_22_1 EXECUTING ===
-test_TC_DL_22_1 Passed!
-=== TEST CASE TC_DL_22_2 EXECUTING ===
-test_TC_DL_22_2 Passed!
-=== TEST CASE TC_DL_22_3 EXECUTING ===
-test_TC_DL_22_3 Passed!
-=== TEST CASE TC_DL_22_4 EXECUTING ===
-test_TC_DL_22_4 Passed!
-=== TEST CASE TC_DL_22_5 EXECUTING ===
-test_TC_DL_22_5 Passed!
-=== TEST CASE TC_DL_22_6 EXECUTING ===
-test_TC_DL_22_6 Passed!
-=== TEST CASE TC_DL_25 EXECUTING ===
-Description validation message verified.
-test_TC_DL_25 Passed!
-=== TEST CASE TC_DL_28 EXECUTING ===
-=== TEST CASE TC_DL_30 EXECUTING ===
-test_TC_DL_30 Passed!
-=== TEST CASE TC_DL_32 EXECUTING ===
-test_TC_DL_32 Passed!
-=== TEST CASE TC_DL_34 EXECUTING ===
-test_TC_DL_34 Passed!
-=== TEST CASE TC_DL_37 EXECUTING ===
-First document in listing: TestDocument_1776003011236
-Search Result: TestDocument_1776003011236
-test_TC_DL_37 Passed!
-=== TEST CASE TC_DL_38 EXECUTING ===
-test_TC_DL_38 Passed!
-=== TEST CASE TC_DL_39 EXECUTING ===
-Fetched Dynamic Text: TestDocument_1776003011236
-test_TC_DL_39 Passed!
-=== TEST CASE TC_DL_40 EXECUTING ===
-Fetched Dynamic Text: TestDocument_1776002967038
-test_TC_DL_40 Passed!
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_5_UploadingGifImageForThumbnail
-PASSED: tests.DocumentLibraryTest.test_TC_DL_01_takenToDocumentLibraryScreen
-PASSED: tests.DocumentLibraryTest.test_TC_DL_30_fillsAllTheMandatoryAndDocumentOptions
-PASSED: tests.DocumentLibraryTest.test_TC_DL_25_fillsAllMandatoryFieldsExceptDescription
-PASSED: tests.DocumentLibraryTest.test_TC_DL_34_fillsAllTheFieldsWithHashtag
-PASSED: tests.DocumentLibraryTest.test_TC_DL_03_actionsMenuButton
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_2_UploadingDocumentInCsvFormat
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_6_UploadingJpgImageForThumbnail
-PASSED: tests.DocumentLibraryTest.test_TC_DL_39_deleteTheContentAndSearchIt
-PASSED: tests.DocumentLibraryTest.test_TC_DL_38_clickDeleteWithoutSelectingAnyContent
-PASSED: tests.DocumentLibraryTest.test_TC_DL_18_allMandatoryFieldsExceptDocumentName
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_UploadingDocumentInPngFormat
-PASSED: tests.DocumentLibraryTest.test_TC_DL_40_updatingTheAccessOfTheContent
-PASSED: tests.DocumentLibraryTest.test_TC_DL_32_fillsAllTheFieldsAndMakesDownloadable
-PASSED: tests.DocumentLibraryTest.test_TC_DL_37_searchFunctionality
-PASSED: tests.DocumentLibraryTest.test_TC_DL_04_uploadDocumentScreen
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_1_UploadingDocumentInJpgFormat
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_3_UploadingDocumentInXlsxFormat
-PASSED: tests.DocumentLibraryTest.test_TC_DL_22_4_UploadingDocumentInMp4Format
-FAILED: tests.DocumentLibraryTest.test_TC_DL_17_allMandatoryFields
-com.microsoft.playwright.TimeoutError: Error {
-  message='Timeout 60000ms exceeded.
-  name='TimeoutError
-  stack='TimeoutError: Timeout 60000ms exceeded.
-    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
-    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
-    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
-    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
-    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+Selected Date & Time: 2026-04-22 10:30
+Test Case TC_SAP_01 is passed!
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+User Logged in Successfully.
+Currently displayed month & year: April 2026
+PASSED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_01_whenPostedWithPngImageWithCobranding
+FAILED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
 }
 Call log:
-- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
 
-	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
 	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
 	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
 	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
-	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
 	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
 	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
-	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
-	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
-	at pageObjects.DocumentLibraryPage.clickOnUploadOption(DocumentLibraryPage.java:249)
-	at tests.DocumentLibraryTest.test_TC_DL_17_allMandatoryFields(DocumentLibraryTest.java:156)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4378)
+	at pageObjects.SocialAutoPostPagePW.selectFutureDate(SocialAutoPostPagePW.java:177)
+	at tests.SocialAutoPostPlaywrightTest.test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption(SocialAutoPostPlaywrightTest.java:175)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -238,277 +86,76 @@ Call log:
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: com.microsoft.playwright.TimeoutError: Error {
-  message='Timeout 60000ms exceeded.
-  name='TimeoutError
-  stack='TimeoutError: Timeout 60000ms exceeded.
-    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
-    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
-    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
-    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
-    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
 }
 Call log:
-- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
 
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
 	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
-	... 36 more
+	... 40 more
 
-FAILED: tests.DocumentLibraryTest.test_TC_DL_28_fillsAllTheFieldsExceptDocumentOption
-com.microsoft.playwright.TimeoutError: Error {
-  message='Timeout 60000ms exceeded.
-  name='TimeoutError
-  stack='TimeoutError: Timeout 60000ms exceeded.
-    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
-    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
-    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
-    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
-    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+FAILED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
 }
 Call log:
-- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
 
-	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
 	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
 	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
 	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
-	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
 	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
 	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
-	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
-	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
-	at pageObjects.DocumentLibraryPage.clickOnUploadOption(DocumentLibraryPage.java:249)
-	at tests.DocumentLibraryTest.test_TC_DL_28_fillsAllTheFieldsExceptDocumentOption(DocumentLibraryTest.java:487)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4378)
+	at pageObjects.SocialAutoPostPagePW.selectFutureDate(SocialAutoPostPagePW.java:177)
+	at tests.SocialAutoPostPlaywrightTest.test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL(SocialAutoPostPlaywrightTest.java:202)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -535,144 +182,428 @@ Call log:
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: com.microsoft.playwright.TimeoutError: Error {
-  message='Timeout 60000ms exceeded.
-  name='TimeoutError
-  stack='TimeoutError: Timeout 60000ms exceeded.
-    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
-    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
-    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
-    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
-    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
 }
 Call log:
-- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
--   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
 
-	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
 	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
-	... 36 more
+	... 40 more
+
+FAILED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_03_whenPostedWithVideo
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4378)
+	at pageObjects.SocialAutoPostPagePW.selectFutureDate(SocialAutoPostPagePW.java:177)
+	at tests.SocialAutoPostPlaywrightTest.test_TC_SAP_03_whenPostedWithVideo(SocialAutoPostPlaywrightTest.java:92)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 40 more
+
+FAILED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4378)
+	at pageObjects.SocialAutoPostPagePW.selectFutureDate(SocialAutoPostPagePW.java:177)
+	at tests.SocialAutoPostPlaywrightTest.test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl(SocialAutoPostPlaywrightTest.java:147)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 40 more
+
+FAILED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4378)
+	at pageObjects.SocialAutoPostPagePW.selectFutureDate(SocialAutoPostPagePW.java:177)
+	at tests.SocialAutoPostPlaywrightTest.test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription(SocialAutoPostPlaywrightTest.java:118)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 40 more
+
+FAILED: tests.SocialAutoPostPlaywrightTest.test_TC_SAP_02_whenPostedWithJpgImageWithCobranding
+com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4378)
+	at pageObjects.SocialAutoPostPagePW.selectFutureDate(SocialAutoPostPagePW.java:177)
+	at tests.SocialAutoPostPlaywrightTest.test_TC_SAP_02_whenPostedWithJpgImageWithCobranding(SocialAutoPostPlaywrightTest.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements:
+    1) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(2)
+    2) <button type="button" class="xdsoft_next"></button> aka locator("div").filter(new Locator.FilterOptions().setHasText("AprilJanuaryFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecember202619501951195219531954195519561957195819591960196119621963196419651966196719681969197019711972197319741975197619771978197919801981198219831984198519861987198819891990199119921993199419951996199719981999200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023202420252026202720282029203020312032203320342035203620372038203920402041204220432044204520462047204820492050SunMonTueWedThuFriSat29303112345678910111213141516171819202122232425262728293012Save Selected00:0000:3001:0001:3002:0002:3003:0003:3004:0004:3005:0005:3006:0006:3007:0007:3008:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:3018:0018:3019:0019:3020:0020:3021:0021:3022:0022:3023:0023:")).getByRole(AriaRole.BUTTON).nth(4)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\javascript.js:241:12)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:635:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:923:24)
+    at async C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\frames.js:621:14
+    at async ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\frameDispatcher.js:106:85)
+    at async LongStandingScope._race (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-10451679482177008759\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for locator("//button[contains(@class,'xdsoft_next')]")
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 40 more
 
 
 ===============================================
     Default test
-    Tests run: 21, Failures: 2, Skips: 0
+    Tests run: 7, Failures: 6, Skips: 0
 ===============================================
 
 
 ===============================================
 Default suite
-Total tests run: 21, Passes: 19, Failures: 2, Skips: 0
+Total tests run: 7, Passes: 1, Failures: 6, Skips: 0
 ===============================================
 

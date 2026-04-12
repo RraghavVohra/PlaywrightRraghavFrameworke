@@ -3,17 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.DocumentLibraryTest">
+      <class name="tests.SocialAutoPostPlaywrightTest">
         <methods>
-          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="closeAll"/>
-          <include name="initPage"/>
           <include name="globalSetup"/>
-          <include name="test_TC_DL_17_allMandatoryFields"/>
-          <include name="test_TC_DL_28_fillsAllTheFieldsExceptDocumentOption"/>
+          <include name="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL"/>
+          <include name="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription"/>
+          <include name="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl"/>
+          <include name="setUp"/>
+          <include name="test_TC_SAP_03_whenPostedWithVideo"/>
+          <include name="closeAll"/>
+          <include name="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption"/>
         </methods>
-      </class> <!-- tests.DocumentLibraryTest -->
+      </class> <!-- tests.SocialAutoPostPlaywrightTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -66,8 +66,9 @@
     </configuration>
 </plugin>
 
-<!-- Allure Maven plugin — run `mvn allure:serve` to open report in browser,
-     or `mvn allure:report` to generate static HTML in target/site/allure-maven-plugin/ -->
+<!-- Allure Maven plugin — automatically generates the HTML report after tests finish.
+     Bound to the 'verify' phase so running `mvn verify` runs tests AND generates the report.
+     Report is saved to target/site/allure-maven-plugin/index.html — open it in any browser. -->
 <plugin>
     <groupId>io.qameta.allure</groupId>
     <artifactId>allure-maven</artifactId>
@@ -76,6 +77,17 @@
         <!-- Must match the allure-testng dependency version -->
         <reportVersion>2.27.0</reportVersion>
     </configuration>
+    <executions>
+        <execution>
+            <id>allure-report</id>
+            <!-- 'verify' phase runs after 'test' phase — so results are ready before report is generated -->
+            <phase>verify</phase>
+            <goals>
+                <!-- 'report' generates static HTML — no browser needed, just open index.html -->
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
 </plugin>
       </plugins>
   </build> 

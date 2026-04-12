@@ -1,4 +1,4 @@
 utils\ConfigReader.class
-pageObjects\PushNotificationPageImproved.class
 pageObjects\PushNotificationPage.class
 utils\AuthManager.class
+pageObjects\PushNotificationPageImproved.class

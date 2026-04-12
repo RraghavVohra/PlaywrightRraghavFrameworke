@@ -37,8 +37,10 @@ public class BaseTest {
                 .setHeadless(headless)
                 .setSlowMo(slowMo)
                 .setArgs(Arrays.asList(
-                    "--start-maximized",       // opens browser filling the full screen
-                    "--window-position=0,0"    // anchors it to the top-left, not off-screen
+                    "--start-maximized",          // maximizes the browser window on launch
+                    "--window-position=0,0",      // anchors it to top-left so it doesn't open off-screen
+                    "--window-size=1366,768"      // explicitly sets window size to match screen resolution (1366x768)
+                                                  // --start-maximized alone is unreliable in Playwright — this ensures the correct size is applied
                 )));
 
         // Ensure login exists
@@ -58,9 +60,10 @@ public class BaseTest {
         context = browser.newContext(
                 new Browser.NewContextOptions()
                         .setStorageStatePath(Paths.get("auth.json"))
-                        // No setViewportSize — Playwright will use the actual window size.
-                        // Combined with --start-maximized, this matches the full screen,
-                        // exactly like a normal user opening Chrome.
+                        // setViewportSize(null) disables Playwright's default viewport (1280x720).
+                        // Without this, Playwright overrides the window size even when --start-maximized is set.
+                        // null tells Playwright to use the actual maximized window size instead.
+                        .setViewportSize(null)
         );
 
         page = context.newPage();

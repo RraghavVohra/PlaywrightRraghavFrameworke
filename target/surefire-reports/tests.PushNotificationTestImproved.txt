@@ -1,0 +1,2872 @@
+-------------------------------------------------------------------------------
+Test set: tests.PushNotificationTestImproved
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 16, Errors: 0, Skipped: 0, Time elapsed: 477.6 s <<< FAILURE! -- in tests.PushNotificationTestImproved
+tests.PushNotificationTestImproved.test_TC_PN_04_takentoCreateAppNotificationScreen -- Time elapsed: 14.86 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_04_takentoCreateAppNotificationScreen(PushNotificationTestImproved.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_07_fillsAllFieldsExceptNotificationName -- Time elapsed: 14.23 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_07_fillsAllFieldsExceptNotificationName(PushNotificationTestImproved.java:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_08_fillsAllFieldsExceptNotificationMessage -- Time elapsed: 15.77 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_08_fillsAllFieldsExceptNotificationMessage(PushNotificationTestImproved.java:114)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_017_missingCategoryField -- Time elapsed: 15.28 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_017_missingCategoryField(PushNotificationTestImproved.java:147)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_019_missingCustomLinkField -- Time elapsed: 15.79 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_019_missingCustomLinkField(PushNotificationTestImproved.java:175)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_03_clickActionMenuButton -- Time elapsed: 64.31 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.click (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:1007:23)
+    at FrameDispatcher.click (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//a[normalize-space()='Push Notification']")
+-   locator resolved to <a class="menu-link py-3" data-bs-trigger="hover" d…>…</a>
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #1
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #2
+-   waiting 20ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #3
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #4
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #5
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #6
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #7
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #8
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #9
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #10
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #11
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #12
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #13
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #14
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #15
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #16
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #17
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #18
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #19
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #20
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #21
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #22
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #23
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #24
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #25
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #26
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #27
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #28
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #29
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #30
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #31
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #32
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #33
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #34
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #35
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #36
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #37
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #38
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #39
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #40
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #41
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #42
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #43
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #44
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #45
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #46
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #47
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #48
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #49
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #50
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #51
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #52
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #53
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #54
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #55
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #56
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #57
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #58
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #59
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #60
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #61
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #62
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #63
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #64
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #65
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #66
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #67
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #68
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #69
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #70
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #71
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #72
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #73
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #74
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #75
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #76
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #77
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #78
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #79
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #80
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #81
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #82
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #83
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #84
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #85
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #86
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #87
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #88
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #89
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #90
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #91
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #92
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #93
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #94
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #95
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #96
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #97
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #98
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #99
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #100
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #101
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #102
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #103
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #104
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #105
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #106
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #107
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #108
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #109
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #110
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #111
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #112
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #113
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #114
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #115
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #116
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #117
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2468)
+	at pageObjects.PushNotificationPageImproved.openPushNotificationPage(PushNotificationPageImproved.java:131)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:143)
+	at tests.PushNotificationTestImproved.test_TC_PN_03_clickActionMenuButton(PushNotificationTestImproved.java:208)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.click (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:1007:23)
+    at FrameDispatcher.click (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//a[normalize-space()='Push Notification']")
+-   locator resolved to <a class="menu-link py-3" data-bs-trigger="hover" d…>…</a>
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #1
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #2
+-   waiting 20ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #3
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #4
+-   waiting 100ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #5
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #6
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #7
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #8
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #9
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #10
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #11
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #12
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #13
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #14
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #15
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #16
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #17
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #18
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #19
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #20
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #21
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #22
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #23
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #24
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #25
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #26
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #27
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #28
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #29
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #30
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #31
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #32
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #33
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #34
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #35
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #36
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #37
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #38
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #39
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #40
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #41
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #42
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #43
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #44
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #45
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #46
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #47
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #48
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #49
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #50
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #51
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #52
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #53
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #54
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #55
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #56
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #57
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #58
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #59
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #60
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #61
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #62
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #63
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #64
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #65
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #66
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #67
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #68
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #69
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #70
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #71
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #72
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #73
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #74
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #75
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #76
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #77
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #78
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #79
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #80
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #81
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #82
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #83
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #84
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #85
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #86
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #87
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #88
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #89
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #90
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #91
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #92
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #93
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #94
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #95
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #96
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #97
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #98
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #99
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #100
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #101
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #102
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #103
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #104
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #105
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #106
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #107
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #108
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #109
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #110
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #111
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #112
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #113
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #114
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #115
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #116
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+-   element is not visible
+- retrying click action, attempt #117
+-   waiting 500ms
+-   waiting for element to be visible, enabled and stable
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+
+tests.PushNotificationTestImproved.test_TC_PN_06_notificationChannelSelection -- Time elapsed: 15.13 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_06_notificationChannelSelection(PushNotificationTestImproved.java:227)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_013_sendToOptionsSelection -- Time elapsed: 15.57 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_013_sendToOptionsSelection(PushNotificationTestImproved.java:242)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_015_selectAllCategories -- Time elapsed: 15.20 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_015_selectAllCategories(PushNotificationTestImproved.java:257)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_016_verifySearchTextField -- Time elapsed: 15.65 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_016_verifySearchTextField(PushNotificationTestImproved.java:273)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_09_verifyImageUpload -- Time elapsed: 16.29 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_09_verifyImageUpload(PushNotificationTestImproved.java:288)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_023_verifyNotificationStatus -- Time elapsed: 15.12 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_023_verifyNotificationStatus(PushNotificationTestImproved.java:304)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_020_verifyContentLink -- Time elapsed: 15.81 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_020_verifyContentLink(PushNotificationTestImproved.java:340)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_012_imagesInDifferentFormat -- Time elapsed: 14.86 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_012_imagesInDifferentFormat(PushNotificationTestImproved.java:373)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_036_pushNotificationWithCsvUpload -- Time elapsed: 17.19 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_036_pushNotificationWithCsvUpload(PushNotificationTestImproved.java:406)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+
+tests.PushNotificationTestImproved.test_TC_PN_050_pushNotificationWithoutCsvUpload -- Time elapsed: 15.03 s <<< FAILURE!
+com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.PushNotificationPageImproved.openCreateNotification(PushNotificationPageImproved.java:161)
+	at tests.PushNotificationTestImproved.test_TC_PN_050_pushNotificationWithoutCsvUpload(PushNotificationTestImproved.java:423)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-3438262639164299899\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("xpath=(//a/span[text()='Create App Notification'])[1]").first() to be visible
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+-   locator resolved to hidden <span class="m-2">Create App Notification</span>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+

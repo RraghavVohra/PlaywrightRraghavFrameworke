@@ -2,6 +2,7 @@ package pageObjects;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import utils.ConfigReader;
 
@@ -16,9 +17,10 @@ public class PushNotificationPageImproved {
     // LOCATORS
     private Locator communicationTab;
     private Locator notifications;
-    private Locator notificationsprod;
+    private Locator notificationspreprod;
     private Locator pageHeading;
     private Locator actionsButton;
+    private Locator actionsButtonprod;
     private Locator createAppNotification;
 
     private Locator notificationNameField;
@@ -55,6 +57,7 @@ public class PushNotificationPageImproved {
     private Locator contentLinkButton;
     private Locator contentLinkDropdown;
     private Locator contentSelection;
+    private Locator contentSelectionProd;
 
     private Locator uploadCsvButton;
 
@@ -65,10 +68,14 @@ public class PushNotificationPageImproved {
 
         communicationTab = page.locator("//span[text()='Communication']");
         notifications = page.locator("//a[normalize-space()='New Push Notification']");
-        notificationsprod = page.locator("//a[normalize-space()='Push Notification']");
+        notificationspreprod = page.locator("//a[normalize-space()='Push Notification']");
         pageHeading = page.locator("//span[@class='fs-2 fw-bolder']");
 
         actionsButton = page.locator("(//*[name()='svg'])[1]");
+        // Using 'action_button_course' class because it is unique to this button in the DOM (confirmed from HTML on technochimes prod).
+        // Previous locator targeted the SVG inside the button which was fragile — clicking an SVG child can miss the clickable area.
+        // Targeting the button element directly using its specific class is more reliable and less likely to break on DOM changes.
+        actionsButtonprod = page.locator("//button[contains(@class,'action_button_course')]");
         createAppNotification = page.locator("(//a/span[text()='Create App Notification'])[1]");
 
         notificationNameField = page.locator("#pushnotify_name");
@@ -105,6 +112,7 @@ public class PushNotificationPageImproved {
         contentLinkButton = page.locator("//label[@for='content-link']");
         contentLinkDropdown = page.locator("#select2-contentLinkDropdown-container");
         contentSelection = page.locator("(//li[contains(@class,'select2-results__option')])[1]");
+        contentSelectionProd = page.locator("//li[contains(@class,'select2-results__option') and contains(text(),'test brochure new')]");
 
         uploadCsvButton = page.locator("//input[@id='upload_csv']");
     }
@@ -115,14 +123,15 @@ public class PushNotificationPageImproved {
         communicationTab.click();
 
         // Pick the correct menu link locator based on the active environment.
-        // The link text differs between prod and dev/preprod because the feature
+        // The link text differs between dev and preprod/prod because the feature
         // is at different release stages across servers.
-        // env=prod  → "Push Notification"     (app.technochimes.com)
-        // env=dev / env=preprod → "New Push Notification" (app.spdevmfp.com / app.sppreprod.in)
-        if (ConfigReader.get("env").equals("prod")) {
-            notificationsprod.click();
+        // env=dev      → "New Push Notification" (app.spdevmfp.com)
+        // env=preprod  → "Push Notification"     (app.sppreprod.in)
+        // env=prod     → "Push Notification"     (app.technochimes.com)
+        if (ConfigReader.get("env").equals("dev")) {
+            notifications.click();          // "New Push Notification" — dev only
         } else {
-            notifications.click();
+            notificationspreprod.click();   // "Push Notification" — preprod and prod
         }
     }
 
@@ -133,9 +142,44 @@ public class PushNotificationPageImproved {
     //    createAppNotification.first().click();
     //    }
     
+    // Opens the actions dropdown menu without clicking any item inside it.
+    // Used by TC_PN_03 to read and verify the menu options while the dropdown is still open.
+    // openCreateNotification() can't be used for this because it clicks "Create App Notification"
+    // which navigates away before the options can be read.
+    public void openActionsMenu() {
+        openPushNotificationPage();
+        if (ConfigReader.get("env").equals("prod")) {
+            page.waitForLoadState(LoadState.NETWORKIDLE);
+            actionsButtonprod.scrollIntoViewIfNeeded();
+            actionsButtonprod.dispatchEvent("click");
+            page.waitForTimeout(1000);
+        } else {
+            actionsButton.click();
+        }
+    }
+
     public void openCreateNotification() {
         openPushNotificationPage();
-        actionsButton.click();
+
+        // Use the correct actions button locator based on environment.
+        // actionsButton (SVG[1]) works on dev/preprod.
+        // actionsButtonprod uses a more stable XPath anchored to its specific class — for prod only.
+        if (ConfigReader.get("env").equals("prod")) {
+            // Wait for the page to fully settle before interacting with the KTMenu button.
+            // NETWORKIDLE ensures the KTMenu JS is fully initialized — without this,
+            // the click fires before the JS event listeners are attached and the dropdown never opens.
+            page.waitForLoadState(LoadState.NETWORKIDLE);
+            actionsButtonprod.scrollIntoViewIfNeeded();
+            // dispatchEvent fires a synthetic DOM click event directly on the element.
+            // This is different from evaluate("el => el.click()") — it goes through
+            // the browser's event system which KTMenu's listeners are bound to.
+            actionsButtonprod.dispatchEvent("click");
+            // Give KTMenu time to toggle the dropdown visibility after the event fires.
+            page.waitForTimeout(1000);
+        } else {
+            actionsButton.click();
+        }
+
         createAppNotification.first().waitFor(
             new Locator.WaitForOptions()
                 .setState(WaitForSelectorState.VISIBLE)
@@ -263,7 +307,10 @@ public class PushNotificationPageImproved {
 
         List<String> options = new ArrayList<>();
 
-        List<Locator> elements = page.locator("//a[@class='menu-link px-3']").all();
+        // Using contains(@class,'menu-link') instead of exact class match.
+        // On prod the <a> tags have additional classes so exact match returns 0 results.
+        // contains() is flexible enough to work across environments.
+        List<Locator> elements = page.locator("//a[contains(@class,'menu-link')]").all();
 
         for (Locator element : elements) {
             options.add(element.textContent().trim());
@@ -283,7 +330,14 @@ public class PushNotificationPageImproved {
     }
 
     public void selectContentOption() {
-        contentSelection.click();
+        // On prod the first dropdown option is a disabled placeholder "-Select Content-".
+        // contentSelectionProd targets a specific known content item by text to avoid clicking the placeholder.
+        // On dev/preprod the first option is always a real selectable item so contentSelection works fine.
+        if (ConfigReader.get("env").equals("prod")) {
+            contentSelectionProd.click();
+        } else {
+            contentSelection.click();
+        }
     }
 
     // CSV

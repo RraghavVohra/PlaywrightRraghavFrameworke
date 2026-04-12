@@ -71,13 +71,36 @@ The AspectJ weaver jar is passed as a `-javaagent` to the JVM running tests. Wit
 
 ### Commands
 ```bash
-mvn test              # runs tests, produces target/allure-results/
-mvn allure:serve      # generates report and opens it in browser
-mvn allure:report     # generates static HTML in target/site/allure-maven-plugin/
+mvn test              # runs tests only, produces raw JSON in target/allure-results/
+mvn allure:serve      # manually generates report and opens it in browser
+mvn allure:report     # manually generates static HTML in target/site/allure-maven-plugin/
+mvn verify            # runs tests AND auto-generates the report — recommended way
+```
+
+### How to run — `mvn verify`
+Run this from the **root of the project** (where `pom.xml` is). In Eclipse/IntelliJ you can right click the project → Run As → Maven build → type `verify` in the Goals field. Or from terminal, `cd` into the project folder and run `mvn verify`.
+
+After it finishes, open the report at:
+```
+target/site/allure-maven-plugin/index.html
+```
+Just double-click that file in your file explorer to open it in the browser.
+
+### Why `mvn verify` instead of `mvn test`?
+The `verify` phase runs after the `test` phase in Maven's lifecycle. By binding `allure:report` to the `verify` phase in `pom.xml`, the report generation is triggered automatically after all tests complete — no extra manual command needed.
+
+```xml
+<execution>
+    <id>allure-report</id>
+    <phase>verify</phase>   <!-- runs after test phase -->
+    <goals>
+        <goal>report</goal> <!-- generates HTML from target/allure-results/ -->
+    </goals>
+</execution>
 ```
 
 ### Interview talking point
-> "Allure is integrated via the allure-testng dependency which auto-discovers itself through ServiceLoader — no listener registration needed in testng.xml. Screenshots are captured on failure inside AfterMethod using Playwright's screenshot API and attached via the @Attachment annotation. The hierarchy in the report is driven by @Epic, @Feature, @Story annotations on the test classes and methods."
+> "Allure is integrated via the allure-testng dependency which auto-discovers itself through ServiceLoader — no listener registration needed in testng.xml. Screenshots are captured on failure inside AfterMethod using Playwright's screenshot API and attached via the @Attachment annotation. The hierarchy in the report is driven by @Epic, @Feature, @Story annotations on the test classes and methods. We also bound the allure:report goal to Maven's verify phase so the report is generated automatically after every run — no separate command needed, just open target/site/allure-maven-plugin/index.html."
 
 ---
 
@@ -162,3 +185,67 @@ Because that means editing code every time you switch environments — error-pro
 
 ### Interview talking point
 > "Our app has three environments — dev, preprod, and prod — and some locators differ between them because features are at different release stages. We handle this with an `env` key in config.properties. The page object reads that value and picks the correct locator at runtime using a simple if/else. This means switching environments is a two-line config change — no code edits, no risk of breaking things."
+
+---
+
+## 7. What makes a good locator in Playwright? How do you evaluate locator quality?
+
+### The hierarchy (best to worst)
+
+| Priority | Type | Example | Why |
+|---|---|---|---|
+| 1 | ID | `#pushnotify_name` | Unique by design, fastest, most stable |
+| 2 | Name / stable attribute | `//input[@name='channel'][@value='1']` | Semantic, tied to functionality not layout |
+| 3 | Playwright role-based | `page.getByRole(AriaRole.BUTTON, ...)` | Playwright's recommended approach — uses accessibility tree |
+| 4 | Text-based | `//a[normalize-space()='Push Notification']` | Readable but breaks if copy changes |
+| 5 | Class-based | `//span[@class='fs-2 fw-bolder']` | Breaks if CSS is refactored |
+| 6 | Position-based | `(//span[@class='ms-2'])[3]` | Very fragile — breaks if anything is added before it |
+| 7 | Tag-only | `(//*[name()='svg'])[1]` | Worst — grabs first matching element on the whole page |
+
+### Real example from this project
+
+`actionsButton = page.locator("(//*[name()='svg'])[1]")` worked on dev but failed on prod because the first SVG on the page was a different element entirely. It was replaced with:
+
+```java
+actionsButtonprod = page.locator("//span[text()='PUSH NOTIFICATION']/following::button[1]//*[local-name()='svg']");
+```
+
+This anchors the locator to a known, stable text element (`PUSH NOTIFICATION` heading) and traverses from there — much more reliable.
+
+### Which locators are currently stable in this project?
+- **Good:** All `#id`-based locators, `[@name]`/`[@value]` attribute locators, `[@for]` label locators
+- **Risky:** `(//*[name()='svg'])[1]`, `(//span[@class='ms-2'])[3]`, `//button[@type='submit']`, `//button[@class='btn btn-primary']`
+
+The risky ones work today but are vulnerable to DOM restructuring or CSS refactoring. They'll be improved as failures occur rather than upfront, since they haven't broken yet.
+
+### Interview talking point
+> "I evaluate locators based on how tightly they're coupled to the DOM structure versus the actual functionality. ID-based locators are ideal — they're unique and stable. Position-based or tag-only locators like 'first SVG on the page' are the worst because any DOM change upstream breaks them. We had a real case where the actions button locator worked on dev but failed on prod for exactly this reason — the first SVG element was different. We fixed it by anchoring the locator to a nearby stable text element and traversing from there."
+
+---
+
+## 8. How do you handle JS-driven dropdowns that are in the DOM but stay hidden?
+
+### The problem
+On prod (technochimes), clicking the actions button wasn't opening the dropdown menu. The `createAppNotification` element was found in the DOM immediately — but always reported as **hidden**. The `waitFor(VISIBLE)` kept timing out.
+
+The button uses **KTMenu** (Keenthemes JS library), triggered via `data-kt-menu-trigger="click"`. This means the dropdown visibility is controlled by JavaScript, not just CSS. If the click doesn't land cleanly or the JS hasn't had time to run, the menu stays hidden.
+
+### The fix — scroll + pause after click
+
+```java
+actionsButtonprod.scrollIntoViewIfNeeded();  // ensure button is in viewport before clicking
+actionsButtonprod.click();
+page.waitForTimeout(500);  // give KTMenu JS time to run and make the dropdown visible
+```
+
+### Why scrollIntoViewIfNeeded?
+If the button is partially off-screen, Playwright's click can silently "miss" it — the event fires but doesn't land on the button correctly. Scrolling it into view first ensures the click registers.
+
+### Why waitForTimeout?
+KTMenu toggles a CSS class to show the dropdown after the click event. This is asynchronous — there's a brief gap between the click and the DOM update. `waitForTimeout(500)` bridges that gap. Without it, `waitFor(VISIBLE)` starts checking before the JS has run.
+
+### Why not just increase the waitFor timeout?
+`waitFor(VISIBLE)` polls the element state — but if the JS never fires (e.g. the click missed), it will never become visible no matter how long you wait. The root fix is ensuring the click lands correctly, not waiting longer.
+
+### Interview talking point
+> "We had a case where a dropdown menu item was in the DOM but always hidden — the waitFor kept timing out. The button used a JS library (KTMenu) to control visibility. The fix was two things: scroll the button into view before clicking so the click lands cleanly, then add a short pause after clicking to let the JS run before checking visibility. This is a common pattern with JS-driven UI components — the element exists in the DOM from the start, but its visible state is toggled by JavaScript after the click event."

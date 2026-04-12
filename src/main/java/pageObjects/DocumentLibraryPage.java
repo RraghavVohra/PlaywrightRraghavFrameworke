@@ -32,6 +32,11 @@ public class DocumentLibraryPage {
     private Locator actionsButton(){ 
     	return page.locator("(//*[name()='svg'])[1]"); 
     }
+    
+    private Locator actionsButtonPreprod() {
+    	
+    	return page.locator("//div[contains(@class,'btn-group dropdown')]");
+    }
     private Locator profileIcon(){ 
     	return page.locator("//i[@class='fa fa-user-circle']"); 
     }
@@ -44,8 +49,16 @@ public class DocumentLibraryPage {
     private Locator logoutButtonYes(){ 
     	return page.locator("//a[normalize-space()='Yes']"); 
     }
-    private Locator uploadOption(){ 
-    	return page.locator("//a[@href='sp-upload-document.php']"); 
+    private Locator uploadOption(){
+        // ROOT CAUSE: The old locator used an exact @href match — //a[@href='sp-upload-document.php'].
+        // On preprod the actual href in the DOM is '/manager/sp-upload-document.php' (includes path prefix),
+        // so the exact match found nothing. waitFor(VISIBLE) kept waiting until it hit the 60s timeout.
+        // Some tests passed anyway due to timing luck — Playwright's click() fired before the dropdown
+        // closed on faster runs, bypassing the wait. Tests that explicitly called waitFor(VISIBLE) always failed.
+        //
+        // FIX: Switched to contains(@href, ...) so it matches regardless of path prefix.
+        // Works on both dev ('sp-upload-document.php') and preprod ('/manager/sp-upload-document.php').
+    	return page.locator("//a[contains(@href,'sp-upload-document.php')]");
     }
     private Locator uploadButton(){ 
     	return page.locator("//input[@id='share_button']"); 
@@ -80,8 +93,15 @@ public class DocumentLibraryPage {
     private Locator hashtagField(){ 
     	return page.locator("//input[@id='tagcsv']"); 
     }
-    private Locator hashtagSuggestion(){ 
-    	return page.locator("//li[@class='ui-menu-item']"); 
+    private Locator hashtagSuggestion(){
+        // FIX: Changed from exact class match to contains() because on preprod the <li>
+        // has additional classes alongside 'ui-menu-item', so exact match returns nothing.
+    	return page.locator("//li[contains(@class,'ui-menu-item')]");
+    }
+    
+    private Locator hashtagSuggestionPreprod() {
+    	
+    	return page.locator("//li[contains(@class,'ui-menu-item') and text()='teaser']");
     }
     private Locator searchBox(){ 
     	return page.locator("//input[@type='search' and @placeholder='Search']"); 
@@ -101,8 +121,15 @@ public class DocumentLibraryPage {
     private Locator checkboxOption(){ 
     	return page.locator("(//input[@id='document_content'])[1]");
     }
-    private Locator dynamicElement(){ 
-    	return page.locator("(//td[@class='wBreak d-none d-md-table-cell' and @style='cursor: no-drop;'])[1]"); 
+    private Locator dynamicElement(){
+    	return page.locator("(//td[@class='wBreak d-none d-md-table-cell' and @style='cursor: no-drop;'])[1]");
+    }
+    // Locator for the first document name in the listing — used by getFirstDocumentName().
+    // Unlike dynamicElement(), this does NOT require a checkbox to be selected first.
+    // The @style='cursor: no-drop;' on dynamicElement only appears after a checkbox interaction,
+    // so we use a class-only match here to find the first row regardless of state.
+    private Locator firstDocumentNameElement(){
+    	return page.locator("(//td[@class='wBreak d-none d-md-table-cell'])[1]");
     }
     private Locator noRecordsElement(){ 
     	return page.locator("//td[@class='dataTables_empty' and text()='No matching records found']"); 
@@ -148,8 +175,12 @@ public class DocumentLibraryPage {
     public static final String PNG_FILE   = "src/main/resources/testfiles/Amsterdam.png";
     public static final String JPG_FILE   = "src/main/resources/testfiles/budapest.jpg";
     public static final String CSV_FILE   = "src/main/resources/testfiles/pushnotificationsspuat.csv";
-    public static final String XLSX_FILE  = "src/main/resources/testfiles/test.xlsx";
-    public static final String MP4_FILE   = "src/main/resources/testfiles/video.mp4";
+    // FIX: Added the full relative path prefix — Playwright resolves Paths.get() from the
+    // project root, so without "src/main/resources/testfiles/" it won't find the file.
+    public static final String XLSX_FILE  = "src/main/resources/testfiles/JMeter_Load_Test_Report_Template.xlsx";
+    // FIX: Updated to the new smaller video file added to testfiles/.
+    // The old video.mp4 was too large — preprod upload timed out at 60s without completing.
+    public static final String MP4_FILE   = "src/main/resources/testfiles/AUTO VID.mp4";
     public static final String GIF_FILE   = "src/main/resources/testfiles/Wallpaper01.gif";
 
     public static final String THUMBNAIL_PNG = "src/main/resources/testfiles/empirestate.png";
@@ -168,7 +199,20 @@ public class DocumentLibraryPage {
     }
 
     public void clickOnActionsButton() {
-        actionsButton().click();
+        // Use the correct locator based on the active environment.
+        // dev  → SVG-based locator (//*[name()='svg'])[1]
+        // preprod/prod → div-based locator anchored to 'btn-group dropdown' class
+        // The SVG locator is fragile on preprod/prod because the button renders differently.
+        if (utils.ConfigReader.get("env").equals("dev")) {
+            actionsButton().click();
+        } else {
+            actionsButtonPreprod().click();
+        }
+    }
+
+    // Kept for direct use if needed — clickOnActionsButton() now calls this internally for non-dev envs.
+    public void clickOnActionsButtonPreprod() {
+    	actionsButtonPreprod().click();
     }
     
     // ACTIONS MENU OPTIONS
@@ -206,6 +250,12 @@ public class DocumentLibraryPage {
     // ================================================================
 
     public void clickOnUploadOption() {
+        // FIX: Added waitFor(VISIBLE) before clicking.
+        // On preprod the dropdown can close before the element becomes interactable,
+        // causing click() to fail with "element is not visible". Waiting for visibility
+        // first ensures the dropdown is still open when we click.
+        uploadOption().waitFor(new Locator.WaitForOptions()
+            .setState(com.microsoft.playwright.options.WaitForSelectorState.VISIBLE));
         uploadOption().click();
     }
 
@@ -331,7 +381,14 @@ public class DocumentLibraryPage {
     }
 
     public void selectInternalHashtag() {
-        hashtagSuggestion().click();
+        // Use the preprod locator on preprod/prod — it matches the exact hashtag text "teaser"
+        // which is what the autocomplete dropdown shows on preprod when you type "teaser".
+        // On dev the generic ui-menu-item locator is sufficient.
+        if (utils.ConfigReader.get("env").equals("dev")) {
+            hashtagSuggestion().click();
+        } else {
+            hashtagSuggestionPreprod().click();
+        }
     }
 
 
@@ -382,6 +439,15 @@ public class DocumentLibraryPage {
 
     public String getDynamicText() {
         return dynamicElement().innerText();
+    }
+
+    // Returns the name of the first document visible in the listing table.
+    // Used by TC_DL_37 to get a real document name to search for — works without
+    // clicking a checkbox first (unlike getDynamicText() which needs the no-drop style).
+    public String getFirstDocumentName() {
+        firstDocumentNameElement().waitFor(new Locator.WaitForOptions()
+                .setState(com.microsoft.playwright.options.WaitForSelectorState.VISIBLE));
+        return firstDocumentNameElement().innerText().trim();
     }
 
     public String noRecordsElementMethod() {

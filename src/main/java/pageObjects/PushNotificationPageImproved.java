@@ -307,10 +307,15 @@ public class PushNotificationPageImproved {
 
         List<String> options = new ArrayList<>();
 
-        // Using contains(@class,'menu-link') instead of exact class match.
-        // On prod the <a> tags have additional classes so exact match returns 0 results.
-        // contains() is flexible enough to work across environments.
-        List<Locator> elements = page.locator("//a[contains(@class,'menu-link')]").all();
+        // PREVIOUS BUG: //a[contains(@class,'menu-link')] matched every link on the page
+        // (sidebar nav + dropdown = 49 elements) instead of just the 3 dropdown items.
+        //
+        // FIX: Scope to //div[contains(@class,'menu-sub-dropdown')] which is the container
+        // KTMenu renders for the open dropdown panel. Only the active dropdown panel has this
+        // class, so this XPath returns only the items inside the actions dropdown.
+        List<Locator> elements = page.locator(
+            "//div[contains(@class,'menu-sub-dropdown')]//a[contains(@class,'menu-link')]"
+        ).all();
 
         for (Locator element : elements) {
             options.add(element.textContent().trim());

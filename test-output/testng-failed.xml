@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.PushNotificationTestImproved">
+      <class name="tests.DocumentLibraryTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="closeAll"/>
           <include name="initPage"/>
-          <include name="test_TC_PN_050_pushNotificationWithoutCsvUpload"/>
-          <include name="test_TC_PN_020_verifyContentLink"/>
           <include name="globalSetup"/>
-          <include name="test_TC_PN_03_clickActionMenuButton"/>
+          <include name="test_TC_DL_17_allMandatoryFields"/>
+          <include name="test_TC_DL_28_fillsAllTheFieldsExceptDocumentOption"/>
         </methods>
-      </class> <!-- tests.PushNotificationTestImproved -->
+      </class> <!-- tests.DocumentLibraryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

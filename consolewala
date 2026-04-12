@@ -1,3 +1,678 @@
-//a[@href='/framework/AgencyCommunication/wpTemplateList' and contains(.,'WhatsApp Template List')]
+[RemoteTestNG] detected TestNG version 7.9.0
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+No session found. Performing login...
+Login completed & saved.
+=== TEST CASE TC_DL_01 EXECUTING ===
+Test Case TC_DL_01 Passed!
+=== TEST CASE TC_DL_03 EXECUTING ===
+Actual Options: [Upload, Access, Update Hashtag(s), Delete]
+test_TC_DL_03 Passed!
+=== TEST CASE TC_DL_04 EXECUTING ===
+test_TC_DL_04 Passed!
+=== TEST CASE TC_DL_17 EXECUTING ===
+=== TEST CASE TC_DL_18 EXECUTING ===
+Document Name validation message verified.
+test_TC_DL_18 Passed!
+=== TEST CASE TC_DL_22 EXECUTING ===
+test_TC_DL_22 Passed!
+=== TEST CASE TC_DL_22_1 EXECUTING ===
+test_TC_DL_22_1 Passed!
+=== TEST CASE TC_DL_22_2 EXECUTING ===
+test_TC_DL_22_2 Passed!
+=== TEST CASE TC_DL_22_3 EXECUTING ===
+test_TC_DL_22_3 Passed!
+=== TEST CASE TC_DL_22_4 EXECUTING ===
+test_TC_DL_22_4 Passed!
+=== TEST CASE TC_DL_22_5 EXECUTING ===
+test_TC_DL_22_5 Passed!
+=== TEST CASE TC_DL_22_6 EXECUTING ===
+test_TC_DL_22_6 Passed!
+=== TEST CASE TC_DL_25 EXECUTING ===
+Description validation message verified.
+test_TC_DL_25 Passed!
+=== TEST CASE TC_DL_28 EXECUTING ===
+=== TEST CASE TC_DL_30 EXECUTING ===
+test_TC_DL_30 Passed!
+=== TEST CASE TC_DL_32 EXECUTING ===
+test_TC_DL_32 Passed!
+=== TEST CASE TC_DL_34 EXECUTING ===
+test_TC_DL_34 Passed!
+=== TEST CASE TC_DL_37 EXECUTING ===
+First document in listing: TestDocument_1776003011236
+Search Result: TestDocument_1776003011236
+test_TC_DL_37 Passed!
+=== TEST CASE TC_DL_38 EXECUTING ===
+test_TC_DL_38 Passed!
+=== TEST CASE TC_DL_39 EXECUTING ===
+Fetched Dynamic Text: TestDocument_1776003011236
+test_TC_DL_39 Passed!
+=== TEST CASE TC_DL_40 EXECUTING ===
+Fetched Dynamic Text: TestDocument_1776002967038
+test_TC_DL_40 Passed!
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_5_UploadingGifImageForThumbnail
+PASSED: tests.DocumentLibraryTest.test_TC_DL_01_takenToDocumentLibraryScreen
+PASSED: tests.DocumentLibraryTest.test_TC_DL_30_fillsAllTheMandatoryAndDocumentOptions
+PASSED: tests.DocumentLibraryTest.test_TC_DL_25_fillsAllMandatoryFieldsExceptDescription
+PASSED: tests.DocumentLibraryTest.test_TC_DL_34_fillsAllTheFieldsWithHashtag
+PASSED: tests.DocumentLibraryTest.test_TC_DL_03_actionsMenuButton
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_2_UploadingDocumentInCsvFormat
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_6_UploadingJpgImageForThumbnail
+PASSED: tests.DocumentLibraryTest.test_TC_DL_39_deleteTheContentAndSearchIt
+PASSED: tests.DocumentLibraryTest.test_TC_DL_38_clickDeleteWithoutSelectingAnyContent
+PASSED: tests.DocumentLibraryTest.test_TC_DL_18_allMandatoryFieldsExceptDocumentName
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_UploadingDocumentInPngFormat
+PASSED: tests.DocumentLibraryTest.test_TC_DL_40_updatingTheAccessOfTheContent
+PASSED: tests.DocumentLibraryTest.test_TC_DL_32_fillsAllTheFieldsAndMakesDownloadable
+PASSED: tests.DocumentLibraryTest.test_TC_DL_37_searchFunctionality
+PASSED: tests.DocumentLibraryTest.test_TC_DL_04_uploadDocumentScreen
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_1_UploadingDocumentInJpgFormat
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_3_UploadingDocumentInXlsxFormat
+PASSED: tests.DocumentLibraryTest.test_TC_DL_22_4_UploadingDocumentInMp4Format
+FAILED: tests.DocumentLibraryTest.test_TC_DL_17_allMandatoryFields
+com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
 
-//a[@title='Delete']
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.DocumentLibraryPage.clickOnUploadOption(DocumentLibraryPage.java:249)
+	at tests.DocumentLibraryTest.test_TC_DL_17_allMandatoryFields(DocumentLibraryTest.java:156)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 36 more
+
+FAILED: tests.DocumentLibraryTest.test_TC_DL_28_fillsAllTheFieldsExceptDocumentOption
+com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at pageObjects.DocumentLibraryPage.clickOnUploadOption(DocumentLibraryPage.java:249)
+	at tests.DocumentLibraryTest.test_TC_DL_28_fillsAllTheFieldsExceptDocumentOption(DocumentLibraryTest.java:487)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\progress.js:78:26)
+    at Frame.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\frames.js:619:23)
+    at FrameDispatcher.waitForSelector (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4330699901019925074\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//a[@href='sp-upload-document.php']") to be visible
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+-   locator resolved to hidden <a href="sp-upload-document.php">…</a>
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 36 more
+
+
+===============================================
+    Default test
+    Tests run: 21, Failures: 2, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 21, Passes: 19, Failures: 2, Skips: 0
+===============================================
+

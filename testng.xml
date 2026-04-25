@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Document Library Suite">
-    <test name="Document Library Tests">
+
+<!--
+    parallel="classes" — runs each test class on its own thread simultaneously.
+    Each class gets its own instance, so instance fields (context, page) are
+    naturally isolated. The shared static Browser is thread-safe for concurrent
+    newContext() calls — no ThreadLocal or code changes needed.
+
+    thread-count="3" — max 3 classes run at the same time.
+    Tune this based on machine resources; 3-4 is the sweet spot for browser tests.
+
+    Why NOT parallel="methods":
+    Methods of the same class share one instance, so context/page (instance fields)
+    would be overwritten by concurrent setUp() calls — a race condition.
+    parallel="classes" avoids this with zero code changes.
+-->
+<suite name="SalesPanda Automation Suite" parallel="classes" thread-count="3">
+
+    <listeners>
+        <!-- Injects RetryAnalyzer into every @Test globally before the suite starts -->
+        <listener class-name="listeners.RetryAnnotationTransformer"/>
+        <!-- Logs pass/fail/skip and embeds screenshots → test-output/extent-report/index.html -->
+        <listener class-name="listeners.ExtentReportListener"/>
+    </listeners>
+
+    <!--
+        All classes extend BaseTest (directly or via SocialAutoPostBaseTest).
+        One shared Browser instance, one @BeforeSuite, one @AfterSuite.
+        Each class runs in parallel on its own thread with its own context + page.
+    -->
+    <test name="SalesPanda Feature Tests">
         <classes>
             <class name="tests.DocumentLibraryTest"/>
+            <class name="tests.PushNotificationTestImproved"/>
+            <class name="tests.PushNotificationDataDrivenTest"/>
+            <class name="tests.SocialAutoPostPlaywrightTest"/>
         </classes>
     </test>
+
 </suite>

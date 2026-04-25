@@ -249,3 +249,457 @@ KTMenu toggles a CSS class to show the dropdown after the click event. This is a
 
 ### Interview talking point
 > "We had a case where a dropdown menu item was in the DOM but always hidden — the waitFor kept timing out. The button used a JS library (KTMenu) to control visibility. The fix was two things: scroll the button into view before clicking so the click lands cleanly, then add a short pause after clicking to let the JS run before checking visibility. This is a common pattern with JS-driven UI components — the element exists in the DOM from the start, but its visible state is toggled by JavaScript after the click event."
+
+---
+
+## 9. What is a strict mode violation in Playwright and how did you fix one?
+
+### The problem
+6 out of 7 Social Auto-Post tests were failing with:
+```
+Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements
+```
+
+Playwright operates in **strict mode by default** — if a locator matches more than one element, it throws immediately instead of silently picking one. This protects you from accidentally interacting with the wrong element.
+
+### Root cause
+The xdsoft datetime picker renders **two** `xdsoft_next` buttons in the DOM at the same time:
+1. Inside `xdsoft_datepicker` — the "next month" arrow (what we wanted)
+2. Inside `xdsoft_timepicker` — a "scroll time" arrow (not what we wanted)
+
+The bare locator matched both, so Playwright threw a strict mode violation every time the test needed to navigate to a future month.
+
+### Why only 1 test passed?
+TC_SAP_01 used `getScheduleDate(10)` which landed on a date in the **current month** — so the next button was never clicked, and the error never triggered. All other tests used larger offsets (20, 25, 140 days) and needed to navigate to a future month.
+
+### The fix — scope the locator to the date panel
+```java
+// BEFORE — matches both date panel and time panel next buttons
+Locator nextButton = page.locator("//button[contains(@class,'xdsoft_next')]");
+
+// AFTER — scoped to xdsoft_datepicker, only matches the month-navigation button
+Locator nextButton = page.locator(
+    "//div[contains(@class,'xdsoft_datepicker')]//button[contains(@class,'xdsoft_next')]"
+);
+```
+
+### Interview talking point
+> "We hit a Playwright strict mode violation where our locator matched two elements — the xdsoft datetime picker renders two 'next' buttons, one for months and one for time scrolling. Playwright doesn't silently pick one like Selenium would — it throws an error, which is actually safer behaviour. The fix was to scope the locator to the parent date panel container so only the month-navigation button matched. This is a good example of why strict mode is valuable — it caught an ambiguous locator that Selenium would have silently gotten wrong half the time."
+
+---
+
+## 10. How do you keep scheduled date fields future-safe in tests?
+
+### The problem
+Tests that schedule posts or access control use a date picker. If you hardcode a date like "April 2026", that date becomes a **past date** as time moves on — the picker disables past dates and the test fails silently.
+
+### The solution — dynamic date helper
+A `getScheduleDate(int daysFromNow)` method in the base class computes the target date at runtime by adding an offset to today:
+
+```java
+protected String[] getScheduleDate(int daysFromNow) {
+    LocalDate future = LocalDate.now().plusDays(daysFromNow);
+    String day       = String.valueOf(future.getDayOfMonth());
+    String monthYear = future.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH)
+                       + " " + future.getYear();
+    return new String[]{ day, monthYear };
+}
+```
+
+All 7 Social Auto-Post tests use `getScheduleDate(1)` — always picks tomorrow. Simple, consistent, and self-maintaining forever.
+
+### Interview talking point
+> "We had hardcoded dates in our tests — things like 'April 2026'. Those dates become past dates as time passes, and the date picker disables them, causing silent failures. We replaced all hardcoded dates with a helper method that computes a future date by adding an offset to today's date using Java's LocalDate. Every test now calls getScheduleDate(1) for tomorrow — the tests will never need updating regardless of when they run."
+
+---
+
+## 11. Why was the Social Auto-Post suite logging in before every test, and how was it fixed?
+
+### The problem
+`SocialAutoPostBaseTest` had a full login sequence inside `@BeforeMethod`:
+```java
+page.navigate(preprod.base.url);
+page.locator("#username").fill(...);
+page.locator("#password").fill(...);
+page.locator("...submit...").evaluate("el => el.click()");
+page.waitForURL("**/AssetLibrary**");
+```
+
+This ran **before every single test** — 7 full logins for a 7-test suite. Each login costs several seconds, slows the suite, and adds an unnecessary point of failure.
+
+### Why it was missed
+`SocialAutoPostBaseTest` was written as a standalone base class and never wired up to use `AuthManager`, which the rest of the framework already used.
+
+### The fix
+Same pattern as `BaseTest`:
+1. `@BeforeSuite` calls `AuthManager.ensureLogin(browser)` — logs in **once**, saves cookies to `auth.json`
+2. `@BeforeMethod` loads `auth.json` via `setStorageStatePath` — restores the session instantly, no login page
+
+```java
+// @BeforeSuite
+AuthManager.ensureLogin(browser);
+
+// @BeforeMethod
+context = browser.newContext(
+    new Browser.NewContextOptions()
+        .setStorageStatePath(Paths.get("auth.json"))
+        .setViewportSize(null)
+);
+page.navigate(ConfigReader.get("preprod.base.url") + "/home");
+```
+
+### Interview talking point
+> "We noticed the Social Auto-Post suite was logging in before every test even though the rest of the framework had an auth state reuse pattern in place. The base class for that feature was written in isolation and never connected to AuthManager. The fix was straightforward — call ensureLogin once in BeforeSuite and load the saved session in BeforeMethod using Playwright's setStorageStatePath. This reduced 7 logins down to 1 per suite run."
+
+---
+
+## 13. How do you handle flaky tests? What is a Retry Analyzer?
+
+### The problem
+Some tests are genuinely flaky — not because the code is wrong, but because of network latency, animation timing on preprod, or a slow server response. Without retries, a single flaky failure marks the entire test as FAILED in the report, making it hard to distinguish real bugs from environmental noise.
+
+### The solution — RetryAnalyzer + IAnnotationTransformer
+
+**Two classes, two responsibilities:**
+
+`RetryAnalyzer` implements `IRetryAnalyzer` — TestNG calls `retry()` after each failure. If we haven't hit the max, we increment and return `true` (retry). Once the limit is reached, return `false` (mark as FAILED).
+
+```java
+public class RetryAnalyzer implements IRetryAnalyzer {
+    private int retryCount = 0;
+    private static final int MAX_RETRY = Integer.parseInt(ConfigReader.get("retry.count"));
+
+    @Override
+    public boolean retry(ITestResult result) {
+        if (retryCount < MAX_RETRY) {
+            retryCount++;
+            return true;  // retry
+        }
+        return false;  // give up, mark as FAILED
+    }
+}
+```
+
+`RetryAnnotationTransformer` implements `IAnnotationTransformer` — called once at suite startup for every `@Test` method. It injects `RetryAnalyzer` into every test annotation automatically.
+
+```java
+public class RetryAnnotationTransformer implements IAnnotationTransformer {
+    @Override
+    public void transform(ITestAnnotation annotation, Class testClass,
+                          Constructor testConstructor, Method testMethod) {
+        annotation.setRetryAnalyzer(RetryAnalyzer.class);  // applied to every @Test globally
+    }
+}
+```
+
+### Why IAnnotationTransformer instead of @Test(retryAnalyzer=...)?
+Without the transformer, you'd write `@Test(retryAnalyzer = RetryAnalyzer.class)` on every single test method — easy to miss and tedious to maintain. The transformer injects it globally in one place.
+
+### Registration in testng.xml
+```xml
+<listeners>
+    <listener class-name="listeners.RetryAnnotationTransformer"/>
+</listeners>
+```
+This must be at the `<suite>` level (not inside `<test>`) so it fires before TestNG processes any test annotations.
+
+### Configuration
+```properties
+# config.properties
+retry.count=2   # 1 original run + 2 retries = 3 total attempts
+```
+
+### Interview talking point
+> "We use a RetryAnalyzer to handle flaky tests caused by environmental instability — things like preprod slowness or animation timing. The key design decision was using IAnnotationTransformer alongside it, which automatically injects the retry analyzer into every test at suite startup. This means we don't have to annotate every single @Test method — one registration in testng.xml covers the entire suite. The max retry count lives in config.properties so we can tune it without touching code."
+
+---
+
+## 15. How is Extent Reports set up and how does it differ from Allure?
+
+### Why two reporting tools?
+They solve different problems:
+- **Allure** — rich, interactive report but requires a CLI (`allure serve`) or a server to render. Better for CI pipelines with a reporting dashboard.
+- **Extent** — generates a **single self-contained HTML file**. No server, no CLI, just open `index.html` in any browser. Better for sharing results quickly or running locally.
+
+Having both means you always have a report you can open instantly (Extent) and a deep-dive report for CI (Allure).
+
+### Files created
+
+| File | Purpose |
+|---|---|
+| `listeners/ExtentReportManager.java` | Singleton that creates `ExtentReports` + configures `ExtentSparkReporter` |
+| `listeners/ExtentReportListener.java` | `ITestListener` — logs pass/fail/skip, embeds screenshot on failure |
+| `utils/TestContext.java` | `ThreadLocal<Page>` holder so the listener can grab the page without coupling to BaseTest |
+
+### Why TestContext.java?
+The listener needs a Playwright `Page` to capture screenshots on failure, but listeners don't have a reference to `BaseTest`. A `public static` field on `BaseTest` would work but couples the base class to the listener. `TestContext` is a neutral holder: `BaseTest.setUp()` writes the page in, the listener reads it out. `ThreadLocal` makes it safe for parallel execution.
+
+### ExtentReportManager — singleton pattern
+```java
+public static synchronized ExtentReports getInstance() {
+    if (extent == null) {
+        ExtentSparkReporter spark = new ExtentSparkReporter("test-output/extent-report/index.html");
+        spark.config().setTheme(Theme.DARK);
+        spark.config().setDocumentTitle("SalesPanda Automation Report");
+        extent = new ExtentReports();
+        extent.attachReporter(spark);
+        extent.setSystemInfo("Environment", ConfigReader.get("env"));
+    }
+    return extent;
+}
+```
+`synchronized` prevents a race condition if two threads both call `getInstance()` at the same time during parallel startup.
+
+### ExtentReportListener — key methods
+```java
+public void onTestStart(ITestResult result) {
+    ExtentTest test = extent.createTest(result.getMethod().getMethodName());
+    extentTest.set(test);  // store in ThreadLocal — each thread has its own ExtentTest
+}
+
+public void onTestFailure(ITestResult result) {
+    extentTest.get().fail(result.getThrowable());
+
+    // Embed screenshot as Base64 — report stays a single portable file
+    byte[] bytes = TestContext.getPage().screenshot(...);
+    String base64 = Base64.getEncoder().encodeToString(bytes);
+    extentTest.get().fail("<img src='data:image/png;base64," + base64 + "'/>");
+}
+
+public void onFinish(ITestContext context) {
+    extent.flush();  // CRITICAL — without flush(), the HTML file is created but stays empty
+}
+```
+
+### Retry interaction
+When a test is retried, TestNG fires `onTestSkipped` (not `onTestFailure`) for each failed attempt that will be retried. The final result fires `onTestSuccess` or `onTestFailure`. This gives a visible audit trail in the report showing how many retries happened.
+
+### Registration in testng.xml
+```xml
+<listener class-name="listeners.ExtentReportListener"/>
+```
+
+### Report location
+```
+test-output/extent-report/index.html
+```
+Open directly in any browser — no command needed.
+
+### Interview talking point
+> "We use both Allure and Extent Reports. Allure is richer but needs a server or CLI to view — it's great for CI pipelines. Extent generates a single HTML file you can open directly in a browser, which is better for quick sharing. The key design decision was adding a TestContext class — a ThreadLocal Page holder — so the Extent listener can capture screenshots on failure without coupling directly to the base test class. This also makes it safe for parallel execution since each thread has its own Page reference."
+
+---
+
+## 14. How do you capture video recordings and traces in Playwright?
+
+### Why both?
+They serve different debugging purposes:
+- **Video** — lets you *watch* exactly what the browser did during the test. Useful for understanding timing issues, wrong clicks, or UI state before a failure.
+- **Trace** — gives you a structured, step-by-step timeline: every action, DOM snapshot, network request, and console log. It's like Chrome DevTools recorded for your entire test. Opened with `npx playwright show-trace`.
+
+### Video Recording
+
+Video is enabled by setting `recordVideoDir` on the `BrowserContext` at creation time:
+
+```java
+if (Boolean.parseBoolean(ConfigReader.get("video.enabled"))) {
+    contextOptions.setRecordVideoDir(Paths.get("test-output/videos"));
+}
+```
+
+Playwright writes the `.webm` file only when `context.close()` is called — that's when the video is finalised.
+
+**On pass:** delete the video to save disk space (no point keeping green test evidence).
+**On fail:** keep the video, print its path so you can watch it immediately.
+
+```java
+context.close();  // must come first — this writes the video file
+
+if (Boolean.parseBoolean(ConfigReader.get("video.enabled")) && page.video() != null) {
+    if (failed) {
+        System.out.println("[Video] Saved → " + page.video().path());
+    } else {
+        Files.deleteIfExists(page.video().path());  // clean up on pass
+    }
+}
+```
+
+### Tracing
+
+Tracing is started after context creation and stopped in `@AfterMethod`:
+
+```java
+// @BeforeMethod — start tracing
+context.tracing().start(new Tracing.StartOptions()
+    .setScreenshots(true)  // screenshot at each action
+    .setSnapshots(true)    // full DOM snapshot — inspect page state at any step in the viewer
+    .setSources(true)      // embeds Java source lines so you see which line triggered each action
+);
+
+// @AfterMethod — save on failure, discard on pass
+if (failed) {
+    context.tracing().stop(new Tracing.StopOptions()
+        .setPath(Paths.get("test-output/traces/" + result.getName() + "-" + System.currentTimeMillis() + ".zip")));
+} else {
+    context.tracing().stop();  // no path = no file written
+}
+```
+
+Timestamp in the filename prevents overwriting when a test is retried (retry 1 and retry 2 both save traces).
+
+### Viewing a trace
+```bash
+npx playwright show-trace test-output/traces/<testName>-<timestamp>.zip
+```
+Opens a browser-based viewer showing the full timeline, screenshots, network tab, console, and source code line.
+
+### Config flags
+Both features are controlled by flags in `config.properties` so they can be turned off for faster local runs:
+```properties
+video.enabled=true
+tracing.enabled=true
+```
+
+### Key ordering rule
+`context.tracing().stop()` must be called **before** `context.close()`. `context.close()` must be called **before** reading `page.video().path()`. Getting this order wrong either corrupts the trace or returns a null video path.
+
+### Interview talking point
+> "Playwright has native support for both video recording and tracing. We record video for every test but only keep it on failure — on pass we delete it to avoid filling disk with green test evidence. Traces go further: they capture the full DOM state, network requests, and console logs at every step, and you can open them in Playwright's trace viewer which looks like Chrome DevTools for your test. Both are toggle-controlled in config so you can disable them for a fast local run and re-enable when you're chasing a bug."
+
+---
+
+## 16. How did you implement parallel execution and why did you choose parallel="classes"?
+
+### The options in TestNG
+
+| Mode | What runs in parallel | Safe with instance fields? |
+|---|---|---|
+| `parallel="methods"` | Each `@Test` method on its own thread | No — same class instance, setUp() overwrites context/page |
+| `parallel="classes"` | Each class on its own thread | Yes — each class gets its own instance |
+| `parallel="tests"` | Each `<test>` XML block on its own thread | Yes — separate instances per block |
+
+### Why `parallel="classes"`
+
+`context` and `page` are **instance fields** on `BaseTest`. When TestNG creates a separate instance for each class (`parallel="classes"`), those fields are naturally isolated — `DocumentLibraryTest` has its own `page`, `PushNotificationTestImproved` has its own `page`. No ThreadLocal, no code changes.
+
+With `parallel="methods"`, multiple methods of the same class run on different threads but share one instance. Two threads calling `setUp()` simultaneously would overwrite each other's `page` — a race condition requiring ThreadLocal everywhere. Not worth the complexity for browser tests.
+
+### Zero code changes required
+`BaseTest` needed no modifications. Instance fields are already the right scope. The only change was adding `parallel="classes" thread-count="3"` to `testng.xml`.
+
+```xml
+<suite name="SalesPanda Automation Suite" parallel="classes" thread-count="3">
+    <test name="SalesPanda Feature Tests">
+        <classes>
+            <class name="tests.DocumentLibraryTest"/>
+            <class name="tests.PushNotificationTestImproved"/>
+            <class name="tests.SocialAutoPostPlaywrightTest"/>
+        </classes>
+    </test>
+</suite>
+```
+
+### Consolidating SocialAutoPostBaseTest
+`SocialAutoPostBaseTest` was previously a standalone class with its own `@BeforeSuite`, `@BeforeMethod`, `@AfterSuite` — duplicating `BaseTest` entirely. It was refactored to **extend `BaseTest`** and keep only its unique `getScheduleDate()` helper. This meant:
+- One browser lifecycle for the entire framework
+- `SocialAutoPostPlaywrightTest` can run in the same parallel pool as other feature tests
+- No risk of two `@BeforeSuite` methods conflicting
+
+### thread-count tuning
+`thread-count="3"` is a safe default for browser tests on a standard dev machine. Each browser context uses ~200-300MB RAM. Going higher than 4-5 threads usually causes more slowdown than speedup due to resource contention. Tune based on your machine.
+
+### Interview talking point
+> "We run tests in parallel at the class level — parallel='classes' in testng.xml. Each test class gets its own instance of BaseTest, so the context and page instance fields are naturally isolated between threads — no ThreadLocal needed. We chose this over parallel='methods' because parallel methods would share one class instance and cause concurrent setUp() calls to overwrite each other's page object. The class-level approach gave us parallelism with zero code changes. We also consolidated our two base classes into one inheritance chain so all three feature suites share the same browser lifecycle."
+
+---
+
+## 17. How did you implement Data Driven Testing?
+
+### The approach — three layers
+
+| Layer | File | Responsibility |
+|---|---|---|
+| Data | `PushNotificationData.xlsx` | Holds the test data — editable by non-coders without touching Java |
+| Reader | `utils/ExcelReader.java` | Opens the workbook, reads rows, returns `Object[][]` |
+| Provider | `dataproviders/DataProviders.java` | `@DataProvider` method that calls ExcelReader — test classes reference this |
+| Test | `PushNotificationDataDrivenTest.java` | `@Test` method receives parameters, runs once per Excel row |
+
+### Why Excel over hardcoded data?
+A `@DataProvider` can return inline `Object[][]` (hardcoded arrays). That works for a handful of values but becomes a maintenance burden — a non-technical stakeholder can't add test cases by editing Java. With Excel, anyone can open the file, add a row, and the next test run picks it up with zero code changes.
+
+### ExcelReader — key design decisions
+
+```java
+public static Object[][] getTestData(String filePath, String sheetName) throws IOException {
+    // row 0 = header, skipped. getLastRowNum() returns data row count exactly.
+    int rowCount = sheet.getLastRowNum();
+    Object[][] data = new Object[rowCount][colCount];
+    for (int i = 1; i <= rowCount; i++) { ... }  // start at 1 to skip header
+}
+```
+
+NUMERIC cells are a common trap — Excel stores integers as doubles (`287.0`). The reader checks if the value is a whole number and casts to `long` to avoid returning `"287.0"` instead of `"287"`.
+
+### DataProviders — centralised, static, reusable
+```java
+@DataProvider(name = "pushNotificationData")
+public static Object[][] pushNotificationData() throws IOException {
+    return ExcelReader.getTestData(EXCEL_PATH, "NotificationData");
+}
+```
+`static` means any test class can reference it via `dataProviderClass = DataProviders.class` without instantiating anything. Centralising all providers in one file makes the data sources easy to find.
+
+### Test method — one method, N executions
+```java
+@Test(dataProvider = "pushNotificationData", dataProviderClass = DataProviders.class)
+public void test_TC_DD_PN_createNotificationFromExcel(
+        String testCaseId, String name, String message,
+        String customLink, String scheduleTime, String expectedToast) {
+    ...
+    Assert.assertEquals(pushNotificationPage.getToastMessageText(), expectedToast,
+            "Toast mismatch for: " + testCaseId);
+}
+```
+TestNG calls this method once per row. With 3 rows it runs 3 times — each with different data. The `testCaseId` parameter is included in the assertion message so you know exactly which row failed without opening the Excel.
+
+### Excel columns for Push Notification
+| Column | Purpose |
+|---|---|
+| `testCaseId` | Identifier in reports — e.g. TC_DD_PN_01 |
+| `notificationName` | Text entered in Name field |
+| `notificationMessage` | Text entered in Message field |
+| `customLink` | URL for Custom Link field |
+| `scheduleTime` | Time in HH:mm — date is always +30 days dynamic in code |
+| `expectedToast` | Expected success message to assert |
+
+### Generating the Excel file
+`TestDataGenerator.java` has a `main()` that creates the `.xlsx` using POI. Run it once after cloning the repo — it outputs to `src/test/resources/testdata/PushNotificationData.xlsx`. The generator is committed as Java source, so the data structure is version-controlled even though the binary file is gitignored.
+
+### Interview talking point
+> "We implemented data-driven testing with TestNG's DataProvider and Apache POI for Excel. The key design was keeping the data, reader, and provider in separate layers — ExcelReader handles all the POI boilerplate, DataProviders exposes named providers that test classes reference, and the test method itself just receives parameters and runs. One method handles N rows. We used Excel over JSON for this feature because stakeholders can add test cases by editing a spreadsheet without touching code. A known trap with POI is numeric cells — Excel stores integers as doubles, so we added a whole-number check in ExcelReader to avoid getting '287.0' instead of '287'."
+
+---
+
+## 12. Why does window resolution matter in Playwright and how did you fix a mismatch?
+
+### The problem
+Social Auto-Post tests were running at a smaller resolution than Document Library tests, even though both used `--start-maximized`. The UI was cramped — elements near the bottom or right edge were being partially cut off.
+
+### Root cause
+`--start-maximized` alone is **unreliable in Playwright** — it hints to the OS to maximise the window, but Playwright's viewport setting overrides the actual rendering size. `BaseTest` had already solved this with:
+
+```java
+.setArgs(Arrays.asList(
+    "--start-maximized",
+    "--window-position=0,0",
+    "--window-size=1366,768"   // explicitly pins the resolution
+))
+```
+
+`SocialAutoPostBaseTest` was missing `--window-size=1366,768` — so `--start-maximized` fired but with no explicit size, the browser defaulted to a smaller resolution.
+
+### The fix
+Add the same three launch args to `SocialAutoPostBaseTest` to match `BaseTest`.
+
+### Interview talking point
+> "We had inconsistent resolution between two test suites — one looked fine, the other was cramped. Both used --start-maximized but only one had --window-size set explicitly. In Playwright, --start-maximized alone doesn't guarantee a specific resolution because Playwright's viewport can override the OS window size. Pinning it with --window-size ensures consistent rendering across all suites regardless of the machine's screen settings."

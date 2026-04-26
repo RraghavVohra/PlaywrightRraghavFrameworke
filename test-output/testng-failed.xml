@@ -7,21 +7,15 @@
   </listeners>
   <test thread-count="3" parallel="classes" name="SalesPanda Feature Tests(failed)">
     <classes>
-      <class name="tests.SocialAutoPostPlaywrightTest">
+      <class name="tests.ImageCreationPlaywrightTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL"/>
           <include name="closeAll"/>
-          <include name="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription"/>
-          <include name="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl"/>
-          <include name="test_TC_SAP_03_whenPostedWithVideo"/>
           <include name="globalSetup"/>
-          <include name="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding"/>
-          <include name="test_TC_SAP_01_whenPostedWithPngImageWithCobranding"/>
-          <include name="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption"/>
+          <include name="TC_IC_01_imageCreationThroughAssetLibrary"/>
         </methods>
-      </class> <!-- tests.SocialAutoPostPlaywrightTest -->
+      </class> <!-- tests.ImageCreationPlaywrightTest -->
     </classes>
   </test> <!-- SalesPanda Feature Tests(failed) -->
 </suite> <!-- Failed suite [SalesPanda Automation Suite] -->

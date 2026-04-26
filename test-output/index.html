@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="navigator-link">
-              <span class="suite-name border-passed">SalesPanda Automation Suite</span>
+              <span class="suite-name border-failed">SalesPanda Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,51 +92,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,  2 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="hide-methods passed suite-SalesPanda_Automation_Suite"> (hide)</a> <!-- hide-methods passed suite-SalesPanda_Automation_Suite -->
-                      <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="show-methods passed suite-SalesPanda_Automation_Suite"> (show)</a> <!-- show-methods passed suite-SalesPanda_Automation_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="hide-methods failed suite-SalesPanda_Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-SalesPanda_Automation_Suite -->
+                      <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="show-methods failed suite-SalesPanda_Automation_Suite"> (show)</a> <!-- show-methods failed suite-SalesPanda_Automation_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-SalesPanda_Automation_Suite">
+                    <div class="method-list-content failed suite-SalesPanda_Automation_Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_01_whenPostedWithPngImageWithCobranding">test_TC_SAP_01_whenPostedWithPngImageWithCobranding</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.ImageCreationPlaywrightTest" class="method navigator-link" hash-for-method="TC_IC_01_imageCreationThroughAssetLibrary">TC_IC_01_imageCreationThroughAssetLibrary</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SalesPanda_Automation_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="hide-methods skipped suite-SalesPanda_Automation_Suite"> (hide)</a> <!-- hide-methods skipped suite-SalesPanda_Automation_Suite -->
+                      <a href="#" panel-name="suite-SalesPanda_Automation_Suite" class="show-methods skipped suite-SalesPanda_Automation_Suite"> (show)</a> <!-- show-methods skipped suite-SalesPanda_Automation_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-SalesPanda_Automation_Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.ImageCreationPlaywrightTest" class="method navigator-link" hash-for-method="TC_IC_01_imageCreationThroughAssetLibrary">TC_IC_01_imageCreationThroughAssetLibrary</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding">test_TC_SAP_02_whenPostedWithJpgImageWithCobranding</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.ImageCreationPlaywrightTest" class="method navigator-link" hash-for-method="TC_IC_01_imageCreationThroughAssetLibrary">TC_IC_01_imageCreationThroughAssetLibrary</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_03_whenPostedWithVideo">test_TC_SAP_03_whenPostedWithVideo</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription">test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl">test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption">test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SalesPanda_Automation_Suite" title="tests.SocialAutoPostPlaywrightTest" class="method navigator-link" hash-for-method="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL">test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-SalesPanda_Automation_Suite -->
+                    </div> <!-- method-list-content skipped suite-SalesPanda_Automation_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -148,63 +137,208 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SalesPanda_Automation_Suite" class="panel SalesPanda_Automation_Suite">
-          <div class="suite-SalesPanda_Automation_Suite-class-passed">
+          <div class="suite-SalesPanda_Automation_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.SocialAutoPostPlaywrightTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">tests.ImageCreationPlaywrightTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_TC_SAP_01_whenPostedWithPngImageWithCobranding">
-                  </a> <!-- test_TC_SAP_01_whenPostedWithPngImageWithCobranding -->
-                  <span class="method-name">test_TC_SAP_01_whenPostedWithPngImageWithCobranding</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding">
-                  </a> <!-- test_TC_SAP_02_whenPostedWithJpgImageWithCobranding -->
-                  <span class="method-name">test_TC_SAP_02_whenPostedWithJpgImageWithCobranding</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_TC_SAP_03_whenPostedWithVideo">
-                  </a> <!-- test_TC_SAP_03_whenPostedWithVideo -->
-                  <span class="method-name">test_TC_SAP_03_whenPostedWithVideo</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription">
-                  </a> <!-- test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription -->
-                  <span class="method-name">test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl">
-                  </a> <!-- test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl -->
-                  <span class="method-name">test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption">
-                  </a> <!-- test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption -->
-                  <span class="method-name">test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL">
-                  </a> <!-- test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL -->
-                  <span class="method-name">test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL</span>
+                  <a name="TC_IC_01_imageCreationThroughAssetLibrary">
+                  </a> <!-- TC_IC_01_imageCreationThroughAssetLibrary -->
+                  <span class="method-name">TC_IC_01_imageCreationThroughAssetLibrary</span>
+                  <div class="stack-trace">com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 60000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;//input[@type=&apos;file&apos; and @accept=&apos;image/*&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.dispatchEventImpl(FrameImpl.java:291)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$dispatchEvent$11(FrameImpl.java:280)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.dispatchEvent(FrameImpl.java:280)
+	at com.microsoft.playwright.impl.LocatorImpl.dispatchEvent(LocatorImpl.java:181)
+	at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2624)
+	at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2672)
+	at pageObjects.ImageCreationPagePW.uploadImage(ImageCreationPagePW.java:339)
+	at tests.ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary(ImageCreationPlaywrightTest.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 60000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;//input[@type=&apos;file&apos; and @accept=&apos;image/*&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 30 more
+... Removed 11 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SalesPanda_Automation_Suite-class-passed -->
+          </div> <!-- suite-SalesPanda_Automation_Suite-class-failed -->
+          <div class="suite-SalesPanda_Automation_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.ImageCreationPlaywrightTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_IC_01_imageCreationThroughAssetLibrary">
+                  </a> <!-- TC_IC_01_imageCreationThroughAssetLibrary -->
+                  <span class="method-name">TC_IC_01_imageCreationThroughAssetLibrary</span>
+                  <div class="stack-trace">com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 60000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;//input[@type=&apos;file&apos; and @accept=&apos;image/*&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.dispatchEventImpl(FrameImpl.java:291)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$dispatchEvent$11(FrameImpl.java:280)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.dispatchEvent(FrameImpl.java:280)
+	at com.microsoft.playwright.impl.LocatorImpl.dispatchEvent(LocatorImpl.java:181)
+	at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2624)
+	at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2672)
+	at pageObjects.ImageCreationPagePW.uploadImage(ImageCreationPagePW.java:339)
+	at tests.ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary(ImageCreationPlaywrightTest.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 60000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;//input[@type=&apos;file&apos; and @accept=&apos;image/*&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 30 more
+... Removed 11 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_IC_01_imageCreationThroughAssetLibrary">
+                  </a> <!-- TC_IC_01_imageCreationThroughAssetLibrary -->
+                  <span class="method-name">TC_IC_01_imageCreationThroughAssetLibrary</span>
+                  <div class="stack-trace">com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 60000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;//input[@type=&apos;file&apos; and @accept=&apos;image/*&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.dispatchEventImpl(FrameImpl.java:291)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$dispatchEvent$11(FrameImpl.java:280)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.dispatchEvent(FrameImpl.java:280)
+	at com.microsoft.playwright.impl.LocatorImpl.dispatchEvent(LocatorImpl.java:181)
+	at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2624)
+	at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2672)
+	at pageObjects.ImageCreationPagePW.uploadImage(ImageCreationPagePW.java:339)
+	at tests.ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary(ImageCreationPlaywrightTest.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 60000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;//input[@type=&apos;file&apos; and @accept=&apos;image/*&apos;]&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 30 more
+... Removed 11 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SalesPanda_Automation_Suite-class-skipped -->
         </div> <!-- panel SalesPanda_Automation_Suite -->
         <div panel-name="test-xml-SalesPanda_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -221,7 +355,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;3&quot; parallel=&quot;classes&quot; name=&quot;SalesPanda Feature Tests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.SocialAutoPostPlaywrightTest&quot;/&gt;
+      &lt;class name=&quot;tests.ImageCreationPlaywrightTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- SalesPanda Feature Tests --&gt;
 &lt;/suite&gt; &lt;!-- SalesPanda Automation Suite --&gt;
@@ -261,40 +395,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_TC_SAP_03_whenPostedWithVideo')
-data.setCell(0, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(0, 3, 24641);
+data.setCell(0, 1, 'TC_IC_01_imageCreationThroughAssetLibrary')
+data.setCell(0, 2, 'tests.ImageCreationPlaywrightTest')
+data.setCell(0, 3, 88113);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_TC_SAP_01_whenPostedWithPngImageWithCobranding')
-data.setCell(1, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(1, 3, 21537);
+data.setCell(1, 1, 'TC_IC_01_imageCreationThroughAssetLibrary')
+data.setCell(1, 2, 'tests.ImageCreationPlaywrightTest')
+data.setCell(1, 3, 87057);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL')
-data.setCell(2, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(2, 3, 20552);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription')
-data.setCell(3, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(3, 3, 20049);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption')
-data.setCell(4, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(4, 3, 19945);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl')
-data.setCell(5, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(5, 3, 19381);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'test_TC_SAP_02_whenPostedWithJpgImageWithCobranding')
-data.setCell(6, 2, 'tests.SocialAutoPostPlaywrightTest')
-data.setCell(6, 3, 18599);
+data.setCell(2, 1, 'TC_IC_01_imageCreationThroughAssetLibrary')
+data.setCell(2, 2, 'tests.ImageCreationPlaywrightTest')
+data.setCell(2, 3, 86069);
 window.suiteTableData['SalesPanda_Automation_Suite']= { tableData: data, tableDiv: 'times-div-SalesPanda_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-SalesPanda_Automation_Suite">
               </div> <!-- times-div-SalesPanda_Automation_Suite -->
             </div> <!-- times-div -->
@@ -320,98 +438,52 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.SocialAutoPostPlaywrightTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.ImageCreationPlaywrightTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">globalSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">17267 ms</span>
+                <span class="method-start">16628 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test_TC_SAP_01_whenPostedWithPngImageWithCobranding</span>
-                <span class="method-start">25556 ms</span>
+                <span class="method-name">TC_IC_01_imageCreationThroughAssetLibrary</span>
+                <span class="method-start">27099 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_01_whenPostedWithPngImageWithCobranding status=SUCCESS method=SocialAut...)</span>
-                <span class="method-start">47210 ms</span>
+                <span class="method-name">tearDown([TestResult name=TC_IC_01_imageCreationThroughAssetLibrary status=SKIP method=ImageCreationPlaywrigh...)</span>
+                <span class="method-start">113291 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">48761 ms</span>
+                <span class="method-start">127466 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test_TC_SAP_02_whenPostedWithJpgImageWithCobranding</span>
-                <span class="method-start">55223 ms</span>
+                <span class="method-name">TC_IC_01_imageCreationThroughAssetLibrary</span>
+                <span class="method-start">139758 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_02_whenPostedWithJpgImageWithCobranding status=SUCCESS method=SocialAut...)</span>
-                <span class="method-start">73835 ms</span>
+                <span class="method-name">tearDown([TestResult name=TC_IC_01_imageCreationThroughAssetLibrary status=SKIP method=ImageCreationPlaywrigh...)</span>
+                <span class="method-start">227898 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">74512 ms</span>
+                <span class="method-start">242958 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test_TC_SAP_03_whenPostedWithVideo</span>
-                <span class="method-start">81129 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_IC_01_imageCreationThroughAssetLibrary</span>
+                <span class="method-start">250870 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_03_whenPostedWithVideo status=SUCCESS method=SocialAutoPostPlaywrightTe...)</span>
-                <span class="method-start">105800 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">108200 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription</span>
-                <span class="method-start">116396 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription status=SUCCESS m...)</span>
-                <span class="method-start">136463 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">137494 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl</span>
-                <span class="method-start">143997 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl status=SUCCESS method=Social...)</span>
-                <span class="method-start">163416 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">164121 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption</span>
-                <span class="method-start">170882 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption status=SUCCESS method=Socia...)</span>
-                <span class="method-start">190847 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">191434 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL</span>
-                <span class="method-start">199262 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL status=SUCCESS method=Soc...)</span>
-                <span class="method-start">219821 ms</span>
+                <span class="method-name">tearDown([TestResult name=TC_IC_01_imageCreationThroughAssetLibrary status=FAILURE method=ImageCreationPlaywr...)</span>
+                <span class="method-start">338399 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">closeAll</span>
-                <span class="method-start">221788 ms</span>
+                <span class="method-start">357374 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

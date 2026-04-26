@@ -34,7 +34,9 @@
             <!-- <class name="tests.DocumentLibraryTest"/> -->
             <!-- <class name="tests.PushNotificationTestImproved"/> -->
             <!-- <class name="tests.PushNotificationDataDrivenTest"/> -->
-            <class name="tests.SocialAutoPostPlaywrightTest"/>
+            <!-- <class name="tests.SocialAutoPostPlaywrightTest"/> -->
+            <!-- Image Creation — Asset Library → Add New Asset → Social Post → Publish -->
+            <class name="tests.ImageCreationPlaywrightTest"/>
         </classes>
     </test>
 

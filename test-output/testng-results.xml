@@ -1,154 +1,333 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results retried="2" ignored="2" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-26T17:56:35 IST" name="SalesPanda Automation Suite" finished-at="2026-04-26T17:59:59 IST" duration-ms="203809">
+  <suite started-at="2026-04-26T21:01:29 IST" name="SalesPanda Automation Suite" finished-at="2026-04-26T21:07:09 IST" duration-ms="339346">
     <groups>
     </groups>
-    <test started-at="2026-04-26T17:56:35 IST" name="SalesPanda Feature Tests" finished-at="2026-04-26T17:59:59 IST" duration-ms="203809">
-      <class name="tests.SocialAutoPostPlaywrightTest">
-        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:56:19 IST" name="globalSetup" finished-at="2026-04-26T17:56:35 IST" duration-ms="16862" status="PASS">
+    <test started-at="2026-04-26T21:01:29 IST" name="SalesPanda Feature Tests" finished-at="2026-04-26T21:07:09 IST" duration-ms="339346">
+      <class name="tests.ImageCreationPlaywrightTest">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:01:13 IST" name="globalSetup" finished-at="2026-04-26T21:01:29 IST" duration-ms="16365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:56:36 IST" name="setUp" finished-at="2026-04-26T17:56:43 IST" duration-ms="7393" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:01:29 IST" name="setUp" finished-at="2026-04-26T21:01:38 IST" duration-ms="8504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_01_whenPostedWithPngImageWithCobranding()[pri:1, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:56:44 IST" name="test_TC_SAP_01_whenPostedWithPngImageWithCobranding" finished-at="2026-04-26T17:57:06 IST" duration-ms="21537" status="PASS">
+        <test-method retried="true" signature="TC_IC_01_imageCreationThroughAssetLibrary()[pri:1, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:01:40 IST" name="TC_IC_01_imageCreationThroughAssetLibrary" finished-at="2026-04-26T21:03:06 IST" duration-ms="86069" status="SKIP">
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.dispatchEventImpl(FrameImpl.java:291)
+at com.microsoft.playwright.impl.FrameImpl.lambda$dispatchEvent$11(FrameImpl.java:280)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.dispatchEvent(FrameImpl.java:280)
+at com.microsoft.playwright.impl.LocatorImpl.dispatchEvent(LocatorImpl.java:181)
+at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2624)
+at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2672)
+at pageObjects.ImageCreationPagePW.uploadImage(ImageCreationPagePW.java:339)
+at tests.ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary(ImageCreationPlaywrightTest.java:97)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_TC_SAP_01_whenPostedWithPngImageWithCobranding -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:06 IST" name="tearDown" finished-at="2026-04-26T17:57:07 IST" duration-ms="1546" status="PASS">
+        </test-method> <!-- TC_IC_01_imageCreationThroughAssetLibrary -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:03:06 IST" name="tearDown" finished-at="2026-04-26T21:03:20 IST" duration-ms="14171" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_TC_SAP_01_whenPostedWithPngImageWithCobranding status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_01_whenPostedWithPngImageWithCobranding()[pri:1, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+                <![CDATA[[TestResult name=TC_IC_01_imageCreationThroughAssetLibrary status=SKIP method=ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary()[pri:1, instance:tests.ImageCreationPlaywrightTest@45aca496] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:07 IST" name="setUp" finished-at="2026-04-26T17:57:14 IST" duration-ms="6459" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:03:20 IST" name="setUp" finished-at="2026-04-26T21:03:33 IST" duration-ms="12255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding()[pri:2, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:14 IST" name="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding" finished-at="2026-04-26T17:57:32 IST" duration-ms="18599" status="PASS">
+        <test-method retried="true" signature="TC_IC_01_imageCreationThroughAssetLibrary()[pri:1, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:03:33 IST" name="TC_IC_01_imageCreationThroughAssetLibrary" finished-at="2026-04-26T21:05:01 IST" duration-ms="88113" status="SKIP">
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.dispatchEventImpl(FrameImpl.java:291)
+at com.microsoft.playwright.impl.FrameImpl.lambda$dispatchEvent$11(FrameImpl.java:280)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.dispatchEvent(FrameImpl.java:280)
+at com.microsoft.playwright.impl.LocatorImpl.dispatchEvent(LocatorImpl.java:181)
+at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2624)
+at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2672)
+at pageObjects.ImageCreationPagePW.uploadImage(ImageCreationPagePW.java:339)
+at tests.ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary(ImageCreationPlaywrightTest.java:97)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_TC_SAP_02_whenPostedWithJpgImageWithCobranding -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:32 IST" name="tearDown" finished-at="2026-04-26T17:57:33 IST" duration-ms="674" status="PASS">
+        </test-method> <!-- TC_IC_01_imageCreationThroughAssetLibrary -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:05:01 IST" name="tearDown" finished-at="2026-04-26T21:05:16 IST" duration-ms="15057" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_TC_SAP_02_whenPostedWithJpgImageWithCobranding status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_02_whenPostedWithJpgImageWithCobranding()[pri:2, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+                <![CDATA[[TestResult name=TC_IC_01_imageCreationThroughAssetLibrary status=SKIP method=ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary()[pri:1, instance:tests.ImageCreationPlaywrightTest@45aca496] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:33 IST" name="setUp" finished-at="2026-04-26T17:57:40 IST" duration-ms="6575" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:05:16 IST" name="setUp" finished-at="2026-04-26T21:05:24 IST" duration-ms="7910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_03_whenPostedWithVideo()[pri:3, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:40 IST" name="test_TC_SAP_03_whenPostedWithVideo" finished-at="2026-04-26T17:58:04 IST" duration-ms="24641" status="PASS">
+        <test-method signature="TC_IC_01_imageCreationThroughAssetLibrary()[pri:1, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:05:24 IST" name="TC_IC_01_imageCreationThroughAssetLibrary" finished-at="2026-04-26T21:06:51 IST" duration-ms="87057" status="FAIL">
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.dispatchEventImpl(FrameImpl.java:291)
+at com.microsoft.playwright.impl.FrameImpl.lambda$dispatchEvent$11(FrameImpl.java:280)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.dispatchEvent(FrameImpl.java:280)
+at com.microsoft.playwright.impl.LocatorImpl.dispatchEvent(LocatorImpl.java:181)
+at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2624)
+at com.microsoft.playwright.Locator.dispatchEvent(Locator.java:2672)
+at pageObjects.ImageCreationPagePW.uploadImage(ImageCreationPagePW.java:339)
+at tests.ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary(ImageCreationPlaywrightTest.java:97)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 60000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 60000ms exceeded.
+    at ProgressController.run (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\progress.js:78:26)
+    at Frame._callOnElementOnceMatches (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:1429:23)
+    at Frame.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\frames.js:696:16)
+    at FrameDispatcher.dispatchEvent (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\frameDispatcher.js:110:24)
+    at FrameDispatcher._handleCommand (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\admin\AppData\Local\Temp\playwright-java-4013487674022283618\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("//input[@type='file' and @accept='image/*']")
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_TC_SAP_03_whenPostedWithVideo -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:04 IST" name="tearDown" finished-at="2026-04-26T17:58:07 IST" duration-ms="2397" status="PASS">
+        </test-method> <!-- TC_IC_01_imageCreationThroughAssetLibrary -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:06:51 IST" name="tearDown" finished-at="2026-04-26T21:07:09 IST" duration-ms="17283" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_TC_SAP_03_whenPostedWithVideo status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_03_whenPostedWithVideo()[pri:3, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+                <![CDATA[[TestResult name=TC_IC_01_imageCreationThroughAssetLibrary status=FAILURE method=ImageCreationPlaywrightTest.TC_IC_01_imageCreationThroughAssetLibrary()[pri:1, instance:tests.ImageCreationPlaywrightTest@45aca496] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:07 IST" name="setUp" finished-at="2026-04-26T17:58:15 IST" duration-ms="8186" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription()[pri:4, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:15 IST" name="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription" finished-at="2026-04-26T17:58:35 IST" duration-ms="20049" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:35 IST" name="tearDown" finished-at="2026-04-26T17:58:36 IST" duration-ms="1028" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription()[pri:4, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:36 IST" name="setUp" finished-at="2026-04-26T17:58:43 IST" duration-ms="6501" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl()[pri:5, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:43 IST" name="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl" finished-at="2026-04-26T17:59:02 IST" duration-ms="19381" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:02 IST" name="tearDown" finished-at="2026-04-26T17:59:03 IST" duration-ms="702" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl()[pri:5, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:03 IST" name="setUp" finished-at="2026-04-26T17:59:09 IST" duration-ms="6757" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption()[pri:6, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:09 IST" name="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption" finished-at="2026-04-26T17:59:29 IST" duration-ms="19945" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:29 IST" name="tearDown" finished-at="2026-04-26T17:59:30 IST" duration-ms="584" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption()[pri:6, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:30 IST" name="setUp" finished-at="2026-04-26T17:59:38 IST" duration-ms="7819" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL()[pri:7, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:38 IST" name="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL" finished-at="2026-04-26T17:59:58 IST" duration-ms="20552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:58 IST" name="tearDown" finished-at="2026-04-26T17:59:59 IST" duration-ms="888" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL()[pri:7, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="closeAll()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T18:00:00 IST" name="closeAll" finished-at="2026-04-26T18:00:01 IST" duration-ms="879" status="PASS">
+        <test-method is-config="true" signature="closeAll()[pri:0, instance:tests.ImageCreationPlaywrightTest@45aca496]" started-at="2026-04-26T21:07:10 IST" name="closeAll" finished-at="2026-04-26T21:07:11 IST" duration-ms="1255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeAll -->
-      </class> <!-- tests.SocialAutoPostPlaywrightTest -->
+      </class> <!-- tests.ImageCreationPlaywrightTest -->
     </test> <!-- SalesPanda Feature Tests -->
   </suite> <!-- SalesPanda Automation Suite -->
 </testng-results>

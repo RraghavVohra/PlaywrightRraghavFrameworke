@@ -1385,3 +1385,98 @@ social.partner.value=287    # 287 on preprod, 478 on prod
 | `ThreadLocal<Page>` in TestContext | Each thread has its own Page — no cross-contamination in parallel runs |
 | `IAnnotationTransformer` for retry | Applies `RetryAnalyzer` globally — no need to annotate every `@Test` |
 | Dynamic dates via `LocalDate` | Tests never expire — no manual date updates needed |
+
+---
+
+## 20. How do you handle file uploads in Playwright? (Image Creation feature)
+
+This is one of the most common practical interview questions once you mention Playwright.
+There are **two completely different techniques** depending on whether the upload control is an HTML element or a native OS dialog.
+
+---
+
+### Technique 1 — Native OS file dialog (`waitForFileChooser`)
+
+Used when: clicking a **button** opens the operating system's "Open File" window (not an HTML element).
+
+**Selenium approach (painful):**
+You had to use the `Robot` class to simulate keyboard input — copy the file path to the clipboard, press CTRL+V, press ENTER. Fragile, platform-dependent, not readable.
+
+```java
+Robot robot = new Robot();
+StringSelection selection = new StringSelection("C:\\path\\to\\file.png");
+Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+robot.keyPress(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_V);
+robot.keyRelease(KeyEvent.VK_V);
+robot.keyRelease(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_ENTER);
+robot.keyRelease(KeyEvent.VK_ENTER);
+```
+
+**Playwright approach (clean):**
+`page.waitForFileChooser()` registers a listener for the upcoming OS dialog.
+The lambda inside the call triggers the click. Playwright intercepts the dialog before it opens and fills it with `setFiles()`.
+
+```java
+// The click that opens the dialog goes INSIDE the lambda — critical ordering
+FileChooser fileChooser = page.waitForFileChooser(() ->
+    page.locator("//button[normalize-space()='Attach']").click()
+);
+fileChooser.setFiles(Paths.get(ConfigReader.get("image.attach.file")));
+```
+
+> **Why the lambda must contain the click:** If you click first and call `waitForFileChooser()` after, the event has already fired and Playwright misses it. The listener must be registered before the click.
+
+---
+
+### Technique 2 — Hidden HTML file input (`setInputFiles`)
+
+Used when: there is a hidden `<input type="file">` element in the DOM (no button opens a dialog).
+
+**Selenium approach:**
+```java
+WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
+fileInput.sendKeys("C:\\path\\to\\image.jpg");  // sendKeys on a hidden input
+```
+
+**Playwright approach:**
+```java
+page.locator("//input[@type='file' and @accept='image/*']")
+    .setInputFiles(Paths.get(ConfigReader.get("image.upload.file")));
+```
+
+Same concept (`sendKeys` → `setInputFiles`), just cleaner API. Works even on hidden inputs because `setInputFiles` bypasses the visibility check intentionally.
+
+---
+
+### How to tell which technique to use
+
+| Scenario | Technique |
+|---|---|
+| A button click opens the OS "Open File" window | `waitForFileChooser()` |
+| A hidden `<input type="file">` exists in the HTML | `setInputFiles()` |
+
+Inspect the page in DevTools. If you can find an `<input type="file">` element → use `setInputFiles`. If the upload is triggered by a button with no visible file input in the DOM → use `waitForFileChooser`.
+
+---
+
+### Why `setForce(true)` throughout this feature
+
+Several steps in this flow use `.click(new Locator.ClickOptions().setForce(true))`.
+
+**The problem:** The app renders an overlay (`div.overlay-bg`) while dropdowns and dialogs are open. When that overlay is still fading out, Playwright's default `click()` detects that the target element is "covered" by the overlay and throws an error.
+
+**The solution:** `setForce(true)` tells Playwright to skip the "is this element covered?" check and fire the click directly on the target. This is the Playwright equivalent of:
+```java
+// Selenium
+((JavascriptExecutor) driver).executeScript("arguments[0].click()", element);
+```
+
+**Rule of thumb:** Try a regular `click()` first. If you consistently see `ElementInterceptedException` or similar, switch to `setForce(true)`. Don't use force everywhere by default — it can mask real UI bugs.
+
+---
+
+### Interview talking point
+> "The Image Creation feature taught me that Playwright has two distinct file upload patterns. The first — `waitForFileChooser()` — handles native OS dialogs by intercepting the browser's file chooser event before the dialog even opens. In Selenium, the same thing required the Robot class with clipboard tricks, which was fragile and platform-specific. The second — `setInputFiles()` — targets a hidden `<input type="file">` element directly in the DOM, equivalent to Selenium's `sendKeys()` on a hidden input. Knowing which one to use comes down to inspecting the DOM: if there's a file input element, use `setInputFiles`; if it's a button that opens an OS dialog, use `waitForFileChooser`."
+

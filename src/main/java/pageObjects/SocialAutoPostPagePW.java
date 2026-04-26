@@ -94,10 +94,12 @@ public class SocialAutoPostPagePW {
     }
 
     public void clickOnSelectPartnerCategory() {
-        // Search term and partner value are driven from config so this works on both
-        // preprod (value=287) and prod (value=478) without any code change.
+        // Partner value differs per environment — look up using env-specific key so switching
+        // environments in config.properties automatically picks the correct checkbox value.
+        String env = ConfigReader.get("env");
+        String partnerValue = ConfigReader.get("social.partner.value." + env);
         page.locator("#searchBox").fill(ConfigReader.get("social.partner.search"));
-        page.locator("//input[@value='" + ConfigReader.get("social.partner.value") + "']").click();
+        page.locator("//input[@value='" + partnerValue + "']").click();
     }
 
     public void clickOnStaticText() {

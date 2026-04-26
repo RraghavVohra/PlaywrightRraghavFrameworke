@@ -5,6 +5,271 @@ Use this to confidently answer questions in interviews.
 
 ---
 
+## 0. Overview — Two Projects, One Journey
+
+You have built two automation frameworks from scratch against a real SaaS application (SalesPanda / preprod + prod environments). Both are on GitHub and demonstrate a clear learning arc.
+
+### Project 1 — Selenium Java PageObjectModel (`/PageObjectModel`)
+- **Stack:** Selenium 4, TestNG, Java, Extent Reports, Maven
+- **Pattern:** Page Object Model — locators and actions in page classes, test logic in test classes
+- **Features automated:** Login, Push Notification, Document Library, Social Auto-Post, Image/PDF/Video Creation, Search
+- **Supporting utilities:** `WaitUtils` (centralised explicit waits), `Utilities` (screenshot, scroll, properties), `RetryAnalyzer`, `ExtentReporter`, `MyListeners`
+- **Auth:** Full login before every test (no session reuse)
+
+### Project 2 — Playwright Java (`/playwright-java-learning`)
+- **Stack:** Playwright for Java, TestNG, Java, Allure Reports, Extent Reports, Maven
+- **Pattern:** Page Object Model + centralized config + auth state reuse
+- **Features automated:** Push Notification (standard + improved + data-driven), Document Library, Social Auto-Post
+- **Supporting utilities:** `AuthManager`, `ConfigReader`, `ExcelReader`, `TestContext` (ThreadLocal), `DataProviders`, `RetryAnalyzer` + `RetryAnnotationTransformer`, `ExtentReportListener`, `ExtentReportManager`
+- **Auth:** Login once per suite run, session saved to `auth.json`, restored instantly per test via `setStorageStatePath`
+
+---
+
+## 00. Why did you switch from Selenium to Playwright?
+
+This is the most important interview question for your profile. Here is a full, honest, confident answer.
+
+### The short answer
+> "I started with Selenium on a real SaaS app — not a demo site. I ran into enough real pain points (stale elements, fragile waits, session management, screenshot capture via reflection) that I wanted to understand if a modern tool solved them by design. Playwright did. So I rebuilt the same feature set in Playwright to directly compare the two."
+
+### The long answer — problem by problem
+
+---
+
+### Problem 1: StaleElementReferenceException
+
+**In Selenium:** When React or Angular re-renders a component after a click or navigation, the `WebElement` reference you have becomes stale — the DOM node it pointed to no longer exists. The test throws `StaleElementReferenceException`. I had to write a dedicated `waitForElementStalenessAndRefresh()` method in `WaitUtils.java`:
+
+```java
+public static WebElement waitForElementStalenessAndRefresh(WebDriver driver,
+        WebElement staleElement, By locator) {
+    getWait(driver, DEFAULT_TIMEOUT)
+        .until(ExpectedConditions.stalenessOf(staleElement));
+    return waitForElementClickable(driver, locator);
+}
+```
+
+You're telling the framework: "wait for this element to go stale, then re-fetch it." It's defensive boilerplate you repeat constantly.
+
+**In Playwright:** This doesn't exist. Playwright does not cache element references the way Selenium does. Every time you call `.click()`, `.fill()`, or any action on a `Locator`, Playwright re-queries the DOM at that moment. A Locator is a description of how to find the element — not a snapshot of it. You never hold a stale reference.
+
+**Interview talking point:**
+> "Stale element exceptions were one of the biggest sources of false failures in my Selenium work. Every time the React app re-rendered, I had to re-fetch the element. Playwright eliminates this entirely because Locators are lazy — they query the DOM at action time, not at the point you define them. I never had a single stale element error in the Playwright project."
+
+---
+
+### Problem 2: Manual wait management — building WaitUtils from scratch
+
+**In Selenium:** Every action potentially needs an explicit wait. The framework gives you `WebDriverWait` + `ExpectedConditions`, but you have to wire it up yourself every time. In my Selenium project, I ended up building an entire `WaitUtils.java` class with 8+ methods — `waitForElementClickable`, `waitForElementVisible`, `waitForElementPresent`, `waitForElementToDisappear`, `waitForPageLoad`, `waitForTextPresent`, `waitForUrlToContain`, `waitForAllElements`, `isElementPresent`. That's a lot of infrastructure before you've written a single test.
+
+On top of that: if you accidentally leave `implicitlyWait` active alongside `WebDriverWait`, the two interact in unpredictable ways — the effective timeout becomes `implicit + explicit` and tests become slower and flakier. I had to explicitly set `implicitlyWait(0)` to disable it and rely purely on explicit waits.
+
+```java
+// Had to do this to prevent implicit+explicit conflict:
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+```
+
+**In Playwright:** Auto-waiting is built into every action. When you call `locator.click()`, Playwright automatically waits for the element to be visible, enabled, stable (not animating), and not obscured — before performing the click. There is no `WebDriverWait`. There is no `ExpectedConditions`. There is no `WaitUtils`. I deleted the entire class when moving to Playwright. `page.setDefaultTimeout(60000)` sets a global cap and that's it.
+
+**Interview talking point:**
+> "In Selenium I had to build a WaitUtils class with 8 different wait methods just to handle the most common scenarios. In Playwright, every action has auto-waiting built in — click, fill, navigate, all of them wait for the element to be in the right state automatically. I went from maintaining a 150-line utility class to setting one default timeout. The framework does what you'd expect a modern tool to do."
+
+---
+
+### Problem 3: Implicit wait + explicit wait conflict
+
+**In Selenium:** This is a well-known trap. `driver.manage().timeouts().implicitlyWait()` applies globally to every `findElement` call. `WebDriverWait` applies per-wait. When both are active, the actual timeout becomes unpredictable — Selenium adds the two together in some situations, and conditions like `invisibilityOfElementLocated` can wait the full `implicit + explicit` duration even when the element disappears quickly. I had to document the decision to set implicit wait to 0:
+
+```java
+// Removed 35s implicit wait — mixing implicit + explicit waits causes unpredictable behavior.
+// All page objects already use explicit WebDriverWait, so implicit wait is unnecessary.
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+```
+
+**In Playwright:** This concept doesn't exist. There is one timeout model — `page.setDefaultTimeout()` — and it applies uniformly. No interaction between two competing timeout systems.
+
+---
+
+### Problem 4: Getting the driver into the listener — Java reflection
+
+**In Selenium:** When a test fails, the `MyListeners` class needs to take a screenshot. But `ITestListener` doesn't know about `WebDriver` — it only knows about `ITestResult`. To get the driver, I had to use Java reflection to reach into the test class instance and pull the private field out:
+
+```java
+// In MyListeners.java — getting the driver from the test instance
+Field field = testInstance.getClass().getSuperclass().getDeclaredField("driver");
+field.setAccessible(true);  // bypass access control
+driver = (WebDriver) field.get(testInstance);
+```
+
+This works but it's fragile: if the field is renamed, moved to a grandparent class, or made static, the reflection breaks silently. It's also hard to understand for anyone reading the code.
+
+**In Playwright:** I created `TestContext.java` — a `ThreadLocal<Page>` holder. `BaseTest.setUp()` writes the page in after creating it. The listener reads it out. No reflection, no coupling:
+
+```java
+// BaseTest.setUp() — writes the page in
+TestContext.setPage(page);
+
+// ExtentReportListener.onTestFailure() — reads it out
+Page page = TestContext.getPage();
+byte[] screenshot = page.screenshot(...);
+```
+
+`ThreadLocal` also makes this safe for parallel tests — each thread has its own page reference.
+
+**Interview talking point:**
+> "In Selenium I had to use Java reflection to get the WebDriver into the test listener for screenshots. That's a code smell — you're breaking encapsulation with setAccessible(true). In Playwright I replaced that with a ThreadLocal page holder called TestContext. BaseTest writes the page in, the listener reads it out. Clean, type-safe, and parallel-safe."
+
+---
+
+### Problem 5: Screenshot management — file paths vs Base64
+
+**In Selenium:** Screenshots are saved as PNG files to disk. The `Utilities.captureScreenshot()` method creates the file and returns a relative path. That path is then passed to `extentTest.addScreenCaptureFromPath()`. The problem: the path is relative from the report file to the screenshot folder. If the report is at `target/reports/ExtentReport.html` and screenshots are at `screenshots/`, the relative path is `../../screenshots/testName_timestamp.png`. Move either file, change the report output path, or open the HTML on a different machine and the images break.
+
+```java
+// Selenium — fragile relative path
+return "../../screenshots/" + fileName;
+```
+
+**In Playwright:** Screenshots are captured as a `byte[]` and encoded as Base64. The image is embedded directly inside the HTML as a `data:image/png;base64,...` string. The report is completely self-contained — no external files, no relative paths, works on any machine:
+
+```java
+// Playwright — self-contained Base64 embedding
+byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(false));
+String base64 = Base64.getEncoder().encodeToString(screenshotBytes);
+test.fail("<img src='data:image/png;base64," + base64 + "'/>");
+```
+
+**Interview talking point:**
+> "In Selenium, screenshots were saved as separate PNG files and linked via relative paths in the Extent report. Send the HTML to someone else and the images are broken. In Playwright, screenshots are Base64-encoded and embedded directly in the HTML — the report is a single portable file that works anywhere."
+
+---
+
+### Problem 6: No built-in session reuse — full login before every test
+
+**In Selenium:** Selenium has no native mechanism to save and restore browser session state. In my Selenium project, every test started from scratch — open browser, navigate to login, fill credentials, submit, wait for home page. For a 20-test suite, that's 20 logins. Each login takes 3–5 seconds, so it's adding a minute to every run, plus 20 extra failure points (if login flakes, all 20 tests fail).
+
+The alternative — sharing a browser instance across tests — creates a different problem: test isolation. If test 5 leaves the app in a broken state, test 6 inherits it.
+
+**In Playwright:** `AuthManager.ensureLogin()` runs once in `@BeforeSuite`, performs the login, and saves cookies + local storage to `auth.json` via `context.storageState()`. Every `@BeforeMethod` creates a fresh `BrowserContext` and loads `auth.json` via `setStorageStatePath()`. You get isolation (each test has its own context) AND speed (no login — just session restore):
+
+```java
+// @BeforeSuite — runs once
+AuthManager.ensureLogin(browser);  // login + save to auth.json
+
+// @BeforeMethod — runs per test
+context = browser.newContext(
+    new Browser.NewContextOptions()
+        .setStorageStatePath(Paths.get("auth.json"))  // restore instantly
+);
+```
+
+For a 20-test suite: 1 login instead of 20. auth.json is cached between runs — if it still exists from last run, `ensureLogin()` skips the login entirely.
+
+**Interview talking point:**
+> "Selenium has no built-in session reuse — every test had to do a full login. In Playwright, I login once per suite, save the session to auth.json, and every test restores it via setStorageStatePath on a fresh context. Tests are isolated from each other but don't pay the cost of a login. For a 20-test suite that's the difference between 1 login and 20 logins."
+
+---
+
+### Problem 7: Strict mode — Selenium silently picks the wrong element
+
+**In Selenium:** If your locator matches multiple elements, `findElement()` silently returns the first one. You might be clicking the wrong button and not know it — the test passes, but it's testing the wrong thing. There's no warning.
+
+**In Playwright:** Strict mode is on by default. If a locator matches more than one element, Playwright throws immediately:
+
+```
+Error: strict mode violation: locator("//button[contains(@class,'xdsoft_next')]") resolved to 2 elements
+```
+
+I ran into this with the xdsoft datetime picker — it renders two "next" buttons (one for months, one for time). Playwright caught it instantly. Selenium would have silently clicked the first one, which was the time-scroll button, and the test would have appeared to work while navigating to the wrong month.
+
+The fix was scoping the locator to the date panel container. Playwright's strictness forced me to write a better locator.
+
+**Interview talking point:**
+> "Playwright's strict mode threw an error the moment my locator matched two elements. Selenium would have silently used the first one — which was the wrong button. Strict mode is actually a feature. It caught an ambiguous locator that would have been a silent false-positive in Selenium. It forced me to be precise."
+
+---
+
+### Problem 8: ChromeOptions workarounds in Selenium
+
+**In Selenium:** Getting Chrome to behave reliably required a list of workarounds that had nothing to do with testing:
+
+```java
+options.addArguments("--force-device-scale-factor=0.8");  // fix viewport scaling
+options.addArguments("--disable-gpu");                    // prevent renderer crashes
+options.addArguments("--no-sandbox");                     // fix renderer timeouts
+
+// Disable password save / breach detection popups
+Map<String, Object> prefs = new HashMap<>();
+prefs.put("credentials_enable_service", false);
+prefs.put("profile.password_manager_enabled", false);
+prefs.put("profile.password_manager_leak_detection", false);
+options.setExperimentalOption("prefs", prefs);
+options.addArguments("--disable-features=PasswordLeakDetection");
+```
+
+Every one of these was added to fix a real problem encountered during automation. The viewport scaling fix exists because Windows DPI scaling was hiding the right side of the navigation bar. The GPU flags fix renderer crashes. The password prefs stop Chrome popups from blocking test actions.
+
+**In Playwright:** None of these were needed. Playwright manages the browser process itself with a controlled launch — no OS-level DPI interference, no password popups, no renderer timeout issues. The only launch args I added were window size flags (`--start-maximized`, `--window-size=1366,768`) for consistent resolution, which is an application-level concern, not a framework workaround.
+
+---
+
+### Problem 9: Retry count was hardcoded — not configurable
+
+**In Selenium `RetryAnalyzer`:**
+```java
+private static final int MAX_RETRY = 2;  // hardcoded
+```
+
+Changing the retry count means changing Java code, recompiling, redeploying.
+
+**In Playwright `RetryAnalyzer`:**
+```java
+private static final int MAX_RETRY = Integer.parseInt(ConfigReader.get("retry.count"));
+```
+
+Change it in `config.properties`. No code change needed. Works per-environment if needed.
+
+---
+
+### Problem 10: Config loading with FileInputStream — fragile path
+
+**In Selenium `Utilities.loadPropertiesFile()`:**
+```java
+String path = System.getProperty("user.dir") + "\\src\\test\\resources\\projectdata.properties";
+prop.load(new FileInputStream(path));
+```
+
+`user.dir` is the current working directory of the JVM — it depends on how the JVM was launched. From IntelliJ it's the project root. From a Maven Surefire fork it may differ. Hardcoding `\\` also breaks on Mac/Linux.
+
+**In Playwright `ConfigReader`:**
+```java
+InputStream is = ConfigReader.class.getClassLoader().getResourceAsStream("config.properties");
+```
+
+`getResourceAsStream` loads from the classpath regardless of how the JVM was started — works in IDE, Maven, CI, any OS. No path separators. No `user.dir`.
+
+---
+
+### Summary comparison table
+
+| Concern | Selenium (PageObjectModel) | Playwright (playwright-java-learning) |
+|---|---|---|
+| Stale elements | `waitForElementStalenessAndRefresh()` workaround | Doesn't exist — Locators re-query on every action |
+| Waits | Manual `WaitUtils` (8 methods) + implicit/explicit conflict | Auto-waiting built-in on every action |
+| Session reuse | Not supported — full login before every test | `auth.json` via `setStorageStatePath` — 1 login per suite |
+| Screenshot in listener | Java reflection (`getDeclaredField().setAccessible(true)`) | `TestContext` ThreadLocal — clean and parallel-safe |
+| Screenshot storage | PNG files on disk, fragile relative paths | Base64 embedded in HTML — single portable file |
+| Ambiguous locators | Silent — picks first match, may be wrong | Strict mode — throws immediately |
+| Browser setup | Long list of ChromeOptions workarounds | Clean launch, no workarounds needed |
+| Video recording | Not built-in | Native `setRecordVideoDir()` — WebM per test |
+| Traces | Not available | Full DOM + network + source trace, viewer built-in |
+| Retry config | Hardcoded `MAX_RETRY = 2` | Read from `config.properties` |
+| Config loading | `FileInputStream` with `user.dir` — fragile | `getResourceAsStream` — classpath-safe |
+| Parallel safety | `driver` instance field — not ThreadLocal | `BrowserContext` per test — naturally isolated |
+| Cross-browser API | Different driver class per browser | Same API — swap `playwright.chromium()` to `firefox()` |
+
+---
+
 ## 1. How do you run tests against a different environment (e.g. preprod vs prod)?
 
 ### The problem
@@ -703,3 +968,420 @@ Add the same three launch args to `SocialAutoPostBaseTest` to match `BaseTest`.
 
 ### Interview talking point
 > "We had inconsistent resolution between two test suites — one looked fine, the other was cramped. Both used --start-maximized but only one had --window-size set explicitly. In Playwright, --start-maximized alone doesn't guarantee a specific resolution because Playwright's viewport can override the OS window size. Pinning it with --window-size ensures consistent rendering across all suites regardless of the machine's screen settings."
+
+---
+
+## 18. Page Object Model — What it is, how you used it, and the OOP behind it
+
+### What is POM and why use it?
+
+Page Object Model is a design pattern where every page or feature of the application gets its own Java class. That class owns two things:
+1. **Locators** — how to find the elements on that page
+2. **Action methods** — what a user can do on that page
+
+Test classes call those methods. They never touch a locator directly.
+
+**Why this matters:**
+- If a locator changes (e.g. a button ID is renamed), you fix it in one place — the page class — not across 30 test files
+- Tests read like plain English: `pushPage.createNotification(name, message)` — no XPath noise in the test
+- Each class has a single responsibility — easy to maintain, easy to review
+
+### How you implemented it — both projects
+
+**Selenium project (`/PageObjectModel`):**
+```
+src/main/java/pageObjects/
+    LoginPage.java
+    PushNotificationPage.java
+    DocumentLibraryPage.java
+    SocialAutoPostPage.java
+    ImageCreationPage.java
+    PdfCreationPage.java
+    VideoCreationPage.java
+    SearchPage.java
+
+src/test/java/tests/
+    PushNotification.java       ← calls methods from PushNotificationPage
+    DocumentLibrary.java        ← calls methods from DocumentLibraryPage
+    SocialAutoPostTest.java     ← calls methods from SocialAutoPostPage
+```
+
+**Playwright project (`/playwright-java-learning`):**
+```
+src/main/java/pageObjects/
+    PushNotificationPage.java
+    PushNotificationPageImproved.java
+    DocumentLibraryPage.java
+    SocialAutoPostPagePW.java
+
+src/test/java/tests/
+    PushNotificationTest.java
+    PushNotificationTestImproved.java
+    PushNotificationDataDrivenTest.java
+    DocumentLibraryTest.java
+    SocialAutoPostPlaywrightTest.java
+```
+
+---
+
+### The OOP pillars — how each one appears in your code
+
+#### 1. Encapsulation
+
+Locators are `private` — hidden inside the page class. Action methods are `public` — the only thing tests can see. The test cannot accidentally click a raw locator; it must go through a named method.
+
+```java
+// Selenium — PushNotificationPage.java
+private By notificationNameField = By.id("pushnotify_name");  // private — test can't touch this
+private By submitButton = By.xpath("//button[@type='submit']");
+
+public void enterNotificationName(String name) {
+    driver.findElement(notificationNameField).sendKeys(name);  // public — test calls this
+}
+```
+
+```java
+// Playwright — PushNotificationPageImproved.java
+private Locator notificationNameField = page.locator("#pushnotify_name");  // private
+private Locator submitButton = page.locator("//button[@type='submit']");
+
+public void enterNotificationName(String name) {
+    notificationNameField.fill(name);  // public
+}
+```
+
+**Why encapsulation matters here:**
+If the name field changes from `#pushnotify_name` to `#notification_name`, you change one private field. Every test that calls `enterNotificationName()` still works — they don't even know the locator changed.
+
+#### 2. Inheritance
+
+`BaseTest` contains everything shared across all tests — browser setup, context creation, teardown, screenshot capture. Every test class extends it and inherits all of this for free.
+
+```java
+// Selenium
+public class Base {
+    protected WebDriver driver;
+    public WebDriver openBrowserAndApplication(String browserName) { ... }
+}
+
+public class PushNotification extends Base {
+    // inherits driver, openBrowserAndApplication() — no re-implementation needed
+}
+```
+
+```java
+// Playwright — two-level inheritance for Social Auto-Post
+public class BaseTest {
+    protected static Browser browser;
+    protected BrowserContext context;
+    protected Page page;
+    // @BeforeSuite, @BeforeMethod, @AfterMethod all here
+}
+
+public class SocialAutoPostBaseTest extends BaseTest {
+    // inherits the full browser lifecycle
+    // adds only: getScheduleDate() helper specific to this feature
+}
+
+public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
+    // inherits BaseTest lifecycle + getScheduleDate()
+    // contains only: the actual @Test methods
+}
+```
+
+**Why inheritance matters here:**
+Without it, every test class would re-implement `@BeforeSuite` / `@BeforeMethod` / `@AfterMethod`. That's 5 classes × 30 lines each = 150 lines of duplicated lifecycle code. Change the timeout? Change it in 5 places. With inheritance you change it in `BaseTest` and every test class picks it up.
+
+#### 3. Abstraction
+
+The test doesn't know *how* a notification is created — it just calls `createNotification()`. The complexity (clicking the menu, waiting for the form, filling 6 fields, submitting, waiting for the toast) is hidden inside the page object.
+
+```java
+// Test — clean, readable, no implementation detail
+@Test
+public void test_TC_PN_01_createBasicNotification() {
+    pushPage.openNotificationPage();
+    pushPage.enterNotificationName("Test Alert");
+    pushPage.enterNotificationMessage("Hello world");
+    pushPage.clickSubmit();
+    Assert.assertEquals(pushPage.getToastMessageText(), "Notification created successfully");
+}
+
+// Page Object — all the complexity is here, hidden from the test
+public void clickSubmit() {
+    submitButton.scrollIntoViewIfNeeded();
+    submitButton.click();
+    page.waitForSelector(".toast-message", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+}
+```
+
+#### 4. Polymorphism
+
+Polymorphism appears through **interface implementation** — multiple classes implement the same TestNG interface, and TestNG calls the methods uniformly without knowing which implementation it's talking to.
+
+```java
+// RetryAnalyzer implements IRetryAnalyzer
+public class RetryAnalyzer implements IRetryAnalyzer {
+    @Override
+    public boolean retry(ITestResult result) { ... }
+}
+
+// ExtentReportListener implements ITestListener
+public class ExtentReportListener implements ITestListener {
+    @Override
+    public void onTestStart(ITestResult result) { ... }
+    @Override
+    public void onTestFailure(ITestResult result) { ... }
+    @Override
+    public void onTestSkipped(ITestResult result) { ... }
+    @Override
+    public void onFinish(ITestContext context) { ... }
+}
+
+// MyListeners (Selenium) also implements ITestListener — same interface, different implementation
+public class MyListeners implements ITestListener {
+    @Override
+    public void onTestFailure(ITestResult result) {
+        // Selenium version: reflection to get driver, save screenshot as PNG file
+    }
+}
+```
+
+TestNG doesn't care which `ITestListener` is registered. It calls `onTestFailure()` and whichever implementation is wired up executes. That's polymorphism — same interface, different behaviour.
+
+#### 5. Constructor injection (Dependency Injection)
+
+Page objects don't create their own `WebDriver` or `Page`. They receive it through the constructor. This is the Dependency Injection pattern — the dependency is injected from outside.
+
+```java
+// Selenium
+public class PushNotificationPage {
+    private WebDriver driver;
+
+    public PushNotificationPage(WebDriver driver) {
+        this.driver = driver;  // injected — not created here
+    }
+}
+
+// In test:
+pushPage = new PushNotificationPage(driver);  // driver created by Base, passed in
+```
+
+```java
+// Playwright
+public class PushNotificationPageImproved {
+    private Page page;
+
+    public PushNotificationPageImproved(Page page) {
+        this.page = page;  // injected — not created here
+    }
+}
+
+// In test:
+pushNotificationPage = new PushNotificationPageImproved(page);  // page created by BaseTest, passed in
+```
+
+**Why this matters:** The page object has no responsibility for browser lifecycle. It just uses whatever it receives. This makes it easy to test in isolation and easy to swap implementations.
+
+#### 6. Static utility classes
+
+`WaitUtils`, `Utilities`, `ConfigReader`, `ExcelReader` — these are utility classes with only `static` methods and no instance state. You call them via class name, never instantiate them.
+
+```java
+// No instantiation needed — static access
+String baseUrl = ConfigReader.get("base.url");
+Object[][] data = ExcelReader.getTestData(EXCEL_PATH, "NotificationData");
+WaitUtils.waitForElementClickable(driver, By.id("submit"));
+```
+
+#### 7. Singleton pattern (Extent Report Manager)
+
+`ExtentReportManager` uses the Singleton pattern — only one `ExtentReports` instance can exist. `synchronized` prevents a race condition in parallel execution where two threads could both enter `getInstance()` simultaneously and create two separate instances.
+
+```java
+public class ExtentReportManager {
+    private static ExtentReports extent = null;
+
+    public static synchronized ExtentReports getInstance() {
+        if (extent == null) {  // only create once
+            ExtentSparkReporter spark = new ExtentSparkReporter("test-output/extent-report/index.html");
+            extent = new ExtentReports();
+            extent.attachReporter(spark);
+        }
+        return extent;  // every caller gets the same instance
+    }
+}
+```
+
+#### 8. ThreadLocal — per-thread instance isolation
+
+`TestContext` wraps a `ThreadLocal<Page>`. In parallel execution, multiple threads run simultaneously. Without ThreadLocal, one shared `static Page` would be overwritten by each thread — a race condition. `ThreadLocal` gives each thread its own private copy.
+
+```java
+public class TestContext {
+    private static final ThreadLocal<Page> pageHolder = new ThreadLocal<>();
+
+    public static void setPage(Page page) { pageHolder.set(page); }  // each thread sets its own
+    public static Page getPage() { return pageHolder.get(); }         // each thread reads its own
+    public static void clear() { pageHolder.remove(); }               // clean up after test
+}
+```
+
+### Interview talking point
+> "POM is the backbone of both my frameworks. Each page class encapsulates locators as private fields and exposes only named action methods — so if a locator changes, I fix it in one place. Tests extend BaseTest which handles the full lifecycle through inheritance — browser setup, auth, teardown. The page objects receive driver or page through the constructor — that's dependency injection, keeping lifecycle management out of the page class. For reporting, I used the Singleton pattern in ExtentReportManager to ensure one shared report instance across parallel threads, and ThreadLocal in TestContext so each thread has its own Page reference. Polymorphism comes through TestNG interfaces — ITestListener, IRetryAnalyzer, IAnnotationTransformer — each implemented differently but called the same way by TestNG."
+
+---
+
+## 19. Selenium vs Playwright — Technical Comparison (Extended)
+
+### Architecture — how each tool communicates with the browser
+
+**Selenium:**
+```
+Your Java Code → ChromeDriver.exe (separate process) → Chrome Browser
+```
+Three hops. Your code sends a REST API call to ChromeDriver. ChromeDriver translates it into a browser command and sends it to Chrome via the W3C WebDriver protocol. Any network delay or process start lag compounds here.
+
+**Playwright:**
+```
+Your Java Code → Chrome Browser (via CDP WebSocket)
+```
+Two hops. Playwright communicates directly with the browser over a persistent WebSocket connection using the Chrome DevTools Protocol (CDP). Lower latency, faster execution, and direct access to browser internals.
+
+### What CDP gives Playwright that Selenium can't match natively
+
+| Capability | Selenium | Playwright |
+|---|---|---|
+| Network interception | Needs BrowserMob Proxy (third-party) | `page.route()` — built in |
+| Mock API responses | Third-party proxy setup | `page.route()` + `route.fulfill()` — built in |
+| Wait for specific response | Not built in | `page.waitForResponse()` — built in |
+| Iframe interaction | `driver.switchTo().frame()` — context switch | `page.frameLocator()` — inline scoping |
+| Shadow DOM access | JavaScript executor hacks | Native `>>` deep combinator |
+| Video recording | Not built in | `setRecordVideoDir()` — built in |
+| Trace viewer | Not available | Full step-by-step trace with DOM snapshots |
+| Browser binaries | Separate driver per version (version mismatch risk) | Playwright installs its own pinned browsers |
+
+### Network interception example (Playwright only)
+```java
+// Intercept any API call and return a mocked response — no proxy needed
+page.route("**/api/notifications", route -> {
+    route.fulfill(new Route.FulfillOptions()
+        .setBody("{\"status\": \"ok\", \"count\": 5}")
+        .setContentType("application/json"));
+});
+```
+
+### Iframe interaction comparison
+```java
+// Selenium — must switch context in and out
+driver.switchTo().frame("iframeId");
+driver.findElement(By.id("insideIframe")).click();
+driver.switchTo().defaultContent();  // must switch back
+
+// Playwright — scope inline, no context switch
+page.frameLocator("#iframeId").locator("#insideIframe").click();
+// continues working on main page immediately after
+```
+
+### Browser installation — no version mismatch
+```bash
+# Selenium — must match ChromeDriver version to Chrome version manually
+# Chrome 123 needs ChromeDriver 123 — breaks on browser auto-updates
+
+# Playwright — manages its own pinned browser binaries
+npx playwright install  # installs the exact versions Playwright was tested against
+```
+
+### Interview talking point
+> "The fundamental architectural difference is how they talk to the browser. Selenium goes through an intermediate driver server — three hops. Playwright connects directly to the browser via CDP WebSocket — two hops. That's why Playwright is faster and why it can do things Selenium can't natively, like network interception, tracing, and video recording. In Selenium you'd need BrowserMob Proxy just to mock an API call. In Playwright it's two lines of code."
+
+---
+
+## 20. Behavioural Questions — Real Stories from Your Projects
+
+### "Tell me about a time you solved a difficult bug in your automation framework."
+
+> "The toughest one was the window resolution inconsistency between two test suites. The Document Library tests ran fine but Social Auto-Post tests were failing — clicks were landing in the wrong place or elements couldn't be found. I initially thought it was a locator issue and spent time inspecting XPaths. After adding console logs I noticed the two suites were running at different window sizes. The root cause was that `--start-maximized` was set in both but only one had `--window-size=1366,768` explicitly pinned. Playwright's viewport setting overrides the OS window size — without pinning, the browser defaulted to something smaller. The fix was three lines of launch args. The lesson was to check environmental consistency first before assuming the locator is wrong."
+
+### "Tell me about a time a test was passing but the feature was actually broken."
+
+> "We had three tests with `Assert.assertTrue(true)` — a placeholder that was never replaced with a real assertion. The test always passed because it was literally asserting that `true` is `true`. The test names suggested they were checking image uploads and CSV uploads, so on paper we had coverage. In practice those features could have been completely broken and the suite would still be green. I identified these by reviewing the test code, replaced them with assertions against the actual page state — checking that an upload preview appeared — and documented them as false-passing tests. The lesson: a passing test isn't the same as a tested feature."
+
+### "Tell me about a time you improved framework performance."
+
+> "The Social Auto-Post suite was logging in before every single test — 7 full login cycles for 7 tests. I discovered this when I noticed the `@BeforeMethod` in that suite's base class had a full login sequence that was completely separate from the `AuthManager` pattern the rest of the framework used. It was written in isolation early on and never connected. I refactored it to extend `BaseTest` and use `AuthManager.ensureLogin()` in `@BeforeSuite`. Login went from 7 times to 1 time per run. The broader fix was also making the suite extend `BaseTest` properly so it could participate in parallel execution alongside other feature suites."
+
+### "What would you improve about your current framework?"
+
+> "Three things. First, CI/CD pipeline — the framework is already CI-ready since headless mode is a single config flag, but I haven't wired up a GitHub Actions workflow yet. That would give automatic test runs on every push and publish the Allure report as a build artifact. Second, the file paths in config use absolute paths for upload files — they work on my machine but need editing on another machine. Moving to classpath-relative paths using `getClass().getClassLoader().getResource()` would fix that. Third, I'd increase parallel execution — currently running at `thread-count=3`. Profiling memory usage with more threads and tuning based on the CI machine specs would let me push that higher and cut total execution time further."
+
+### "How do you approach making tests maintainable long-term?"
+
+> "Three rules I follow. Externalize everything that changes — URLs, credentials, locator-specific values, file paths all live in `config.properties`, never hardcoded in test files. Generate everything that ages — dates, IDs, anything time-sensitive is computed at runtime using Java's `LocalDate`, not written as a string literal that expires. And document every non-obvious decision — I keep an `INTERVIEW_NOTES.md` in the repo with every architectural decision written down: what the problem was, what the solution is, and why that approach was chosen. A new team member can understand the entire framework without reading git history."
+
+---
+
+## 21. Quick Reference — Numbers, Versions, Commands
+
+Use this to glance at facts before walking into the interview.
+
+### Project stats
+| Item | Value |
+|---|---|
+| Total test cases | 87+ across 3 modules |
+| Modules covered | Push Notification, Document Library, Social Auto-Post |
+| Environments | Dev, Preprod (`app.sppreprod.in`), Prod (`app.spdevmfp.com`) |
+| Login cycles (before fix) | 18 per suite run |
+| Login cycles (after fix) | 1 per suite run |
+| Parallel thread count | 3 (class-level) |
+
+### Versions
+| Tool | Version |
+|---|---|
+| Playwright for Java | 1.44.0 |
+| Java | 11 |
+| TestNG | 7.9.0 |
+| Allure TestNG | 2.27.0 |
+| AspectJ Weaver | 1.9.21 |
+| Maven Surefire Plugin | 3.2.5 |
+| Extent Reports | 5.x |
+| Apache POI (Excel) | 5.x |
+
+### Commands
+```bash
+mvn test                          # run tests only
+mvn verify                        # run tests + generate Allure report
+mvn allure:serve                  # open Allure report in browser
+
+# Switch environment via CLI (no file edits needed)
+mvn test -Dbase.url=https://app.sppreprod.in -Denv=preprod -Dvalidusername=... -Dvalidpassword=...
+
+# View a Playwright trace file
+npx playwright show-trace test-output/traces/<testName>-<timestamp>.zip
+```
+
+### Key config keys
+```properties
+base.url=https://app.spdevmfp.com
+env=prod                    # dev | preprod | prod — drives locator selection
+browser.headless=false
+browser.slowmo=0
+retry.count=2
+video.enabled=true
+tracing.enabled=true
+social.partner.value=287    # 287 on preprod, 478 on prod
+```
+
+### Key design decisions — one-liners
+| Decision | Why |
+|---|---|
+| `getResourceAsStream` for config | Works from IDE + Maven — `FileInputStream` breaks in Maven |
+| `DOMCONTENTLOADED` not `NETWORKIDLE` | Faster; `NETWORKIDLE` times out on SPAs with background polling |
+| `BrowserContext` per test | Isolation without the cost of a full browser launch per test |
+| `auth.json` storage state | Login once — every test restores session in milliseconds |
+| `parallel="classes"` not `parallel="methods"` | Instance fields are naturally isolated per class; methods share one instance |
+| Base64 screenshots in report | Self-contained HTML — no broken relative paths when sharing |
+| `synchronized` on `getInstance()` | Prevents two parallel threads creating two `ExtentReports` instances |
+| `ThreadLocal<Page>` in TestContext | Each thread has its own Page — no cross-contamination in parallel runs |
+| `IAnnotationTransformer` for retry | Applies `RetryAnalyzer` globally — no need to annotate every `@Test` |
+| Dynamic dates via `LocalDate` | Tests never expire — no manual date updates needed |

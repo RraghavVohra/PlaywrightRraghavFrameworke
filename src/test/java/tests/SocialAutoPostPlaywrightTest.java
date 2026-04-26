@@ -10,11 +10,20 @@ public class SocialAutoPostPlaywrightTest extends SocialAutoPostBaseTest {
 
     SocialAutoPostPagePW socialPage;
 
-    // Common navigation to Social Auto Post page (called at the start of every test)
+    // Common navigation to Social Auto Post page (called at the start of every test).
+    // Navigation path differs by environment:
+    //   dev/preprod : Communication tab → Social Auto Post
+    //   prod        : Automation tab → Social → Auto Post
     private void navigateToSocialAutoPost() {
         socialPage = new SocialAutoPostPagePW(page);
-        socialPage.clickOnCommunicationTabPreprod();
-        socialPage.clickOnSocialAutoPostOptionPreprod();
+        if (ConfigReader.get("env").equals("prod")) {
+            socialPage.clickOnAutomationTab();
+            socialPage.clickOnSocialOption();
+            socialPage.clickOnAutoPostTab();
+        } else {
+            socialPage.clickOnCommunicationTabPreprod();
+            socialPage.clickOnSocialAutoPostOptionPreprod();
+        }
         socialPage.clickOnActionsButton();
         socialPage.clickOnCreatePostButton();
     }

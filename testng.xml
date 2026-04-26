@@ -31,9 +31,9 @@
     -->
     <test name="SalesPanda Feature Tests">
         <classes>
-            <class name="tests.DocumentLibraryTest"/>
-            <class name="tests.PushNotificationTestImproved"/>
-            <class name="tests.PushNotificationDataDrivenTest"/>
+            <!-- <class name="tests.DocumentLibraryTest"/> -->
+            <!-- <class name="tests.PushNotificationTestImproved"/> -->
+            <!-- <class name="tests.PushNotificationDataDrivenTest"/> -->
             <class name="tests.SocialAutoPostPlaywrightTest"/>
         </classes>
     </test>

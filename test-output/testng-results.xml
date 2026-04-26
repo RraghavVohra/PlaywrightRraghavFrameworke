@@ -2,104 +2,153 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-12T22:48:32 IST" name="Default suite" finished-at="2026-04-12T22:51:16 IST" duration-ms="164626">
+  <suite started-at="2026-04-26T17:56:35 IST" name="SalesPanda Automation Suite" finished-at="2026-04-26T17:59:59 IST" duration-ms="203809">
     <groups>
     </groups>
-    <test started-at="2026-04-12T22:48:32 IST" name="Default test" finished-at="2026-04-12T22:51:16 IST" duration-ms="164626">
+    <test started-at="2026-04-26T17:56:35 IST" name="SalesPanda Feature Tests" finished-at="2026-04-26T17:59:59 IST" duration-ms="203809">
       <class name="tests.SocialAutoPostPlaywrightTest">
-        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:48:15 IST" name="globalSetup" finished-at="2026-04-12T22:48:32 IST" duration-ms="16594" status="PASS">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:56:19 IST" name="globalSetup" finished-at="2026-04-26T17:56:35 IST" duration-ms="16862" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:48:32 IST" name="setUp" finished-at="2026-04-12T22:48:38 IST" duration-ms="5832" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:56:36 IST" name="setUp" finished-at="2026-04-26T17:56:43 IST" duration-ms="7393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_01_whenPostedWithPngImageWithCobranding()[pri:1, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:48:39 IST" name="test_TC_SAP_01_whenPostedWithPngImageWithCobranding" finished-at="2026-04-12T22:48:57 IST" duration-ms="18277" status="PASS">
+        <test-method signature="test_TC_SAP_01_whenPostedWithPngImageWithCobranding()[pri:1, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:56:44 IST" name="test_TC_SAP_01_whenPostedWithPngImageWithCobranding" finished-at="2026-04-26T17:57:06 IST" duration-ms="21537" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_01_whenPostedWithPngImageWithCobranding -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:48:57 IST" name="tearDown" finished-at="2026-04-12T22:48:57 IST" duration-ms="201" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:06 IST" name="tearDown" finished-at="2026-04-26T17:57:07 IST" duration-ms="1546" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_01_whenPostedWithPngImageWithCobranding status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_01_whenPostedWithPngImageWithCobranding()[pri:1, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:48:57 IST" name="setUp" finished-at="2026-04-12T22:49:04 IST" duration-ms="6691" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:07 IST" name="setUp" finished-at="2026-04-26T17:57:14 IST" duration-ms="6459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding()[pri:2, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:04 IST" name="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding" finished-at="2026-04-12T22:49:21 IST" duration-ms="16740" status="PASS">
+        <test-method signature="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding()[pri:2, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:14 IST" name="test_TC_SAP_02_whenPostedWithJpgImageWithCobranding" finished-at="2026-04-26T17:57:32 IST" duration-ms="18599" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_02_whenPostedWithJpgImageWithCobranding -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:21 IST" name="tearDown" finished-at="2026-04-12T22:49:21 IST" duration-ms="266" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:32 IST" name="tearDown" finished-at="2026-04-26T17:57:33 IST" duration-ms="674" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_02_whenPostedWithJpgImageWithCobranding status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_02_whenPostedWithJpgImageWithCobranding()[pri:2, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:21 IST" name="setUp" finished-at="2026-04-12T22:49:27 IST" duration-ms="6271" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:33 IST" name="setUp" finished-at="2026-04-26T17:57:40 IST" duration-ms="6575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_03_whenPostedWithVideo()[pri:3, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:27 IST" name="test_TC_SAP_03_whenPostedWithVideo" finished-at="2026-04-12T22:49:52 IST" duration-ms="24159" status="PASS">
+        <test-method signature="test_TC_SAP_03_whenPostedWithVideo()[pri:3, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:57:40 IST" name="test_TC_SAP_03_whenPostedWithVideo" finished-at="2026-04-26T17:58:04 IST" duration-ms="24641" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_03_whenPostedWithVideo -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:52 IST" name="tearDown" finished-at="2026-04-12T22:49:52 IST" duration-ms="147" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:04 IST" name="tearDown" finished-at="2026-04-26T17:58:07 IST" duration-ms="2397" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_03_whenPostedWithVideo status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_03_whenPostedWithVideo()[pri:3, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:52 IST" name="setUp" finished-at="2026-04-12T22:49:58 IST" duration-ms="5859" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:07 IST" name="setUp" finished-at="2026-04-26T17:58:15 IST" duration-ms="8186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription()[pri:4, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:49:58 IST" name="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription" finished-at="2026-04-12T22:50:14 IST" duration-ms="16282" status="PASS">
+        <test-method signature="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription()[pri:4, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:15 IST" name="test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription" finished-at="2026-04-26T17:58:35 IST" duration-ms="20049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:14 IST" name="tearDown" finished-at="2026-04-12T22:50:14 IST" duration-ms="125" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:35 IST" name="tearDown" finished-at="2026-04-26T17:58:36 IST" duration-ms="1028" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_04_whenPostedWithSpecialCharacterInTitleAndDescription()[pri:4, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:14 IST" name="setUp" finished-at="2026-04-12T22:50:19 IST" duration-ms="5008" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:36 IST" name="setUp" finished-at="2026-04-26T17:58:43 IST" duration-ms="6501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl()[pri:5, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:19 IST" name="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl" finished-at="2026-04-12T22:50:35 IST" duration-ms="16076" status="PASS">
+        <test-method signature="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl()[pri:5, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:58:43 IST" name="test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl" finished-at="2026-04-26T17:59:02 IST" duration-ms="19381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:35 IST" name="tearDown" finished-at="2026-04-12T22:50:35 IST" duration-ms="101" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:02 IST" name="tearDown" finished-at="2026-04-26T17:59:03 IST" duration-ms="702" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_05_whenPostedOnAllSocialMediaWithCustomUrl()[pri:5, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:35 IST" name="setUp" finished-at="2026-04-12T22:50:41 IST" duration-ms="5736" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:03 IST" name="setUp" finished-at="2026-04-26T17:59:09 IST" duration-ms="6757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption()[pri:6, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:41 IST" name="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption" finished-at="2026-04-12T22:50:56 IST" duration-ms="14677" status="PASS">
+        <test-method signature="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption()[pri:6, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:09 IST" name="test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption" finished-at="2026-04-26T17:59:29 IST" duration-ms="19945" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:56 IST" name="tearDown" finished-at="2026-04-12T22:50:56 IST" duration-ms="181" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:29 IST" name="tearDown" finished-at="2026-04-26T17:59:30 IST" duration-ms="584" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_06_whenPostedOnAllSocialMediaWithNoneOption()[pri:6, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:50:56 IST" name="setUp" finished-at="2026-04-12T22:51:01 IST" duration-ms="5410" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:30 IST" name="setUp" finished-at="2026-04-26T17:59:38 IST" duration-ms="7819" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL()[pri:7, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:51:01 IST" name="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL" finished-at="2026-04-12T22:51:16 IST" duration-ms="14744" status="PASS">
+        <test-method signature="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL()[pri:7, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:38 IST" name="test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL" finished-at="2026-04-26T17:59:58 IST" duration-ms="20552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:51:16 IST" name="tearDown" finished-at="2026-04-12T22:51:16 IST" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T17:59:58 IST" name="tearDown" finished-at="2026-04-26T17:59:59 IST" duration-ms="888" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL status=SUCCESS method=SocialAutoPostPlaywrightTest.test_TC_SAP_07_whenPostedOnAllSocialMediaWithMicrositeURL()[pri:7, instance:tests.SocialAutoPostPlaywrightTest@41184371] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="closeAll()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@d8948cd]" started-at="2026-04-12T22:51:17 IST" name="closeAll" finished-at="2026-04-12T22:51:17 IST" duration-ms="562" status="PASS">
+        <test-method is-config="true" signature="closeAll()[pri:0, instance:tests.SocialAutoPostPlaywrightTest@41184371]" started-at="2026-04-26T18:00:00 IST" name="closeAll" finished-at="2026-04-26T18:00:01 IST" duration-ms="879" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeAll -->
       </class> <!-- tests.SocialAutoPostPlaywrightTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SalesPanda Feature Tests -->
+  </suite> <!-- SalesPanda Automation Suite -->
 </testng-results>
